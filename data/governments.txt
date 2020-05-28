@@ -255,7 +255,20 @@ government "Forest (Prey)"
 		destroy 0
 		atrocity 0
 
+government "Freedom Fighters"
+	swizzle 6
+	color .78 .36 .36
+	
+	"player reputation" 10
+	"attitude toward"
+		"Pirate" -.01
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly civilian"
+	"hostile hail" "hostile civilian"
+
 color "governments: Free" .06 .68 0.
+
 
 government "Free Worlds"
 	swizzle 2
