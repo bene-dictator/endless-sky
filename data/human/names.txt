@@ -77,6 +77,7 @@ phrase "civilian"
 		"civilian subphrase 13" 4900    # [made-up ship names] [sometimes a successor]
 		"civilian subphrase 14" 39200   # [Chinese name] [Chinese name] [Chinese name or sometimes a successor]
 		"civilian subphrase 15" 15620   # [noun] [noun] [sometimes a successor]
+		"civilian subphrase 16" 7645
 
 phrase "adjectives"
 	word
@@ -680,6 +681,7 @@ phrase "things you can be of"
 		"plural nouns" 142
 		"the-nouns" 205
 		"nouns of indeterminate quantity" 103
+		"human planets" 139
 
 phrase "male titles"
 	word
@@ -740,6 +742,10 @@ phrase "gender-neutral titles"
 		"Sergeant"
 		"Hajji"
 		"Rabbi"
+		"Merchant"
+		"Trader"
+		"Purveyor"
+		"Surveyor"
 
 phrase "all titles"
 	phrase
@@ -2176,6 +2182,7 @@ phrase "standalone civilian ship names"
 		"Aquarius"
 		"Aquitaine"
 		"Arabella"
+		"Arctic Roll"
 		"Ardent"
 		"Aresa"
 		"Arethusa"
@@ -2232,6 +2239,7 @@ phrase "standalone civilian ship names"
 		"Cassard"
 		"Castilla"
 		"Centinela"
+		"Ceylon"
 		"Chakra"
 		"Challenger"
 		"Charles Lindbergh"
@@ -2248,6 +2256,7 @@ phrase "standalone civilian ship names"
 		"Choyo"
 		"Circe"
 		"Close-Hauled"
+		"Cloud Nine"
 		"Cocteau"
 		"Colonia"
 		"Colossus"
@@ -2267,6 +2276,7 @@ phrase "standalone civilian ship names"
 		"Dauntless"
 		"David Ricardo"
 		"Dazzler"
+		"Deep Thought"
 		"Deep-Sea Baby"
 		"Destiny"
 		"Dewey"
@@ -2274,8 +2284,10 @@ phrase "standalone civilian ship names"
 		"Discovery"
 		"Dolphin"
 		"Donegal"
+		"Dong Nan Xi Bei"
 		"Dorngas"
 		"Dunquerque"
+		"Durandel"
 		"Eagle"
 		"Eagleview"
 		"Ernest Shackleton"
@@ -2292,15 +2304,19 @@ phrase "standalone civilian ship names"
 		"Excelsior"
 		"Falling Snow"
 		"Fantastic Planet"
+		"Far Star"
+		"Feng Shui"
 		"Fenton"
 		"Firebolt"
 		"Firstborn"
 		"Fletcher"
 		"Flying Junkyard"
+		"For Carnage, Apply Within"
 		"Forbin"
 		"Forrestal"
 		"Fort Garry"
 		"Frida Kahlo"
+		"Frou Frou"
 		"Fujiyama"
 		"Fuso"
 		"Galerna"
@@ -2363,6 +2379,7 @@ phrase "standalone civilian ship names"
 		"James Cook"
 		"Java"
 		"Jeanne d'Arc"
+		"Jenny Haniver"
 		"Jim Bowie"
 		"Jim Jones"
 		"Joseph Schumpeter"
@@ -2380,6 +2397,7 @@ phrase "standalone civilian ship names"
 		"Kasagi"
 		"Katori"
 		"Katsuragi"
+		"Khfiva"
 		"Keeling"
 		"Kersarge"
 		"Khagan"
@@ -2405,6 +2423,7 @@ phrase "standalone civilian ship names"
 		"Leopard"
 		"Lewis and Clark"
 		"Lezo"
+		"Lh'owon"
 		"Libra"
 		"Lizard"
 		"Loaves and Fishes"
@@ -2424,6 +2443,7 @@ phrase "standalone civilian ship names"
 		"Mars"
 		"Mary Ellen Carter"
 		"Mastico"
+		"Matariki"
 		"Matsushima"
 		"Mayflower"
 		"Medway"
@@ -2451,6 +2471,7 @@ phrase "standalone civilian ship names"
 		"Murano"
 		"Musashi"
 		"Mutuality"
+		"My Sharona"
 		"Mysore"
 		"Nagato"
 		"Napoleon"
@@ -2522,6 +2543,7 @@ phrase "standalone civilian ship names"
 		"Remembrance"
 		"Renaissance"
 		"Renowned"
+		"Requiem Vortex"
 		"Retribution"
 		"Richelieu"
 		"Riga"
@@ -2598,6 +2620,7 @@ phrase "standalone civilian ship names"
 		"Syracuse"
 		"Syren"
 		"Tabar"
+		"Taiyang"
 		"Takasago"
 		"Talwar"
 		"Taos"
@@ -2608,6 +2631,7 @@ phrase "standalone civilian ship names"
 		"Tears in Rain"
 		"Tenryu"
 		"Terrible Swift Sword"
+		"Thermoplyae"
 		"Thorstein Veblen"
 		"Throckmorton"
 		"Thunderfish"
@@ -2615,6 +2639,7 @@ phrase "standalone civilian ship names"
 		"Ties That Bind"
 		"Times of Woe"
 		"Tinkat"
+		"Tizona"
 		"Tochinoshin"
 		"Toksotis"
 		"Tonnant"
@@ -2638,6 +2663,7 @@ phrase "standalone civilian ship names"
 		"Vera Hugh"
 		"Verendrye"
 		"Vestal"
+		"Vid Boi"
 		"Virgo"
 		"Visby"
 		"Vondel"
@@ -2666,9 +2692,153 @@ phrase "standalone civilian ship names"
 		"Yuri Gagarin"
 		"Zereguchniy"
 		"Zheng He"
+		"Zhongshan"
 		"Zumwalt"
 		"Zygos"
 
+# Weighted by planet population (millions, rounded up). 10x less likely if the planet has the pirate government.
+phrase "human planets"
+	word
+		"Ada" 222
+		"Albatross" 6 # 64
+		"Alfheim" 87
+		"Amazon" 196
+		"Antipode" 25
+		"Arabia" 5
+		"Asgard" 1987
+		"Big Sky" 111
+		"Bivrost" 2414
+		"Bloodsea" 1 # 1
+		"Bluestone"
+		"Bounty" 167
+		"Bourne" 1572
+		"Buccaneer Bay" 361 # 701
+		"Burthen" 16
+		"Calda" 306
+		"Canyon" 69
+		"Chiron" 10350
+		"Clark" 41
+		"Clink"
+		"Cornucopia" 188
+		"Covert" 18 # 180
+		"Crossroads" 161
+		"Dancer"
+		"Darkstone" 9
+		"Deadman's Cove" 39 # 77
+		"Deep" 28
+		"Delve" 241
+		"Dune" 1
+		"Earth" 20723
+		"Farpoint" 2
+		"Farseer" 371
+		"Featherweight" 3
+		"Flood" 100
+		"Follower" 491
+		"Foundry" 3309
+		"Freedom" 661
+		"Furnace" 2
+		"Geminus" 252
+		"Gemstone" 131
+		"Geyser" 83
+		"Glaze" 276
+		"Glory" 435
+		"Greenrock" 400 # 800
+		"Harmony" 50
+		"Haven" 62 # 124
+		"Haze" 1111
+		"Heartland" 117
+		"Helheim" 20
+		"Hephaestus" 3576
+		"Hermes" 66
+		"Hestia" 747
+		"Hippocrates"
+		"Hope" 2
+		"Hopper" 17
+		"Humanika" 74
+		"Icefall" 24
+		"Ingot"
+		"Lichen" 38
+		"Lodestone" 34
+		"Longjump" 860
+		"Luna"
+		"Maelstrom" 150
+		"Mainsail" 390
+		"Maker" 1380
+		"Mani"
+		"Mars" 1167
+		"Martini" 324
+		"Memory" 54
+		"Mere" 95
+		"Midgard" 4266
+		"Millrace" 3080
+		"Moonshake" 6994
+		"Muspel" 62
+		"Mutiny"
+		"New Argentina" 11
+		"New Austria" 17
+		"New Boston" 8
+		"New Britain" 1689
+		"New China" 2706
+		"New Greenland" 3
+		"New Holland" 338
+		"New Iceland" 60
+		"New India" 3
+		"New Kansas" 22
+		"New Portland" 7
+		"New Sahara"
+		"New Switzerland" 525
+		"New Tibet" 23
+		"New Tortuga" 14 # 144; it was not an entry in the Human Population Numbers chart and this is a guess
+		"New Wales" 14
+		"New Washington" 5
+		"Nifel"
+		"Nimbus" 412
+		"Norn" 58
+		"Oasis" 80
+		"Oblivion" 12
+		"Pearl" 71
+		"Pilot" 7
+		"Placer"
+		"Poisonwood"
+		"Poseidos" 31
+		"Prime" 1470
+		"Quicksilver" 12
+		"Rand" 205
+		"Relic" 44
+		"Reunion" 1826
+		"Rust" 91
+		"Serpens"
+		"Shangri-La" 563
+		"Shiver" 4
+		"Shorebreak" 105
+		"Shroud" 213
+		"Silver" 8
+		"Sinter"
+		"Skillet" 36
+		"Skymoot" 461
+		"Solace" 2179
+		"Splashdown" 15
+		"Starcross" 19
+		"Stormhold" 73 # 145
+		"Sundive" 354
+		"Sundrinker"
+		"Sunracer" 1301
+		"Thrall" 155
+		"Thule" 930 # Assuming that the planet still has some civilian traffic
+		"Thunder" 5
+		"Tinker" 1012
+		"Trinket" 173
+		"Trove"
+		"Tundra" 29
+		"Twinstar"
+		"Vail"
+		"Valhalla" 5295
+		"Vinci" 263
+		"Wayfarer" 593
+		"Windblain" 231
+		"Winter"
+		"Zenith" 5 # 10
+		"Zug" 625
 
 # Final phrases that make ship names
 
@@ -2758,6 +2928,7 @@ phrase "civilian subphrase 5"
 # e.g.:
 # King of the Mountain
 # Champion Ivan
+# Prince of New Austria
 phrase "civilian subphrase 6"
 	phrase
 		"male titles" 1
@@ -2766,11 +2937,12 @@ phrase "civilian subphrase 6"
 		" "
 	phrase
 		"male names" 124
-		"things you can be of" 416
+		"things you can be of" 589
 
 # e.g.:
 # Queen of Thoughts
 # Lady Caroline
+# Lady of Mars
 phrase "civilian subphrase 7"
 	phrase
 		"female titles" 1
@@ -2779,15 +2951,17 @@ phrase "civilian subphrase 7"
 		" "
 	phrase
 		"female names" 132
-		"things you can be of" 416
+		"things you can be of" 589
 
 # e.g.:
 # Ivan the Bold
 # Wendy the White
+# Farpoint the Brave
 phrase "civilian subphrase 8"
 	phrase
-		"male names" 1
-		"female names" 1
+		"male names" 3
+		"female names" 3
+		"human planets"
 	word
 		" the "
 	phrase
@@ -2802,6 +2976,7 @@ phrase "civilian subphrase 9"
 	phrase
 		"singular nouns" 202
 		"adjectives" 165
+		"human planets" 139
 	word
 		" "
 	phrase
@@ -2814,14 +2989,18 @@ phrase "civilian subphrase 9"
 # Oceans of the West
 # Sword of Destiny
 # Moonlight of Bravery
+# Sands of Moonshake
 phrase "civilian subphrase 10"
 	phrase
 		"singular nouns" 202
 		"plural nouns" 142
+		"nouns of indeterminate quantity" 103
 	word
 		" "
 	phrase
 		"things you can be of"
+	phrase
+		"sometimes a successor"
 
 # e.g.:
 # Jade Leviathan
@@ -2835,7 +3014,7 @@ phrase "civilian subphrase 11"
 	phrase
 		"singular nouns" 202
 		"plural nouns" 142
-		"all titles" 25
+		"all titles" 55
 	phrase
 		"sometimes a successor"
 
@@ -2844,7 +3023,7 @@ phrase "civilian subphrase 12"
 		"adjectives" 165
 		"nouns of indeterminate quantity" 101
 		"singular nouns" 202
-		"all titles" 25
+		"all titles" 55
 		"female names" 132
 	phrase
 		"sometimes a successor"
@@ -3068,7 +3247,31 @@ phrase "civilian subphrase 15"
 	phrase
 		"sometimes a successor"
 
+# e.g.
+# Moonshake Express
+# Luna Trader
+# Hephaestus Merchant XII
+phrase "civilian subphrase 16"
+	phrase
+		"human planets" 139
+	word
+		" "
+	phrase
+		"all titles"
+	phrase
+		"sometimes a successor"
 
+# e.g.:
+# Ryan of Bourne
+# Ella of New Austria
+phrase "civilian subphrase 17"
+	phrase
+		"female names"
+		"male titles"
+	word
+		" "
+	phrase
+		"things you can be of" 589
 
 # Law enforcement names:
 
