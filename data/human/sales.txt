@@ -141,6 +141,11 @@ shipyard "Luxury Ships"
 	"Flivver"
 
 
+outfitter "Special Outfits"
+	"SER-4 Shield Reclaimer"
+	"31-DHMR Shield Reinforcer"
+
+
 outfitter "Basic Outfits"
 	"Energy Blaster"
 	"X1700 Ion Thruster"
