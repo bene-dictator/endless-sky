@@ -2382,7 +2382,6 @@ phrase "standalone civilian ship names"
 		"Majestic"
 		"Malaga"
 		"Manzanita"
-		"Manus Celer Dei"
 		"Marblehead"
 		"Marco Polo"
 		"Marie Celeste"
@@ -2500,7 +2499,6 @@ phrase "standalone civilian ship names"
 		"Robert Falcon Scott"
 		"Robin Hood"
 		"Rockingham"
-		"Rozinante"
 		"Rubis"
 		"Ryoju"
 		"Sacramento"
@@ -2862,6 +2860,7 @@ phrase "civilian subphrase 5"
 # e.g.:
 # King of the Mountain
 # Champion Ivan
+# Ivan of New Austria
 phrase "civilian subphrase 6"
 	phrase
 		"male titles" 1
@@ -2888,10 +2887,12 @@ phrase "civilian subphrase 7"
 # e.g.:
 # Ivan the Bold
 # Wendy the White
+# Farpoint the Brave
 phrase "civilian subphrase 8"
 	phrase
 		"male names" 1
 		"female names" 1
+		"human planets"
 	word
 		" the "
 	phrase
@@ -2906,6 +2907,7 @@ phrase "civilian subphrase 9"
 	phrase
 		"singular nouns" 201
 		"adjectives" 152
+		"human planets"
 	word
 		" "
 	phrase
@@ -2918,6 +2920,7 @@ phrase "civilian subphrase 9"
 # Oceans of the West
 # Sword of Destiny
 # Moonlight of Bravery
+# Sands of Moonshake
 phrase "civilian subphrase 10"
 	phrase
 		"singular nouns" 201
@@ -3172,7 +3175,17 @@ phrase "civilian subphrase 15"
 	phrase
 		"sometimes a successor"
 
-
+# e.g.
+# Moonshake Express
+# Luna Trader
+# Hephaestus Merchant XII
+phrase "civilian subphrase 16"
+	word
+		"human planets"
+	word
+		" "
+	word
+		"titles"
 
 # Law enforcement names:
 
