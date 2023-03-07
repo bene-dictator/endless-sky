@@ -2758,7 +2758,6 @@ planet "New Boston"
 	shipyard "Basic Ships"
 	outfitter "Basic Outfits"
 	outfitter "Ammo South"
-	outfitter "Special Outfits"
 	security 0.05
 	tribute 300
 		threshold 2500
@@ -4775,6 +4774,7 @@ planet Zug
 	outfitter "Kraz Basics"
 	outfitter "Common Outfits"
 	outfitter "Ammo South"
+	outfitter "Special Outfits"
 	bribe 0.03
 	security 0.5
 	tribute 1200

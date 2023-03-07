@@ -123,44 +123,57 @@ outfit "S-970 Regenerator"
 	"heat generation" 6
 	description "The S-970 Shield Regenerator is an advanced type of shield recharging technology. Unfortunately, its power needs are rather high, and the shifts it makes in your shield configuration also result in some feedback that causes heat to build up in the regenerator, even when your shields are at full strength."
 
-
 outfit "SER-4 Shield Reclaimer"
 	category "Systems"
 	cost 140000
 	thumbnail "outfit/unknown"
 	"mass" 22
 	"outfit space" -22
-	"shield energy" -0.2
-	"shield generation" -0.08
+	"shield energy" -.2
+	"shield generation multiplier" -.1
 	"heat generation" 6
 	description "Recent developments into shielding technology has made possible the creation of a device that can recover the imperfections in your ship's shield matrix, allowing you to reuse that energy for other systems. However, it only generates energy while the shield is recharging, and with a considerable amount of heat at that."
-	description "Untested."
-
 
 outfit "31-DHMR Shield Reinforcer"
 	category "Systems"
-	cost 1 # 240000
+	cost 240000
 	thumbnail "outfit/unknown"
 	"mass" 12
-	"outfit space" -12
-	"shield energy" 2
-	"energy consumption" 120
+	"outfit space" -1 # -12
+	"energy consumption" .2
 	"heat generation" 6
-	"heat dissipation" -.05
-	"shield protection" 9
-	"shield energy" -10
+	"cooling inefficiency" 2
+	"shield protection" .5
+	"shield energy" -4
 	description "This is a device engineered to make your ship's shield matrix more resilient to incoming fire, by rapidly reinforcing and rebalancing the matrix with each impact. Although this effect can be very powerful, it has a significant negative effect on your heat dissipation, and very high amounts of energy will be expended when you recharge your shields."
 
-
-outfit "Thruster Booster"
+outfit "Thrust Overdrive"
 	category "Systems"
-	cost 300000
+	cost 1 # 540000
 	thumbnail "outfit/unknown"
-	"mass" 15
-	"outfit space" -25
-	"thrusting energy" 2
-	"shield generation multiplier" -0.1
+	"mass" 27
+	"outfit space" -27
+	"engine capacity" -27
+	"inertia reduction" .46
+	"shield generation multiplier" -.6
+	"cooling inefficiency" 2
+	"thrusting energy" -4
+	"turning energy" -2.8
+	"thrusting heat" 6
+	"turning heat" 4.4
+	description "The Thrust Overdrive reroutes a lot of the energy intended for your ship's shield matrix to your engines, resulting in a large boost to your acceleration and turning speed. Of course, the inefficient nature of this device means that it produces a lot of heat, and the shield generation lost far outweighs the thrust gained. However, if you value speed above all else, one of these might be the solution."
 
+outfit "SCS Ship Stabilizer"
+	category "Systems"
+	cost 1 # 128000
+	thumbnail "outfit/unknown"
+	"mass" 10
+	"outfit space" -10
+	"engine capacity" -10
+	"inertia reduction" .1
+	"thrusting energy" -2
+	"turning energy" -1.4
+	description "SCS Ship Stabilizers are aftermarket modifications that allow your ship to travel at a higher speed without sacrificing the stability of your ship."
 
 outfit "Small Radar Jammer"
 	category "Systems"

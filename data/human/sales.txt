@@ -144,6 +144,8 @@ shipyard "Luxury Ships"
 outfitter "Special Outfits"
 	"SER-4 Shield Reclaimer"
 	"31-DHMR Shield Reinforcer"
+	"Thrust Overdrive"
+	"SCS Ship Stabilizer"
 
 
 outfitter "Basic Outfits"
