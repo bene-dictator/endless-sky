@@ -134,7 +134,7 @@ outfit "SER-4 Shield Reclaimer"
 	"heat generation" 6
 	description "Recent developments into shielding technology has made possible the creation of a device that can recover the imperfections in your ship's shield matrix, allowing you to reuse that energy for other systems. However, it only generates energy while the shield is recharging, and with a considerable amount of heat at that."
 
-outfit "31-DHMR Shield Reinforcer"
+outfit "31-DHMA Shield Amplifier"
 	category "Systems"
 	cost 240000
 	thumbnail "outfit/unknown"
