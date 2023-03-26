@@ -10140,6 +10140,7 @@ system "Delta Velorum"
 	link Fala
 	link Mora
 	link Turais
+	link Imai
 	asteroids "small rock" 6 2.775
 	asteroids "medium rock" 39 2.8875
 	asteroids "large rock" 6 3.45
@@ -13211,6 +13212,89 @@ system "Fallen Leaf"
 			distance 126
 			period 17.7794
 
+system Fang
+	pos -382 451.167
+	government Pirate
+	attributes south
+	habitable 13754.955
+	belt 1666 5
+	link Girtab
+	asteroids "small rock" 3 2.7
+	asteroids "medium rock" 7 2.88
+	asteroids "large rock" 4 1.68
+	asteroids "small metal" 5 2.37
+	asteroids "medium metal" 1 2.97
+	asteroids "large metal" 3 1.62
+	minables copper 3 3.855
+	minables tungsten 4 2.493
+	trade Clothing 207
+	trade Electronics 728
+	trade Equipment 490
+	trade Food 139
+	trade "Heavy Metals" 1008
+	trade Industrial 722
+	trade "Luxury Goods" 1211
+	trade Medical 744
+	trade Metal 344
+	trade Plastic 300
+	object
+		sprite star/b0
+		distance 127.5
+		period 71.984
+	object
+		sprite star/b5
+		distance 127.5
+		period 71.984
+		offset 180
+	object
+		sprite planet/gas8-hot
+		distance 507
+		period 38.935
+	object Andaria
+		sprite planet/forest4-b
+		distance 1063
+		period 118.203
+		object
+			sprite planet/dust4-b
+			distance 166
+			period 66.518
+	object
+		sprite planet/gas12-b
+		distance 2454
+		period 414.612
+		object
+			sprite planet/dust3-b
+			distance 319
+			period 215.371
+		object
+			sprite planet/luna-b
+			distance 449
+			period 359.642
+		object
+			sprite planet/luna
+			distance 632
+			period 600.587
+	object
+		sprite planet/gas14
+		distance 3723
+		period 774.765
+		object
+			sprite planet/oberon-b
+			distance 253
+			period 247.842
+	object
+		sprite planet/gas8-b
+		distance 6479
+		period 1778.658
+	object
+		sprite planet/gas9-b
+		distance 12300
+		period 4652.518
+		object
+			sprite planet/miranda-b
+			distance 272
+			period 212.21
+
 system "Far Horizon"
 	pos -1108.59 726.051
 	government Coalition
@@ -14560,6 +14644,7 @@ system Gacrux
 	link "Cor Caroli"
 	link Muhlifain
 	link Turais
+	link Ginan
 	asteroids "medium rock" 20 1.8354
 	asteroids "large rock" 1 2.2862
 	asteroids "small metal" 7 2.8336
@@ -15100,6 +15185,72 @@ system Gienah
 		distance 2135
 		period 1610.94
 
+system Ginan
+	pos -753.667 162.333
+	government Pirate
+	attributes "dirt belt"
+	habitable 4050
+	belt 1849 7
+	link Gacrux
+	link Imai
+	asteroids "small rock" 18 1.338
+	asteroids "medium rock" 27 1.197
+	asteroids "large rock" 6 1.672
+	asteroids "small metal" 23 1.338
+	asteroids "medium metal" 12 1.69
+	asteroids "large metal" 19 0.915
+	minables tungsten 3 2.459
+	minables silver 6 1.717
+	trade Clothing 262
+	trade Electronics 765
+	trade Equipment 524
+	trade Food 245
+	trade "Heavy Metals" 917
+	trade Industrial 648
+	trade "Luxury Goods" 962
+	trade Medical 891
+	trade Metal 514
+	trade Plastic 497
+	object
+		sprite star/g-giant
+		period 10
+	object "New Mesa"
+		sprite planet/desert10
+		distance 548
+		period 80.631
+		object
+			sprite planet/luna-b
+			distance 154
+			period 72.241
+	object
+		sprite planet/luna
+		distance 1006
+		period 200.553
+	object
+		sprite planet/gas7
+		distance 1681
+		period 433.196
+	object
+		sprite planet/gas1-b
+		distance 4671
+		period 2006.538
+		object
+			sprite planet/dust3
+			distance 505
+			period 428.981
+	object
+		sprite planet/gas11-b
+		distance 11118
+		period 7368.388
+	object
+		sprite planet/gas17-b
+		distance 11776
+		period 8032.101
+		object
+			sprite planet/rock7-b
+			distance 233
+			period 168.246
+
 system Giribea
 	pos -6 674
 	government Uninhabited
@@ -15187,6 +15338,7 @@ system Girtab
 	habitable 1080
 	belt 1387
 	link Albaldah
+	link Fang
 	link Lesath
 	link Rastaban
 	asteroids "large rock" 1 7.695
@@ -17153,6 +17305,65 @@ system Ilirco
 		distance 6154
 		period 6168.55
 
+system Imai
+	pos -762 125
+	government Pirate
+	attributes "dirt belt"
+	habitable 2300
+	belt 1817 5
+	belt 2412 3
+	link "Delta Velorum"
+	link Ginan
+	asteroids "small rock" 45 2.57
+	asteroids "medium rock" 39 3.901
+	asteroids "large rock" 11 4.223
+	asteroids "small metal" 17 3.351
+	asteroids "medium metal" 35 3.488
+	asteroids "large metal" 58 2.983
+	minables copper 2 4.242
+	minables titanium 11 4.967
+	trade Clothing 253
+	trade Electronics 683
+	trade Equipment 516
+	trade Food 208
+	trade "Heavy Metals" 937
+	trade Industrial 655
+	trade "Luxury Goods" 965
+	trade Medical 829
+	trade Metal 489
+	trade Plastic 509
+	object
+		sprite star/m-giant
+		period 10
+	object
+		sprite planet/rock6-b
+		distance 614
+		period 126.896
+	object
+		sprite planet/saturn
+		distance 1311
+		period 395.913
+		object
+			sprite planet/dust0
+			distance 289
+			period 302.581
+	object
+		sprite planet/gas17-b
+		distance 1964
+		period 725.953
+	object
+		sprite planet/gas7-hot
+		distance 3103
+		period 1441.68
+	object
+		sprite planet/gas10-hot
+		distance 6937
+		period 4818.963
+		object
+			sprite planet/dust1-b
+			distance 235
+			period 112.042
+
 system "Imo Dep"
 	pos -56.2764 -600.1
 	government Hai
@@ -18861,6 +19072,7 @@ system "Kaus Australis"
 	link Dabih
 	link Peacock
 	link Tais
+	link "Tau Sagittarii"
 	asteroids "small rock" 2 4.7628
 	asteroids "medium rock" 39 4.9518
 	asteroids "large rock" 1 3.8556
@@ -23579,6 +23791,7 @@ system Muhlifain
 	haze _menu/haze-67
 	link Gacrux
 	link Vindemiatrix
+	link "Tau Centauri"
 	asteroids "large metal" 1 2.1186
 	trade Clothing 236
 	trade Electronics 816
@@ -31503,6 +31716,134 @@ system Tarazed
 				scale 0.5
 			distance 228
 			period 16.9693
+
+system "Tau Centauri"
+	pos -728.5 221
+	government Pirate
+	attributes "dirt belt"
+	habitable 1900
+	belt 1985 6
+	link Muhlifain
+	asteroids "small rock" 9 5.4
+	asteroids "medium rock" 74 5.4
+	asteroids "large rock" 16 6.15
+	asteroids "small metal" 20 5.775
+	asteroids "medium metal" 6 3.75
+	asteroids "large metal" 4 6.075
+	minables titanium 7 6.567
+	minables lead 21 9.765
+	minables neodymium 21 9.425
+	trade Clothing 261
+	trade Electronics 812
+	trade Equipment 594
+	trade Food 199
+	trade "Heavy Metals" 924
+	trade Industrial 750
+	trade "Luxury Goods" 983
+	trade Medical 815
+	trade Metal 548
+	trade Plastic 428
+	object
+		sprite star/a8
+		period 10
+	object
+		sprite planet/gas1-hot
+		distance 666
+		period 143.353
+	object Dragonslade
+		sprite planet/ocean3
+		distance 1160
+		period 329.521
+	object
+		sprite planet/gas2-hot
+		distance 1950
+		period 718.204
+		object
+			sprite planet/dust7
+			distance 214
+			period 118.337
+	object
+		sprite planet/jupiter-b
+		distance 3196
+		period 1506.976
+	object
+		sprite planet/io
+		distance 3612
+		period 1810.58
+
+system "Tau Sagittarii"
+	pos -256.167 373.167
+	government Pirate
+	attributes "dirt belt"
+	habitable 3000
+	belt 1660 4
+	belt 2286 9
+	link "Kaus Australis"
+	asteroids "small rock" 66 1.31
+	asteroids "medium rock" 72 1.201
+	asteroids "large rock" 135 1.123
+	asteroids "small metal" 11 1.373
+	asteroids "medium metal" 3 1.529
+	asteroids "large metal" 8 1.326
+	minables neodymium 3 1.477
+	minables iron 17 1.845
+	trade Clothing 274
+	trade Electronics 725
+	trade Equipment 625
+	trade Food 287
+	trade "Heavy Metals" 897
+	trade Industrial 765
+	trade "Luxury Goods" 1388
+	trade Medical 863
+	trade Metal 243
+	trade Plastic 398
+	object
+		sprite star/k-giant
+		period 10
+	object
+		sprite planet/rock3
+		distance 534
+		period 90.118
+	object Pound
+		sprite planet/mars-b
+		distance 1047.335
+		period 246.703
+		object
+			sprite planet/rock0-b
+			distance 143
+			period 64.64
+	object
+		sprite planet/gas4-b
+		distance 2141
+		period 723.476
+	object
+		sprite planet/gas4
+		distance 4447
+		period 2165.709
+		object
+			sprite planet/dust7-b
+			distance 264
+			period 162.146
+	object
+		sprite planet/gas6-hot
+		distance 7860
+		period 5089.009
+		object
+			sprite planet/rock7
+			distance 223
+			period 157.532
+	object
+		sprite planet/gas8-b
+		distance 11210
+		period 8667.778
+		object
+			sprite planet/europa
+			distance 354
+			period 315.077
+		object
+			sprite planet/dust3-b
+			distance 470
+			period 385.166
 
 system Tebuteb
 	pos -615.587 710.051

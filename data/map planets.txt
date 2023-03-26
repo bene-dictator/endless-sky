@@ -147,6 +147,24 @@ planet Amazon
 		threshold 3500
 		fleet "Small Syndicate" 10
 
+planet Andaria
+	attributes factory pirate south "south pirate"
+	description `Andaria, a relatively dry and hilly planet, is home to a number of pirate bases that interdict the trade route between the Southern Rim, the Tarazed sector, and the eastern Dirt Belt mining settlements.`
+	description `Competition over the planet by regional powers is notoriously fierce and petty, with some warlord feuds having lasted for multiple centuries and over multiple continents, spreading across into other systems and planets. While this competitiveness has created some of the most developed - yet illegitimate - manufacturing industries in this area of human space, much of it built off the back of unpaid labor, "Andarian" has become a common term for a particularly uncivilized and mercurial person with a wry sense of humor.`
+	spaceport `This spaceport serving one of the major settlements on Andaria is neither particularly safe nor pretty, but it is at least well defended, as its peripheral laser turrets remind everybody who considers paying the toll to land here safely. More likely, it's meant to protect this warlord's wealth from the neighbouring ones' armies, but the spaceport toll happens to be a profitable side venture as well.`
+	spaceport `In the distance, you can see rising columns of smoke. It's not clear whether this is from another new manufacturing complex, or the remains of one from a recent battle.`
+	shipyard "Basic Ships"
+	shipyard "Southern Pirates"
+	outfitter "Common Outfits"
+	outfitter "Pirate Outfits"
+	outfitter "Delta V Basics"
+	outfitter "Ammo South"
+	bribe 0.05
+	security 0
+	tribute 800
+		threshold 3500
+		fleet "Large Northern Pirates" 6
+
 planet Angko
 	attributes bunrodea factory manufacturing
 	landscape land/water6
@@ -993,6 +1011,17 @@ planet "Double Haze"
 	spaceport `	The air here smells sour and salty, and seems to leave a thin, slimy residue on your tongue. Presumably if you lived here you would get used to it after a while, but it is a bit unnerving.`
 	"required reputation" 15
 	security 0.3
+
+planet Dragonslade
+	attributes "dirt belt" mining pirate "southern pirate"
+	description "Although the mountains shelter various pirate cells who live off the trade routes between northern human space and the Southern Rim, Dragonslade also has some mineral wealth that is exploited by some of the seedier corporations in this part of human space."
+	description "Between the two mountainous continents of Dragonslade, the oceans are speckled with long chains of archipelagos. If this were a more civilized planet, Dragonslade might have been known for its tropical islands and warm beaches rather than its piracy and cartels."
+	spaceport "This spaceport is not far from the largest town on the planet, the only place where the regional warlords will not fight over as it is where the only place where deals of any weight or legitimacy can be made to the off-world companies that they sell their minerals to. A strike on the spaceport would be suicidal for the mining economy."
+	spaceport "The spaceport itself is a drab piece of work, with a few dusty landing pads laid out in a circle to allow for raiding parties to come out and minerals to go out. The air of legality this spaceport is meant to represent is supported by the customs house nearby, although the low stone building appears to have been unattended for some time now."
+	shipyard "Basic Ships"
+	outfitter "Ammo South"
+	outfitter "Kraz Basics"
+	outfitter "Pirate Outfits"
 
 planet "Drekag Firask"
 	attributes korath
@@ -2963,6 +2992,9 @@ planet "New Kansas"
 		threshold 2500
 		fleet "Small Militia" 22
 
+planet "New Mesa"
+	attributes "dirt belt" pirate "southern pirate"
+
 planet "New Portland"
 	attributes "dirt belt" farming
 	landscape land/fog8
@@ -3336,6 +3368,24 @@ planet Poisonwood
 	tribute 300
 		threshold 2000
 		fleet "Large Militia" 7
+
+planet Pound
+	attributes mining frontier "dirt belt" pirate "south pirate"
+	landscape land/valley6
+	description `In the tumultuous early 25th century, Pound was a penal colony for the Celeriton Corporation that governed much of Wayfarer and New Britain. The prisoners were made to mine the planet for its mineral wealth in conditions that some compare to the Syndicate mining worlds.`
+	description `	When the Celeriton Corporation collapsed in the later parts of the 25th century, pirates raided the planet and set loose the prisoners, who sheltered them in return. Pound continues to be governed by the pirates as a mining planet, although due to its history the local pirates have refrained from utilizing 'indentured labor' in their mines. However, the expansion of piracy in the Southern Rim in recent decades has introduced the prescence of foreign warlords less willing continue this tradition. It is now a base from which they raid the mineral lanes from Rand towards Wayfarer and New Britain.`
+	spaceport `This spaceport dates back from when Celeriton established the colony, and is where most civilian business had occurred back when Pound considered itself independent. Now that foreign warlords rule Pound, the port has been fortified, and it is a hub for pirates and their raiding parties instead.`
+	outfitter "Basic Outfits"
+	outfitter "Common Outfits"
+	outfitter "Ammo South"
+	outfitter "Pirate Outfits"
+	outfitter "Delta V Basics"
+	"required reputation" -20
+	security 0
+	tribute 600
+		threshold 2500
+		fleet "Small Southern Pirates" 20
+
 
 planet Poseidos
 	attributes fishing rim
