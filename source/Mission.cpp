@@ -1381,6 +1381,7 @@ Mission Mission::Instantiate(const PlayerInfo &player, const shared_ptr<Ship> &b
 		subs["<origin>"] = player.GetPlanet()->Name();
 	else if(boardingShip)
 		subs["<origin>"] = boardingShip->Name();
+	subs["<origin system>"] = player.GetSystem()->Name();
 	subs["<planet>"] = result.destination ? result.destination->Name() : "";
 	subs["<system>"] = result.destination ? result.destination->GetSystem()->Name() : "";
 	subs["<destination>"] = subs["<planet>"] + " in the " + subs["<system>"] + " system";
