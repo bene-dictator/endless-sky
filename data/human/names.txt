@@ -679,7 +679,7 @@ phrase "things you can be of"
 		"of "
 	phrase
 		"plural nouns" 142
-		"the-nouns" 205
+		"the-nouns" 206
 		"nouns of indeterminate quantity" 103
 		"human planets" 139
 
@@ -2631,7 +2631,7 @@ phrase "standalone civilian ship names"
 		"Tears in Rain"
 		"Tenryu"
 		"Terrible Swift Sword"
-		"Thermoplyae"
+		"Thermopylae"
 		"Thorstein Veblen"
 		"Throckmorton"
 		"Thunderfish"
@@ -3172,6 +3172,11 @@ phrase "civilian subphrase 15"
 		"Steam"
 		"Night"
 		"Rain"
+		"Cosmo"
+		"Astro"
+		"Earth"
+		"Air"
+		"Aero"
 	word
 		" King"
 		" Queen"
@@ -3244,6 +3249,14 @@ phrase "civilian subphrase 15"
 		"-Crossed"
 		"well"
 		"worn"
+		"sailor"
+		"clipper"
+		"cruiser"
+		"cutter"
+		"scaper"
+		"scraper"
+		"drift"
+		"drifter"
 	phrase
 		"sometimes a successor"
 
@@ -3267,11 +3280,48 @@ phrase "civilian subphrase 16"
 phrase "civilian subphrase 17"
 	phrase
 		"female names"
-		"male titles"
+		"male names"
 	word
 		" "
 	phrase
 		"things you can be of" 589
+
+# e.g.:
+# I Need A President
+# Sue Doesn't Have Storms
+# James Lacks The Moon
+phrase "civilian subphrase 18"
+	word
+		"I Have"
+		"I Want"
+		"I Need"
+		"I Lack"
+		"I've Got"
+		"I Don't Have"
+		"I Don't Want"
+		"I Don't Need"
+		"I Don't Got"
+		"{human names} Doesn't Have"
+		"{human names} Doesn't Want"
+		"{human names} Don't Have"
+		"{human names} Don't Want"
+		"{human names} Has"
+		"{human names} Needs"
+		"{human names} Wants"
+		"{human names} Lacks"
+		"{human names}'s Got"
+	word
+		" "
+	word
+		"A {all titles}"
+		"No {all titles}"
+		"{the-nouns}" 206
+		"{plural nouns}"
+		"{adjectives} {plural nouns}" 142
+		"{nouns of indeterminate quantity}" 103
+		"{adjectives} {nouns of indeterminate quantity}" 103
+	replace
+		" the " " The "
 
 # Law enforcement names:
 
