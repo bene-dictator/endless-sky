@@ -77,7 +77,6 @@ phrase "civilian"
 		"civilian subphrase 13" 4900    # [made-up ship names] [sometimes a successor]
 		"civilian subphrase 14" 39200   # [Chinese name] [Chinese name] [Chinese name or sometimes a successor]
 		"civilian subphrase 15" 15620   # [noun] [noun] [sometimes a successor]
-		"civilian subphrase 16" 7645	# [human planet] [title or name] [sometimes a successor]
 
 phrase "adjectives"
 	word
