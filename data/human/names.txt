@@ -77,7 +77,7 @@ phrase "civilian"
 		"civilian subphrase 13" 4900    # [made-up ship names] [sometimes a successor]
 		"civilian subphrase 14" 39200   # [Chinese name] [Chinese name] [Chinese name or sometimes a successor]
 		"civilian subphrase 15" 15620   # [noun] [noun] [sometimes a successor]
-		"civilian subphrase 16" 7645
+		"civilian subphrase 16" 7645	# [human planet] [title or name] [sometimes a successor]
 
 phrase "adjectives"
 	word
@@ -2286,6 +2286,7 @@ phrase "standalone civilian ship names"
 		"Donegal"
 		"Dong Nan Xi Bei"
 		"Dorngas"
+		"Dunno"
 		"Dunquerque"
 		"Durandel"
 		"Eagle"
@@ -2928,7 +2929,6 @@ phrase "civilian subphrase 5"
 # e.g.:
 # King of the Mountain
 # Champion Ivan
-# Prince of New Austria
 phrase "civilian subphrase 6"
 	phrase
 		"male titles" 1
@@ -2937,12 +2937,11 @@ phrase "civilian subphrase 6"
 		" "
 	phrase
 		"male names" 124
-		"things you can be of" 589
+		"things you can be of" 590
 
 # e.g.:
 # Queen of Thoughts
 # Lady Caroline
-# Lady of Mars
 phrase "civilian subphrase 7"
 	phrase
 		"female titles" 1
@@ -2951,7 +2950,7 @@ phrase "civilian subphrase 7"
 		" "
 	phrase
 		"female names" 132
-		"things you can be of" 589
+		"things you can be of" 590
 
 # e.g.:
 # Ivan the Bold
@@ -2989,7 +2988,6 @@ phrase "civilian subphrase 9"
 # Oceans of the West
 # Sword of Destiny
 # Moonlight of Bravery
-# Sands of Moonshake
 phrase "civilian subphrase 10"
 	phrase
 		"singular nouns" 202
@@ -3176,7 +3174,6 @@ phrase "civilian subphrase 15"
 		"Astro"
 		"Earth"
 		"Air"
-		"Aero"
 	word
 		" King"
 		" Queen"
@@ -3236,6 +3233,8 @@ phrase "civilian subphrase 15"
 		"gem"
 		"dream"
 		"ghost"
+		"sprite"
+		"fairy"
 		"tongue"
 		"hawk"
 		"ship"
@@ -3257,71 +3256,14 @@ phrase "civilian subphrase 15"
 		"scraper"
 		"drift"
 		"drifter"
+		"crasher"
+		"smasher"
+		"mancer"
+		"lancer"
+		"lark"
+		"bird"
 	phrase
 		"sometimes a successor"
-
-# e.g.
-# Moonshake Express
-# Luna Trader
-# Hephaestus Merchant XII
-phrase "civilian subphrase 16"
-	phrase
-		"human planets" 139
-	word
-		" "
-	phrase
-		"all titles"
-	phrase
-		"sometimes a successor"
-
-# e.g.:
-# Ryan of Bourne
-# Ella of New Austria
-phrase "civilian subphrase 17"
-	phrase
-		"female names"
-		"male names"
-	word
-		" "
-	phrase
-		"things you can be of" 589
-
-# e.g.:
-# I Need A President
-# Sue Doesn't Have Storms
-# James Lacks The Moon
-phrase "civilian subphrase 18"
-	word
-		"I Have"
-		"I Want"
-		"I Need"
-		"I Lack"
-		"I've Got"
-		"I Don't Have"
-		"I Don't Want"
-		"I Don't Need"
-		"I Don't Got"
-		"{human names} Doesn't Have"
-		"{human names} Doesn't Want"
-		"{human names} Don't Have"
-		"{human names} Don't Want"
-		"{human names} Has"
-		"{human names} Needs"
-		"{human names} Wants"
-		"{human names} Lacks"
-		"{human names}'s Got"
-	word
-		" "
-	word
-		"A {all titles}"
-		"No {all titles}"
-		"{the-nouns}" 206
-		"{plural nouns}"
-		"{adjectives} {plural nouns}" 142
-		"{nouns of indeterminate quantity}" 103
-		"{adjectives} {nouns of indeterminate quantity}" 103
-	replace
-		" the " " The "
 
 # Law enforcement names:
 
