@@ -6850,8 +6850,8 @@ mission "FW Refugees to Humanika"
 		log "Minor People" "Penny Little, Rosa Perkins, and Eduardo" `A young family who wanted to escape a potential war in human space. Took them to the planet Humanika, where the Quarg let humans settle.`
 
 mission "Journalism 1"
-	name "Transport exposition to <planet>"
-	description `Transport expo equipment to <destination>.`
+	name "Transport exposition installations to <planet>"
+	description `Transport <tons> of exposition installations to <destination>. Payment is <payment>.`
 	minor
 	source
 		attributes "paradise"
@@ -6864,52 +6864,77 @@ mission "Journalism 1"
 	to offer
 		random < 80
 		has "Expedition to Hope 2: done"
-		has "FW Katya 4: done"
 
 	on offer
 		conversation
-			`As you explore the luxurious spaceport you notice a large group of people around one of the larger hangers. There are large signs that says, "The Evacuation of Hope" in bold letters. It must be some sort of exposition.`
+			`Walking around <origin>'s luxurious spaceport you notice a large group of people gathered around one of the larger hangers; there are large signs that say "The Evacuation of Hope" in bold letters by it. It looks like some sort of exhibition.`
 			choice
 				`	(Check it out.)`
 				`	(Not right now.)`
 					defer
+
 			`	You approach some of the people at the end of the line and ask what's going on. "It's the last day of Adelita's exposition on the evacuation of Hope," says an excited young woman. "It was their first work that really got them famous. The last week of their expositions are always free so this is a great chance to see it if you haven't already."`
 			choice
 				`	"Sure, why not."`
 				` 	"Maybe some other time."`
-					defer
+					defer # TODO: decide to make it a decline, or combine the two paragraphs above?
+
 			`	"You're going to love it," she says. "No one knows who they really are but Adelita's work is what inspired me to study journalism. Their mixture of mediums, their eye for story telling... I just love it."`
-			`	You reach the entrance to the expo soon enough. Inside is a large room filled with photos, videos, interviews and other mixed media. They focus on three groups: the refugees of Hope, the Navy that saved them, and the Paradise planets that protested the evacuation. There is an installation with nearly a hundred original protest signs from rallies against the Dirt Belt and Navy. Some of them are quite crude and tasteless. Since you are on a Paradise planet it's a strong rebuke.`
-			` There are many, many photos but one especially catches your eye. It's of a woman standing in line to board a Navy Cruiser. She is holding a baby at her hip and staring at the camera with a look of sad determination. Their cheeks, rosy and chapped, stand out in contrast with the cold blues in the background. It gives you goosebumps.`
-			`	While good, you were hoping for a bit more as you head for the exit. As the automatic doors open you are hit with an unexpected arctic blast. Instead of back in the spaceport you find yourself in a life sized 3D recording of the evacuation of Hope, complete with refrigeration. The projection gives the illusion of a horizon. There are huge Navy Cruisers slowly collecting ash in a snowy field near a small town as hundreds of refugees slowly board. But what stands out most is the giant volcano erupting in the background.`
-			`	"It's more of a collage than an exact rendering," says the young woman you met in line. You were so distracted by the experience you didn't notice her approach. "They took 3D recordings from different moments and areas of Hope and edited them together in various loops. The volcano was actually on the other side of the planet for example. The magic of editing. So what do you think?"`
+			`	You reach the entrance to the expo soon enough. Inside is a large room filled with photos, videos, interviews and other mixed media. They focus on three groups: the refugees of Hope, the Navy that saved them, and the Paradise Worlds that protested the evacuation. At one end of the hangar, there is an installation with nearly a hundred original protest signs from rallies against the Dirt Belt and the Republic Navy; some of them quite crude and tasteless. Since you are on a Paradise Planet, it's a strong rebuke to see those displayed here.`
+			`	There are many, many photos but one especially catches your eye. It's of a woman standing in line to board a Navy Cruiser. She is holding a baby at her hip and staring at the camera with a look of sad determination. Their cheeks, rosy and chapped, stand out in contrast with the cold blues in the background. It gives you goosebumps.`
+			`	Having walked around the entire concourse of the exhibition you head towards the exit, but as the automatic doors open you stagger back as you're hit with some chilly, arctic blast rushes that at you from every direction. Instead of the spaceport's open apron, you find yourself in a life-sized 3D representation of the evacuation of Hope, complete with simulated climate effects. The projection gives the illusion of a horizon. There are huge Navy Cruisers and Auxiliaries slowly collecting ash in a snowy field near a small town as hundreds of refugees slowly board. But what stands out most is the massive volcano erupting in the background.`
+			`	"It's more of a collage than an exact rendering," says the young woman you met in line. You were so distracted by the experience you didn't notice her approach. "They took 3D recordings from different moments and areas of Hope and edited them together in various loops. The volcano was actually on the other side of the planet, for example. The magic of editing. So what do you think?"`
 			choice
 				`	"Impressive."`
 				`	"It's OK."`
-			`	"It's just as I imagined it. Well, I have an exam to cram for. Enjoy the expo! I think it closes soon," she says as she heads for the exit.`
-			`	You wander around the exhibit in awe. It's a bit disconcerting as the occasional hologram walks through you. Inside houses you see families frantically gathering their belongings and running for the Navy ships. It strikes you that somewhere here is a young Katya leaving her doomed home. You walk down one of the lines of refugees, observing each person. An officer slips in the snow and a young man helps him up.`
+
+			`	"Well, it was just as I imagined it," the woman replies. "Oh! I have an exam to cram for. Enjoy the expo, I think it closes soon," she says as she heads for the exit.`
+			choice
+				`	(Continue wandering around the exhibit.)`
+				`	(Go to the exit.)`
+					goto exit
+
+			branch katya
+				has "FW Katya 4: done"
+
+			`	Wandering around the exhibit gives you a sense of the desperation of the people as they evacuate, though it's a bit disconcerting when the occasional hologram walks through you. Inside houses you see families frantically gathering their belongings and running for the Navy ships. You walk down one of the lines of refugees, observing each person - their faces harried, distraught, frightened, determined. In the corner of your eye you notice that a Navy Officer slips in the snow, and as you look around a young man helps him up.`
+				goto "move on"
+
+			label katya
+			`	Wandering around the exhibit gives you a sense of the desperation of the people as they evacuate, though it's a bit disconcerting when the occasional hologram walks through you. Inside houses you see families frantically gathering their belongings and running for the Navy ships. It strikes you that somewhere here is a young Katya leaving her doomed home. You walk down one of the lines of refugees, observing each person - their faces harried, distraught, frightened, determined. In the corner of your eye you notice that a Navy Officer slips in the snow, and as you look around a young man helps him up.`
+
+			label "move on"
 			`	As you move on you're startled to realize that you're face to face with the woman holding the baby, right where they were in the photo. She takes little steps toward the ship while bouncing the baby on her hip. A young woman with a camera and a respirator covering her face walks up to her, asks a question and begins to take photos. Before you can register what's going on the entire projection disappears in a disorienting flash, leaving you in a normal hanger bay. You are a little embarrassed to realize the exhibit is nearly empty as a woman walks up to you. "She loves that moment too. That's probably why she fought so hard to have that part left in, even though it's a security risk."`
-			`	"How rude of me," she says. "My name is Mariel, I organize these expositions and act as a spokesperson for Adelita. And you are?"`
+			`	"Oh, how rude of me," she says. "My name is Mariel, I organize these expositions and act as a spokesperson for Adelita. And you are?"`
 			choice
 				`	"Captain <last>."`
-			`	"Captain," she says, her eyes lighting up. "Well, as you may know this is the last day of the expo. The captain I hired to transport everything back to <destination> is not only rude but is now late. I would much rather have it in the hands of someone who appreciates the work. I was going to pay him 60000, but will pay you 80000. What do you say?"`
+
+			`	"Captain," she says, her eyes lighting up. "Well as you may know, this is the last day of the expo. The captain I hired to transport everything back to <destination> is not only rude, but is now late. I would much rather have it in the hands of someone who appreciates the work. I was going to pay him 60000 credits, but I can pay you 80000 credits to take his contract instead. What do you say?"`
 			choice
 				`	"I would love to."`
-				`	"Why not."`
+				`	"Well, why not?"`
 				`	"Sorry, I have more pressing matters at hand."`
-					goto oh
-			`	"Great," she says. "Go and bring your ship to this hanger. I will have the crew get everything ready to load."`
+					goto decline
+
+			`	"Great!" Mariel says. "Bring your ship to this hangar, and I will have our crew get everything ready to load."`
 				accept
-			label oh
-			`	"Oh, I'm surprised you would turn down so much money for such little work and a chance to meet the artists. But it's your call," she says. "The exhibit is closed. I'm going to have to ask you to leave."`
+			label decline
+			`	"Oh, I'm surprised you would turn down so much money for such little work and a chance to meet the artists. But it's your call," Mariel says, but then she glances at her watch. "Well anyway, the exhibit is closed. I'm going to have to ask you to leave."`
+
+			label exit
+			action
+				log `Saw an impressive exposition on the Evacuation of Hope.`
+			`	You walk out of the hangar and back into the familiar spaceport tarmac, wondering if you had missed an opportunity.` # TODO: try not to tell the player what they think.
 				decline
+
 	on visit
-		dialog `You arrive on <planet>, but realize that your escort carrying the exposition has not arrived yet. Better depart and wait for your escorts to enter the system.`
+		dialog `You arrive on <planet>, but realize that your escort carrying the exposition installations has not arrived yet. Better depart and wait for your escorts to enter the system.`
+
 	on complete
 		payment 80000
-		log `Saw an impressive exposition on the Hope evaluation and ended up with a job taking the whole thing to Moonshake.`
+		log `Saw an impressive exposition on the Evacuation of Hope and ended up with a job taking the whole thing to Moonshake.`
 		conversation
-			`	You guide your ship down to the indicated hanger where there is a motley looking crew waiting to unload your ship. One of them hands you a note. It reads: "Meet me at the Common Grounds cafe in the spaceport if you're interested in doing a project with us. Make sure you're not followed. -Adelita Zero"`
+			`After you navigate the thick fog of Moonshake's atmosphere and guide your ship down to the landing berth in the spaceport, you find a motley crew waiting to unload your ship. Once you sign your landing documents with the Syndicated Security official, one of crew walks up to you and hands you a note. It reads: "Meet me at the Common Grounds cafe in the spaceport if you're interested in doing a project with us. Make sure you're not followed. -Adelita Zero"`
 
 mission "Journalism 2"
 	description "Participate in the guerrilla filming of a Syndicate sweatshop on <destination>."
