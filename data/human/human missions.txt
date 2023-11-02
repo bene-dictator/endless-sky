@@ -6867,7 +6867,7 @@ mission "Journalism 1"
 
 	on offer
 		conversation
-			`Walking around <origin>'s luxurious spaceport you notice a large group of people gathered around one of the larger hangers; there are large signs that say "The Evacuation of Hope" in bold letters by it. It looks like some sort of exhibition.`
+			`Walking around <origin>'s luxurious spaceport, you notice a large group of people gathered around one of the larger hangers; there are large signs that say "The Evacuation of Hope" in bold letters by it. It looks like some sort of exhibition.`
 			choice
 				`	(Check it out.)`
 				`	(Not right now.)`
@@ -6933,23 +6933,28 @@ mission "Journalism 1"
 	on complete
 		payment 80000
 		log `Saw an impressive exposition on the Evacuation of Hope and ended up with a job taking the whole thing to Moonshake.`
+		event "journalism 2 offer expired" 1
 		conversation
-			`After you navigate the thick fog of Moonshake's atmosphere and guide your ship down to the landing berth in the spaceport, you find a motley crew waiting to unload your ship. Once you sign your landing documents with the Syndicated Security official, one of crew walks up to you and hands you a note. It reads: "Meet me at the Common Grounds cafe in the spaceport if you're interested in doing a project with us. Make sure you're not followed. -Adelita Zero"`
+			`After you navigate the thick fog of Moonshake's atmosphere and guide your ship down to the landing pad in the spaceport, you find a motley crew waiting to unload your ship. Once you sign your landing documents with the Syndicated Security official, one of crew walks up to you and hands you a note. It reads: "Meet me at the Common Grounds cafe in the spaceport if you're interested in doing a project with us. Make sure you're not followed. -Adelita Zero"`
+
+event "journalism 2 offer expired"
 
 mission "Journalism 2"
-	description "Participate in the guerrilla filming of a Syndicate sweatshop on <destination>."
-	name "Film Sweatshop"
+	description "Participate in an unauthorised filming of a Syndicate sweatshop on <destination>. (You will be paid <payment> after you complete the entire job.)"
+	name "Film Syndicate sweatshop on <planet>"
 	source "Moonshake"
 	destination "Maker"
 	passengers 3
+	"apparent payment" 200000
 	cargo "stealth drones" 1
 	to offer
 		has "Journalism 1: done"
+		not "journalism 2 offer expired"
 
 	on offer
 		conversation
-			`You find the Common Grounds cafe. It has a funky vibe and it's quite busy. You don't seem to be recognized by anyone so you take a seat at a booth and order something to eat. Before your meal arrives a woman, maybe in her late thirties with dark hair, sits down across from you and hails the server. She cheerfully orders a smoothie with a long list of ingredients, many of which you have never heard of, or can even pronounce.`
-			`	"Sorry for the cloak and dagger bit," she says to you finally. "We have enemies in high places. So, Captain <last> "What did you think of the exposition?"`
+			`It takes a while to navigate through the bustling spaceport and the almost viscous fog of <origin>, but after you find an information screen you're able to get to the Common Grounds cafe without too much trouble. The cafe has a funky vibe to it and it's quite busy. You don't seem to be recognized by anyone so you take a seat at a booth and order something to eat. Before your meal arrives, a woman, maybe in her late thirties with dark hair, sits down across from you and hails the server. She cheerfully orders a smoothie with a long list of ingredients, many of which you have never heard of, or can even pronounce.`
+			`	"Sorry for the cloak and dagger bit," she says to you finally. "We have enemies in high places. So Captain <last>, "What did you think of the exposition?"`
 			choice
 				`	"I found it quite moving."`
 				`	"It was OK."`
@@ -6958,33 +6963,40 @@ mission "Journalism 2"
 					goto political
 			`	"I'm glad you liked it," she says smiling.`
 				goto inorout
+
 			label wasok
-			`	"Not exactly a thrilling review, but you're entitled to your opinion," she says smiling.`
+			`	"Not exactly a thrilling review, but you're entitled to your opinion," she says, smiling.`
 				goto inorout
+
 			label political
-			`	"Oh. Well unfortunately for many, everything is political. It was political when the Republic tried to block the evacuation. And it was political when the Navy did it without permission. And the same goes for every single act of oppression and liberation since the dawn of humanity. Our oppressors are very political. Maybe you have the hope of being one some day; wealthy, authoritative. Or maybe you just don't care. Either way, you don't sound like a good fit for this project. But thanks for transporting the installation," she says with a smile. She gets her smoothie to-go and walks out.`
+			`	"Oh. Well unfortunately for many, everything is political. It was political when the Paradise Worlds tried to block the evacuation. And it was political when the Navy did it without the permission of Parliament. And the same goes for every single act of oppression and liberation since the dawn of humanity. Our oppressors are very political. Maybe you have the hope of being one some day; wealthy, authoritative. Or maybe you just don't care. Either way, you don't sound like a good fit for this project. But thanks for transporting the installation," she says with a smile. She gets her smoothie to-go and walks out.`
 				decline
+
 			label inorout
-			`	Mariel said you saw me take the photos of the woman and her baby," you are surprised by the bluntness of her admission. "I really like that moment; not many notice it. You're observant but are you kind? We need a ship for our next project but I can't tell you much until you accept. We need you to transport a team to one planet, quickly land on another, then pickup the team and return here with everyone safe and sound. Nothing to dicey. But it's a dangerous universe, so who knows. Oh, and we have to leave today. It will pay, of course. 200000 credits. So what do you say? Are you in or out?" Your orders are served and you eat in silence and consider her proposition while she drinks her smoothie.`
+			`	"Mariel said you saw me take the photos of the woman and her baby," she says. "I really like that moment, but not many notice it. You're observant, but are you kind? We need a ship for our next project, but I can't tell you much until you accept. We need you to transport a team to one planet, quickly land on another, then pickup the team and return here with everyone safe and sound. Nothing too dicey. But it's a dangerous universe, so who knows. Oh, and we have to leave today. It will pay, of course. <payment>. So what do you say? Are you in or out?" As she finishes, your order is served and you eat in silence and consider her proposition while she drinks her smoothie.`
 			choice
 				`	"In."`
 				`	"Out."`
 					goto imout
-			`	"Great. My name is Alejandra, but call me Ale. Here's the plan: you're going to drop me and a friend off at Maker where we are going to film in 3D the conditions in a secret Syndicate sweatshop. Thing is these aren't just poorly paid factory workers, but slaves. As you can imagine we can't get in as regular workers so with a bit of hacking we got ourselves jobs on site as private security. We know the Syndicate is getting the slaves from the pirates on Covert, and we also know where they do the transaction. So while we are getting the footage we need in the factories you will be going with our associate Bunker to spy on the Syndicate's rendezvous with the pirates on Hippocrates."`
-			`    "Don't worry," she reassures you, sensing your concern about spying on pirates and the Syndicate. "Bunker is a pro and we have an array of long range stealth drones that do the spying, you won't be anywhere near them. But pirates do frequent the system so be quick."`
-			`	See waves to the server for the bill as she finishes the last gulp of her smoothie. "Let's go. Everyone will be meeting at the hanger shortly."`
-			`	You go back to your ships hanger and sure enough there are two people with backpacks waiting for you with a few cases. They introduce themselves as River and Bunker.`
+
+			`	"Great. My name is Alejandra, but call me Ale. Here's the plan: you're going to drop me and a friend off at <planet> where we are going to film in 3D the conditions in a secret Syndicate sweatshop. Thing is, these aren't just poorly paid factory workers, but slaves. As you can imagine we can't get in as regular workers, so with a bit of hacking we got ourselves jobs on site as private security. We know one of the Syndicate's 'trusted contractors' are getting the slaves from the pirates on Covert, and we also know where they do the transaction. So while we are getting the footage we need in the factories, you will be going with our associate Bunker to spy on the Syndicate's rendezvous with the pirates on Hippocrates."`
+			`	Ale senses your concern about spying on pirates and the Syndicate. "Don't worry, Bunker is a pro and we have an array of long range stealth drones that do the spying, you won't be anywhere near them. But pirates do frequent the system, so you'll need to be quick."`
+			`	She waves to the server for the bill as she finishes the last gulp of her smoothie. "Let's go. Everyone will be meeting at the landing pad shortly."`
+			`	You go back to the <ship>'s landing pad and sure enough there are two people with backpacks waiting for you with a few cases. They introduce themselves as River and Bunker.`
 			choice
-				`	"I am Captain <first> <last>."`
-				`	"I'm <first>."`
+				`	"I am Captain <first> <last>, well met."`
+				`	"Hi, I'm <first>."`
 					goto loadup
-			`	They all grimace at your formality.`
+			`	They all frown at your formality.`
+
 			label loadup
-			`	"Good. Now that that's done with let's load up," says Bunker. "Taking down the man. Wwhhoo! Love it."`
+			`	"Good. Now that that's done with, let's load up," says Bunker. "Taking down the Man. Whoo, I love it!"`
 				accept
+
 			label imout
-			`	"I'm sorry to hear that," she says between gulps of her smoothie. "Well I suppose it just wasn't meant to be," she finishes her "drink" with lightning speed, gets up and leaves.`
+			`	"I'm sorry to hear that," she says between gulps of her smoothie. "I suppose it just wasn't meant to be." She finishes her "drink" with lightning speed and leaves.`
 				decline
+
 	on visit
 		dialog `The filming equipment is aboard an escort. Better take off and wait for it to arrive.`
 
@@ -6992,10 +7004,10 @@ mission "Journalism 2"
 mission "Journalism 3"
 	landing
 	name "Slave trade"
-	description "Do a flyby of <destination> while Bunker spies on the slave transaction."
-	minor
+	description "Do a flyby of <destination> while Bunker spies on the slave transaction. (You will be paid <payment> after you complete the entire job.)"
 	source "Maker"
 	destination "Hippocrates"
+	"apparent payment" 200000
 	infiltrating
 	to offer
 		has "Journalism 2: done"
@@ -7003,7 +7015,7 @@ mission "Journalism 3"
 	cargo "stealth drones" 1
 	on offer
 		conversation
-			`You drop off Ale and River at the spaceport and wish them luck. They are visibly embarrassed to be in security uniforms or perhaps uncomfortable with their disguises which make them virtually unrecognizable. Bunker can't stop laughing. Everyone exchanges wishes of good luck and they walk off into the spaceport. You and bunker go back to the <ship> and prepare to launch.`
+			`You drop off Ale and River at the spaceport and wish them luck. They are visibly embarrassed to be in security uniforms or perhaps uncomfortable with their disguises which make them virtually unrecognizable. Bunker can't stop laughing. Everyone exchanges wishes of good luck and they walk off into the spaceport. You and Bunker go back to the <ship> and prepare to launch.`
 				accept
 
 	on visit
@@ -7013,10 +7025,10 @@ mission "Journalism 3"
 mission "Journalism 4"
 	landing
 	name "Slave trade"
-	description "Pick up the team on <destination>."
-	minor
+	description "Pick up the team on <destination>. (You will be paid <payment> after you complete the entire job.)"
 	source "Hippocrates"
 	destination "Maker"
+	"apparent payment" 200000
 	to offer
 		has "Journalism 3: done"
 	passengers 1
@@ -7025,64 +7037,75 @@ mission "Journalism 4"
 	on offer
 		conversation
 			`It's not hard to find a remote canyon within range of the target area. You keep the <ship> hovering in case you need to make a quick escape, but as you are well within the atmosphere Bunker releases the drones from the open cargo bay without needing a pressure suit. The drones are so small you can't make them out from the cockpit, nor can you see them on your ship's scanners. When Bunker returns to the cockpit, he sets up a mini-3D display and sits at the controller. "OK, they are on auto-pilot to the rendezvous site."`
-			`	Once the drones are on site you can see a lone syndicate ship with a security detail posted in front of the loading ramp. "The pirates must be late," says Bunker, smirking. "Typical. I'm going to scatter the drones and set a proximity alert."`
-			`	He hums to himself for awhile before making small talk, "You know, there's a part of me that would much rather be liberating slaves instead of filming them. But for now it seems like this is the best way for me to help. Say we did liberate them right now. There is just going to be another slave ship tomorrow. But if we create political and social will; that could stop the slave ships forever."`
+			`	Once the drones are on site you can see a lone Syndicate-built freighter with a security detail posted in front of the loading ramp. "The pirates must be late," says Bunker, smirking. "Typical. I'm going to scatter the drones and set a proximity alert."`
+			`	He hums to himself for awhile before making some small talk. "You know, there's a part of me that would much rather be liberating slaves instead of filming them. But for now it seems like this is the best way for me to help. Say we did liberate them right now; there's just going to be another slave ship tomorrow. But if we create political and social will, that could stop the slave ships forever."`
 			choice
 				`	"I think you're right."`
 				`	"What about doing both?"`
 					goto plan
+
 			`	"And you know they will use those poor people as human shields. Say we..." he is cut off by the proximity alert.`
 					goto showtime
+
 			label plan
-			`	"Now you're talking! But it would take a lot of planing to do it without killing the people we are trying to liberate. You know they will use those poor people as human shields. Say we..." he is cut off by the proximity alert.`
+			`	"Now you're talking! But it would take a lot of planning to do it without killing the people we are trying to liberate. You know they will use those poor people as human shields. Say we..." he is cut off by the proximity alert.`
+
 			label showtime
-			`	"Show time," he says rubbing his hands together. You both watch as a pirate capital ship lands near the security detail, probably deafening them. It's accompanied by a small fleet of Quicksilver escorts. As soon as the loading ramp is down the security detail gets to work herding the slaves from one ship to another. You see them hit and shove anyone that moves to slowly for their liking. It's hard to watch.`
+			`	"Show time!" he says, rubbing his hands together. Both of you watch as a capital ship in pirate colours lands near the security detail, probably deafening them with the sound of their repulsors. It's accompanied by a small fleet of Quicksilver escorts. As soon as the loading ramp is down the security detail gets to work herding the slaves from one ship to another; meanwhile, the detail hit and shove anyone that moves too slowly for their liking. It's hard to watch.`
 			`	"Pigs," blurts out Bunker. He zooms in on two men talking a few meters away from everyone else. "What do we have here?" he says. One is in a suit, the other a black hooded robe. "Must be the leaders," he whispers as if they can hear him. Just then, the hooded man looks up to the sky, as if he sees something. He motions and his escorts fire up their engines and begin taking off.`
-			` "I don't like the look of this," says Bunker."`
+			`	"Oh, I don't like the look of this," says Bunker."`
 			choice
 				`	"I'm sure it has nothing to do with us. Keep filming."`
 				`	"Call back the drones immediately."`
-					goto calldrones
-				`	"I'm sorry but we have to leave the drones behind."`
-					goto nocando
-				`	"Did he SEE us?"`
-					goto seeus
-			`	"I don't know. I think we oughta get going," says Bunker, looking worried.`
+					goto "call drones"
+				`	"I'm sorry, but we'll have to leave the drones behind."`
+					goto "no can do"
+				`	"Did he see us?"`
+					goto "see us"
+
+			`	"I don't know. I think we oughta' get going," says Bunker, his face turning into a grimace.`
 			choice
 				`	"That's an order!"`
 				`	"OK. Call the drones back."`
-					goto calldrones
-			`	"You're the captain," he responds giving up. You continue to watch the display. The last of the slaves are loaded followed by the security team. The two men are last to get to their ships. You notice a slight hum from outside before getting raked with fire from one of the pirate escorts. You try to pull out to space but another escort appears, cutting you off and laying down a stream of fire. Your engines are hit and your ship falls from the sky, exploding on impact.`
-				explode
-			label seeus
+					goto "call drones"
+
+			`	"You're the captain," Bunker responds in a sore tone. Meanwhile, you continue to watch the display. The last of the slaves are loaded, followed by the security team. The two men in the suit and hood are the last to get to their ships.`
+			`	You notice a slight hum from outside before getting raked with particle fire from the pirate Quicksilvers, who have found your location and are now speeding towards you. You try to pull out to space but more Quicksilvers appear, sending even more volleys of particle and proton fire. The <ship>'s repulsors are hit and you feel your pilot seat go out underneath you as it falls from the sky, exploding on impact with <origin>'s surface.`
+				die
+
+			label "see us"
 			`	"I have no idea! Right now we have bigger things to worry about."`
 			choice
 				`	"Call back the drones immediately."`
-					goto calldrones
+					goto "call drones"
 				`	"I'm sorry but we have to leave the drones behind."`
-					goto nocando
-			label nocando
+
+			label "no can do"
 			`	Bunker hits the recall button for the drones anyways. "This display is a low resolution proxy," explains Bunker. "If we leave the drones we lose all the footage we need. It looks like the fighters aren't coming straight for us. We have time. The drones are less than two minutes out."`
 			choice
 				`	"We're leaving. Now!"`
 				`	"Fine. Get to the cargo bay and lock down the drones as soon as they land. We take off on your mark."`
 					goto escape
-			`	"I can't let you do that <first>," says Bunker stepping in between you and the controls. "The drones are almost here. Just let me go to the cargo bay to lock them down and we're out of here.`
+
+			`	"I can't let you do that, <first>," says Bunker, standing between you and the controls. "The drones are almost here. Just let me go to the cargo bay to lock them down and we're out of here.`
 			choice
-				`	(Pull your blaster and charge him with mutiny.)`
+				`	(Charge him with mutiny.)`
 					goto blaster
 				`	(Let him go to the cargo bay and lock down the drones.)`
 					goto escape
-			label calldrones
-			`	"Aye aye captain," he says as he hits a button. "Drone ETA: two minutes, fifteen seconds."`
+
+			label "call drones"
+			`	"Aye aye, Captain," he says as he hits a button. "Drone ETA: two minutes, fifteen seconds."`
 			`	"Get to the cargo bay," you say. "Lock down the drones as soon as they arrive and get belted in. We'll take off on your mark."`
+
 			label escape
-			`	Less than a minute later, you hear Bunker on comms. "Drones are locked down and ready to go."`
-			`	The moment you pull out of the canyon, pirate fighters appear on your scanners. You accelerate into space at full speed with the fighters in hot pursuit.`
+			`	Less than a minute later, you hear Bunker on the comms. "Drones are locked down and ready to go."`
+			`	The moment you pull out of the canyon, pirate Quicksilvers appear in the distance from all directions. You shunt the <ship>'s repulsors into full blast and accelerate into space with the pirates in hot pursuit.`
 				launch
+
 			label blaster
-			`	You pull your blaster and order him to stand down. "Don't do this," he says. You're looking for the handcuffs when you notice a hum coming from outside. Suddenly, you are raked with fire from one of the pirate escorts. You drop your blaster and try to lift off into space but another escort appears, cutting you off and laying down a stream of fire. Your engines are hit and your ship falls from the sky, exploding on impact.`
-				explode
+			`	You get up and point your pistol at Bunker while ordering him to stand down. "Don't do this," he says. You turn around to look for the handcuffs when you notice a slight hum from outside before getting raked with particle fire from the pirate Quicksilvers, who have found your location and are now speeding towards you. You try to pull out to space but more Quicksilvers appear, sending even more volleys of particle and proton fire. The <ship>'s repulsors are hit and you feel your pilot seat go out underneath you as it falls from the sky, exploding on impact with <origin>'s surface.`
+				die
 
 	npc
 		personality heroic nemesis vindictive launching
@@ -7100,10 +7123,11 @@ mission "Journalism 4"
 
 mission "Journalism 5"
 	name "Slave trade"
-	description "Bring everyone back to <destination>."
+	description "Bring everyone back to <destination>. (You will be paid <payment> after you complete the entire job.)"
 	minor
 	source "Maker"
 	destination "Moonshake"
+	"apparent payment" 200000
 	landing
 	to offer
 		has "Journalism 4: done"
@@ -7114,19 +7138,22 @@ mission "Journalism 5"
 		conversation
 			branch experienced
 				"combat rating" > 100
-			`It was close, but you make it back to Maker. Ale and River are soon on board and excited to be out of their disguises. Although exhausted, both are eager to get back and process what they filmed- both emotionally and literally. "That was horrible, but we got it done. Can we leave now?" asks Ale.`
+			`It was close, but you make it back to Maker. Ale and River are soon on board and excited to be out of their disguises, and they spend a lot of time talking with Bunker about his part of the mission. Although exhausted, both are eager to get back and process what they filmed- both emotionally and literally.`
+			`	"That was horrible, but we got it done. Can we leave now?" asks Ale.`
 				launch
 			label experienced
-			`The pirates were no match for you. Ale and River are soon on board and excited to be out of their disguises. Although exhausted, both are eager to get back and process what they filmed- both emotionally and literally. "That was awful. Can we leave now?" asks Ale.`
+			`The pirates were no match for you. Ale and River are soon on board and excited to be out of their disguises, and they spend a lot of time talking with Bunker about his part of the mission. Although exhausted, both are eager to get back and process what they filmed- both emotionally and literally.`
+			`	"That was awful. Can we leave now?" asks Ale.`
 				launch
+
 	on visit
 		dialog `You left the <cargo> behind. Better take off and wait for them to enter the system.`
+
 	on complete
 		payment 220000
 		log `Helped the Adelita collective gather video evidence of Syndicate participation in the slave trade.`
 		conversation
-			`They seem glad to be home. "Ugh. We saw such horrible things", says Ale, "and now we have to watch it over and over again to edit it into something presentable." She hands you a stack of credits. "There's a bonus in there for you. We really couldn't have done it without you. We'll let you know when it's done. Also, we might need you for some future projects, so expect us to be in touch." The group leaves your ship.`
-
+			`Ale, River and Bunker look glad to be back on <planet>. "Ugh. We saw such horrible things," says Ale, "and now we have to watch it over and over again to edit it into something presentable." She hands you a stack of credit chips totalling <payment>. "There's a bonus in there for you, we really couldn't have done it without you. We'll let you know when it's done. Also, we might need you for some future projects, so expect us to be in touch." The group leaves your ship.`
 
 mission "Journalism 6"
 	deadline 9
@@ -7140,15 +7167,14 @@ mission "Journalism 6"
 	deadline 9
 	on offer
 		conversation
-			`After talking with Ferya you receive an encrypted message from Ale. 'Hello there. The exposition is finally finished! We decided to start the tour in the Free Worlds. You're invited of course.'`
-			branch noexslaves
+			`After talking with Freya you receive an encrypted message from Ale.`
+			`	"Hi, Captain <last>. After all our word, the exposition is finally finished! We decided to start the tour over in the Free Worlds. You're invited, of course.`
+			branch "no ex-slaves"
 				not "Anarco Uprising 3: done"
-			`	'Adding all the extra content we got from the Freedom Fighters and ex-slaves took a lot of time, but it was worth it. It adds so much more depth to the story.'`
-			label noexslaves
-			`	'Anyways, on to the point. Bunker and I flew to The Deep ahead of the exposition because our sources tell us there is going to be a big battle coming up soon. We want to document that battle and show ordinary people on all sides the brutality of war. The plan was to make our proposal directly to the Council but then our sources also told us that you are somewhat of a rising star. So naturally we figured you would make the introduction. We will wait for you on <planet> for a week, after that we will strike out on our own. Meet us at the spaceport in Harmony if you can make it. We will be at 'The Old Order Cafe'. Hope to see you there!'`
+			`	"Adding all the extra content we got from the Freedom Fighters and ex-slaves took a lot of time, but it was worth it. It adds so much more depth to the story.`
+			label "no ex-slaves"
+			`	"Anwyay, recently Bunker and I flew to the Deep ahead of the exposition because our sources tell us there is going to be a big battle coming up soon. We want to document that battle and show ordinary people on all sides the brutality of war. The plan was to make our proposal directly to the Free Worlds Council, but then our sources also told us that you are somewhat of a rising star. So naturally we figured you would make the introduction. We will wait for you on <planet> for a week, after that we will strike out on our own. Meet us at the spaceport on <planet> if you can make it, we will be at the 'Old Order Cafe'. Hope to see you there!"`
 				accept
-	on visit
-		dialog `You must wait for your escorts to reach this system.`
 
 
 mission "Journalism 7 late"
