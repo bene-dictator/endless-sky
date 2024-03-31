@@ -1686,14 +1686,12 @@ mission "FW Katya 3 Alt"
 				`	"I happen to have some 'abandoned' Navy surveillance equipment already."`
 
 			`	Mr. Eyes gives you a quizzical look, and Katya says, "Is that so? Well, I won't ask how you came across it, but that makes our search a lot easier."`
-
-			label end
+			`	You hand over the "salvaged" equipment to Mr. Eyes and Katya. Eyes begins fiddling with it, and soon discovers how to work the atmospheric scanner. "This is really nice stuff!" he says, enthusiastically.`
+			`	Katya says, "We found a halfway decent restaurant in the spaceport village. If you want to keep working with us, meet us there this evening."`
 			action
 				log "Katya's plan for hunting down the nuclear terrorists involves stealing the sensor equipment from a Navy surveillance drone. Supposedly taking equipment from a drone counts as a salvage operation as long as none of its owners are present, due to a legal loophole in an old act of Parliament."
 				set "FW Katya 3: done"
 				outfit "Surveillance Pod" -1
-			`	You hand over the "salvaged" equipment to Mr. Eyes and Katya. Eyes begins fiddling with it, and soon discovers how to work the atmospheric scanner. "This is really nice stuff!" he says, enthusiastically.`
-			`	Katya says, "We found a halfway decent restaurant in the spaceport village. If you want to keep working with us, meet us there this evening."`
 
 
 mission "FW Katya 4"
