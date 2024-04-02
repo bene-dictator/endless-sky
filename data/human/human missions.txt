@@ -9341,3 +9341,258 @@ mission "Timothy Radrickson 7: Grave"
 			label end
 			`	The shadows turn a darker shade of purple as you leave the graveyard of the forgotten dead for the familiar confines of your ship.`
 				decline
+
+
+
+mission "dog skadenga"
+	source "Nifel"
+	destination "Windblain"
+	cargo "Old Doll" 1
+	to offer
+		has "Stones of Skadenga 4: declined"
+		not "event sagaten"
+		has "event: sagaann"
+		random > 35
+	on offer
+		require "Saga"
+		conversation
+			`	The empty corridors of Nifel's spaceport feel even lonelier now that the Skadenga have left. Despite the fact that few of them ever came here, and even then only for work.`
+			`	Beneath the spaceport's hollow fluorescent lighting, Saga pads at your side, and the two of you stop to look out a window at the cold dismal tundra beyond. Something catches Saga's eye and she runs toward the nearest exit hatch.`
+			choice
+				`	(Follow Saga outside.)`
+					goto outside
+				`	(Tell Saga to come back.)`
+			`	Obediently, Saga stops in her tracks, and with head down, returns to your side. She whines a little, but soon forgets about whatever had caught her fancy. After a little while longer of walking the eerie halls, you and her return to your ship.`
+				decline
+			label outside
+			`	The merciless cold bites deep as you follow Saga into Nifel. Thankfully, she does not run far before briefly digging into the snow, and retrieving a dirty raggedy object.`
+			`	The two of you quickly head back inside, to the heated spaceport corridors that suddenly feel much more friendly than before, and you check what Saga had found.`
+			`	Although caked in frozen mud, it appears to be an old doll, made in the familiar Skadenga style. Perhaps, during the migration a child had dropped it.`
+			choice
+				`	(Return the doll to the Skadenga.)`
+					goto return
+				`	(Throw it away.)`
+			`	It's clearly unwanted trash. Certainly not worth an interstellar journey. You toss it in the nearest trash.`
+			`	A sadness fills Saga's eyes as she watches, but she does not whine, and dutifully follows you, as you continue wandering around the spaceport.`
+				decline
+			label return
+			`	Maybe this doll is important to someone. You decide to visit the Skadenga in Windblain, and see if anyone has missed it.`
+				accept
+	on complete
+		conversation
+			`	You land just outside the growing village of Hrithfjall. The Skadenga have been hard at work here, you see many new structures in Skadenga style. The townsfolk happily wave to you as arrive, and before long Hjlod shows up.`
+			`	"<first>!," Hjlod calls out with a laugh upon her lips. "So good of you to visit us!"`
+			`	She gives you a warm embrace, then turns to Saga, "and who might this be?"`
+			`	You tell her about Saga, how you saved her from mad sheep, and how she's become your loyal companion.`
+			`	Hjlod rubs Saga all over. "Sound like <first>, alvays saving someone."`
+			`	"And vhat is this?" Saga drops the doll she's been carrying at Hjlod's feet.`
+			`	"She found it on Nifel. I thought I would stop by and see if anyone was missing it." You explain.`
+			`	Hjlod picks it up. "Aye, I know it. This belong to Svanhildr, made by her grandmother Grimhilda, powerful woman. Long gone now, but important to young Svanhildr."`
+			`	With that, the blue-tattooed Hjlod turns, and starts walking to toward the coast, where numerous Skadenga youths are practicing their new sailing skills. "Come," Hjlod says,"Ve return doll."`
+			choice
+				`	(Follow after her.)`
+			`	The white chalky shore is covered in make-shift rafts, dinghies, and other small boats. The Skadenga youth appear to have traded in their skies and snow-shoes of Nifel, for the water-craft of Windblain.`
+			`	A few weathered members of the native Ran's Folk, appear to be instructing and aiding the enthusiastic Skadenga. Few pay any notice to you, Hjlod, or Saga as you near them.`
+			`	"Svanhildr!" Hjlod hollers into the crowd, and a few moments later a small, gray-eyed teenaged girl, hurries toward to you.`
+			`	"Aye, drottning. Vhat can I help you vith?" Svanhildr says in careful, respectful tones.`
+			`	"My little dros, no need to be formal. This hund has brought you something." Hjlod offers the doll to Svanhildr.`
+			`	Svanhildr quickly snatches up the doll, holds it tightly against her chest, and squeals, "My little Grima, you've returned her!"`
+			`	Svanhildr's eyes water as she holds the doll close, and then gradually remembers she is not alone. "Oh, thank you! Thank you! I never thought I'd see her again. Ve left so much behind. So, much lost. This is all I have of my grandmother. This is everything."`
+			`	Saga, excited by all the activity, jumps up on Svanhildr. The girl promptly pets and whispers sweet nothings to the happy dog.`
+			`	After a few moments of lavishing attention on Saga, Svanhildr looks up, "She's so vonderful, and she deserves treat. Please, can I play vith her on beach?"`
+			choice
+				`	(Let Saga spend the day playing on the beach with the Skadenga youth.)`
+					goto beachday
+				`	(Take Saga back to your ship.)`
+			`	You thank the girl for her offer, and explain that you have other places to be. The girl accepts your excuse, and runs off with her doll. Hjlod accompanies you back to your ship, talking, and reminiscing. She makes you promise to visit her again, gives you another hug, and bids you, and Saga farewell.`
+				decline
+			label beachday
+			`	Saga, and Svanhildr run off together toward the beach and the other kids. While Saga is off playing, Hjlod gives you a tour of the town. You meet new faces and old. You learn how the Ran's Folk, and Skadenga have begun merging into a new vibrant community.`
+			`	Before you know it the day has come to an end. Hjlod and you walk back down the beach where you find the kids laughing, giggling, and yelling happily around a bonfire. At the center of it all is Saga, who has been adopted as some sort of mascot, and looks happier than you've ever seen her.`
+			`	Svanhildr jogs over to you and Hjlod.`
+			`	She bows her head, "Drottning, could I make request?"`
+			`	Hjlod raises an eyebrow, "Request? Aye."`
+			`	Saga, having seen what is going on, pads over to your group.`
+			`	"I vas thinking. Maybe Saga could stay vith us? Ship is hard place for hund, and she's so happy here!" Svanhildr looks up, her eyes filled with desperation.`
+			`	Hjlod frowns, and crosses her blue-tattooed arms. "She is not my hund. It's up to <first>.`
+			`	The girls wide, pleading eyes, lock onto yours. "Please." she whispers.`
+			choice
+				`	(Saga stays with you.)`
+					goto sagawithyou
+				`	(Saga can stay here.)`
+					goto sagastayshere
+				`	(It's Saga's choice.)`
+			`	You bend down, and tenderly pet Saga. "Saga chose to come with me, and I have no right to tell her where she goes next. So we'll leave the decision to her."`
+			`	You take Saga's head in your hands and look at her directly. "What do you say, girl? Do you want to stay with me, on my cramped ship? Or live here with Svanhildr and the Skadenga?"`
+			`	Saga hesitates, she looks from you, to Svanhildr and back. She pushes out of your grasp, and walks over to the elated girl. She jumps up and licks Svanhildr on the face.`
+			`	"Oh, Saga!" The girl joyfully begins, but before she can say more, Saga pads back over to you, and sits at your feet.`
+			`	Hjlod smiles sadly. "It seem Saga has made her decision. Do not take it poorly, my little dros, <first> is most persuasive, and Saga is most loyal."`
+			`	The girl nods slowly. "I understand. Thank you for spending day vith me Saga. I hope you return some day."`
+			`	Svanhildr somberly returns to the bonfire.`
+			`	Hjlod shrugs, "Teenagers."`
+			`	The three of you walk back up the windy hill-side to Hrithfjell. From there Hjlod accompanies you back to your ship talking, and reminiscing along the way. She makes you promise to visit her again, gives you another hug, and bids you, and Saga farewell.`
+				decline
+			label sagawithyou
+			`	"Living on a ship is not easy, and she does seem so happy here. But Saga belongs with me, and I with her. I cannot part with her."`
+			`	Hjlod smiles sadly. "Do not take it poorly, my little dros, it is right that hund stays with her owner, her companion."`
+			`	The girl nods slowly. "I understand. Thank you for spending day vith me Saga. I hope you return some day."`
+			`	Svanhildr somberly returns to the bonfire.`
+			`	Hjlod shrugs, "Teenagers."`
+			`	The three of you walk back up the windy hill-side to Hrithfjell. From there Hjlod accompanies you back to your ship talking, and reminiscing along the way. She makes you promise to visit her again, gives you another hug, and bids you, and Saga farewell.`
+				decline
+			label sagastayshere
+			`	"It has been hard." You admit, "and she does seem happy here. I think it would be in her best interest to stay here. To have you, and all the Skadenga as her family. To be free to rove the beaches, and not be cramped on my ship."`
+			`	You guide Saga over to the elated Svanhildr, and let her take hold of Saga's collar, then step back.`
+			`	"Oh! Oh!" The girl nearly screams. "Thank you! I vill take such good care of her. She will be like queen, like drottning! Alvays happy! Alvays!"`
+			`	Hjlod frowns, "Is big thing, for hund to separate from companion. Maybe not best thing. But, <first>, I vill keep an eye on Svanhildr, and Saga. I vill make sure she has best care."`
+			`	Your decision made you begin to move away from Svanhildr, and Saga. Saga, realizing what is happening, tries to pull away from Svanhildr and starts crying. Her eyes fill with fear and panic.`
+			`	"It's for the best. You'll be happy here."`
+			`	You turn and quickly make your way up the hill-side and toward your ship. Trying to ignore Saga's howls of despair that fill the windy night.`
+			action
+				outfit "Saga" -1
+			apply
+				set "Sagaswan"
+
+mission "New Kansas So Long"
+	source "New Kansas"
+	to offer
+		has "event: sagafifteen"
+	on offer
+		require "Saga"
+		conversation
+			`	It's been more than fifteen years since you found Saga here, and in that time nothing has changed. Textile merchants hawk their wares, horse patrols scare off sheep, and green well-sunned hills stretch out into the big blue horizon.`
+			`	Saga, however, is not pleased to be home. She seems skittish, and constantly on alert. As though some feral rabid sheep will leap out at her at any moment.`
+			`	To her, this place is nothing more than an unhappy memory. Maybe it wasn't even her home to start with, just a scary point in-between where she was before, and when she ended up with you.`
+			choice
+				`	(Return her to the ship.)`
+			`	Not wanting to upset her further, you return her to your ship.`
+				decline
+
+mission "Skadenga farewell"
+	source "Windblain"
+	to offer
+		has "event: sagaold"
+		has "dog skadenga: done"
+		not "Sagaswan"		
+	landing
+	on offer
+		require "Saga"
+		conversation
+			`	As you prepare your ship for a landing, you find yourself considering your options. You could head down to Hrithfjall, and let Saga visit Svanhildr one last time. Or you could head straight to Windblain's spaceport and avoid the Skadenga.`
+			choice
+				`	(Visit Hrithfjall and Svanhildr).`
+					goto visit
+				`	(Go to the main spaceport.)`
+			`	You decide against visiting Hrithfjall. You have better things to do than let your dog say goodbye to her old friend.`
+				decline
+			label visit
+			`	You alter your course, and bring your ship down just outside Hrithfjall.`
+			`	In your absence the town of Hrithfjall has continued to grow. New buildings and new faces flank you and Saga as you walk slowly toward the beach. An older Svanhildr meets you where the gray sea meets the white shore.`				
+			`	You watch the two play, Saga regaining her youth in one rare moment of blissful enthusiasm, before the weight of age catches up with her and slows her back down. Svanhildr, with fresh blue tattoos on her arms, is undeterred and finds a small wagon to cart your elderly dog around the beach.`
+			`	As the Windblain's sun dips beneath the waves, a mirthful Svanhildr pulls her wagon up to you. Saga, looks at you with a mix of joy, and contentment.`
+			`	"Thank you, Captain <last>," Svanhildr says, as the evening wind scatters her wild hair, "Seeing her again, it means much to me."`
+			` 	Svanhildr holds Saga's face in her hands, and nuzzles it with her own. She whispers something in the dogs ear, and then says goodbye. Saga watches her leave, and then looks back to you, her eyes just as bright as they day you found her.`
+			`	You pull the wagon back to your ship, and carry your old girl aboard. Someone will gather the small wagon later. For now, it's time for you and Saga to go.`
+				decline
+
+
+
+mission "Skadenga visit"
+	source "Windblain"
+	to offer
+		has "event: sagaold"
+		not "event: sagafinal"
+		has "dog skadenga: done"
+		has "Sagaswan"
+	on offer
+		require "Saga"
+		conversation
+			`	As you prepare your ship for a landing, you find yourself considering your options. You could head down to Hrithfjall, and visit the aging Saga. Or you could head straight to Windblain's spaceport, and not bother with the dog.`
+			choice
+				`	(Visit Hrithfjall and Saga).`		
+					goto visither
+				`	(Go to the main spaceport.)`
+			`	You decide against visiting Hrithfjall. You have better things to do than check up on your old dog.`
+				decline
+			label visither
+			`	You alter your course, and bring your ship down just outside Hrithfjall.`
+			`	In your absence the town of Hrithfjall has continued to grow. New buildings and new faces flank you as you walk toward the beach. You see two figures out in the distance, where the gray sea meats the white shore. A gleeful young woman, with fresh blue tattoos, dances around an elderly, but joyful dog. `
+			`	You watch the two play, Saga quickly tires, but Svanhildr is undeterred, and finds a small wagon to cart her aged dog around the beach.`
+			`	After some time, Svanhildr notices you watching, and pulls the wagon with Saga up to where you are standing.`
+			`	Saga, ignoring whatever aches she might be feeling, leaps from her wagon and rushes toward you. She licks, nuzzles, and haltingly attempts to jump on you.`
+			`	Svanhildr excuses herself, and you spend the day with Saga. Her fur has thinned, her eyes grown milky, and her movements are slow. She's an old dog now, probably nearing the end. But she's thrilled to be with you, and like all dogs, she lives only for the moment.`
+			`	The day fades away. The sea shifts, and the waves explode around the mighty stone of Ran just off shore, and an exhausted, cheerful, Saga, falls asleep at your feet.`
+			`	As the Windblain's sun dips beneath the waves, a somber Svanhildr rejoins you. She gives you a sad, sweet smile.`
+			`	"Thank you, Captain <last>," Svanhildr says, as the evening wind scatters her wild hair, "She has been my best friend."`
+			`	The two of you watch the last rays of light get swallowed up by the sea, and the first embers of starlight blink into existence above.`
+			`	Svanhildr gently places the slumbering Saga back into her wagon. She says, "Know, that she is happy." And then begins pulling her Saga-filled wagon toward the lit up homes of Hrithfjall.`
+			`	You walk through the darkness alone to your waiting ship.`
+				decline
+
+mission "Saga's Burial"
+	to offer
+		has "event: sagaburial"
+	destination "Windblain"
+	landing
+	on offer
+	on enter
+		conversation
+			`	It's time to decide what to do with Saga's remains.`
+			branch skadenga
+					has "dog skadenga: done"
+			choice
+				`	(Bury her in space.)`
+					goto space
+			label skadenga
+			choice
+				`	(Bury her in space.)`
+					goto space
+				`	(Take her to Windblain.)`
+					goto Windblain
+			label space
+			`	Saga spent most of her life drifting through space by your side. There is no world that could claim her, no home more appropriate then the unending expanse she merrily shared with you.`
+			`	You gently place her body into an air-tight container.`
+			`	You move the container to an airlock, and wait on the other side to jettison it.`
+			`	Unbidden memories flood your mind. Her happy youth, her uncanny adventures, and the quiet times in between. Where the two of you just existed, two companions, floating through the dark emptiness. With no home other than each other.`
+			`	Warning lights blink, the airlock's mechanisms whir to life, and the small vessel containing Saga tumbles into the void.`
+			`	Destined to float through the emptiness, alone, for untold aeons.`
+			`	As alone, as you are now.`
+				decline
+			label Windblain
+			`	The void seems a cold place to abandon her. You decide to bring her back to the Skadenga, and bury her there among friends.`
+				accept
+	on complete
+		conversation
+			`	You sent word of your coming, and the folk of Hrithfjell are prepared.`
+			`	The Skadenga wear the black furs of mourning, and the Ran's Folk wear dun-scale cloaks made from alien sea-monsters. Some of the younger townsfolk wear a mix of both dress, demonstrating a new blended culture.`
+			`	Svanhildr, and eight other young women pull a small ornate covered-wagon to the field where your ship has landed. The eight women kneel, and Svanhildr approaches you.`
+			`	"Captain <Last>," she says quietly, "place Saga in the Hel-wagon.`
+			choice
+				`	(Place Saga's remains in the wagon.)`
+			`	The Hel-Wagon is solemnly pulled through the silent town. People stand on either side of the path, in quiet solidarity, and then fall after the wagon as it passes.`
+			`	Svanhildr, and her sister-waggoneers pull the wagon past the town, and down the cliff-side trail to the white shores below. Where twin bonfires have been lit on the beach, and Hjlod waits between them with water lapping at her feet.`
+			` 	The Hel-Wagon is laid to rest before Hjlod, with Svanhildr now standing at her side. The Eight other young women retreat to the side of the one of the bonfires and begin pulling something through the water. Beyond the fires the majority of Hrithfjell's townsfolk have arrived and watch the proceedings.`
+			choice
+				`	"Hjlod, why are all these people here? They couldn't have all known Saga. Why all this for my little dog?"`
+			`	Hjlod takes a step forward, out of the water, and rests a hand on your shoulder. "Saga vas greatly loved, by some, that is true." She nods to Svanhildr.`
+			`	"But, you, Captain <last>, are loved by all here. Ve mourn for your pain. Saga vas your family, and you are ours."`
+			`	Hjlod steps back to the shallow tide, and lifts her arms up to the crowd. She speaks easily in a guttural language unfamiliar to you, and the crowd responds with low chanting.`
+			`	Behind Hjlod and Svanhildr, the other eight maidens have pulled up a small boat in waist high water. Svanhildr removes Saga from the wagon, and carriers to the boat.`
+			`	The chanting grows louder, as Svanhildr leads the boat out into the dark evening waves, where it is swept out into the deep ocean, and the wild waters beyond.`
+			`	The crowds chanting hits a crescendo, and at the moment the two bonfires are extinguished. The stars burn bright, their light reflected on the glassy waves, and the dark blot in the distance that is Saga disappears into night and foam.`
+			`	In the darkness the crowd disperses, but a drenched Svanhildr finds you, and presses something cold and smooth into your hand. A stone.`
+			`	"In Nifel, ve vould have let snow take remains. But here, ve follow the Ran's Folk tradition. But there is still the stone-rite, to honor her memory."`
+			`	Svanhildr, lit by starlight, points toward a cliff up the beach. "Saga could not carve her memories into stone. So, I carved those who remember her. Take it up there, where old Ran's Folk cairns were built, and new Skadenga ones have begun."`
+			`	With that Svanhildr leaves your side.`
+			choice
+				`	(Bring the stone to cairns.)`
+			`	Beneath the starlight you make your way up the beach, and then around the cliff, to find the sacred scattered cairns of Ran's Folk and Skadenga.`
+			`	The Ran's Folk cairns are obvious, as they are much larger with well worn family name plates that you can't make out in dim light. The Skadenga cairns, are mostly individual, or small piles of stones. Not really cairns yet. They represent new families formed here, often with the union of Ran Folk and Skadenga.`
+			`	You see a small spot, overlooking the crashing waves below that you think Saga would have liked. You lift the stone up and read what has been carved upon it by Svanhildr.`
+			`	"The day I was found by <first> <last>."`
+			`	"The day I spent with Svanhildr playing on the beach."`
+			`	"The friends I met along the way."`
+			`	"All the things I made whole."`
+			`	"The life I spent with <first> <last>."`
+			`	You leave the stone there, and head back toward the town of Hrithfjell. Your friends are waiting, and you spend the night there in good company. You tell your own stories of Saga, and they listen.`
+			`	When the morning comes, you bid farewell, and head back to your waiting ship.`
