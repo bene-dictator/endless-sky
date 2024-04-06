@@ -11281,3 +11281,246 @@ mission "Patch Stone Waiting"
 	on offer
 		event "stone waiting most" 14
 		fail
+
+
+
+mission "Reunion on Martini"
+	minor
+	name "Reunion on Martini"
+	description "Bring Caroline from <origin> to her husband, Ronald, on <planet>, who she has not seen in four years."
+	source
+		planet "Reunion"
+	destination
+		planet "Martini"
+	passengers 1
+	clearance `When you inform the spaceport controller that you are looking for a "Ronald Sarie," who currently resides on Martini, they give you the clearance to land.`
+	to offer
+		random < 35
+		not "event: war begins"
+		year == 3014
+		month < 7
+
+	on offer
+		conversation
+			`The hustle and bustle of Reunion's spaceport is exceptional. There are Syndicate businessmen mixed in between factory workers following farmers; heads with ten-gallon hats, heads with burqas and heads with baseball caps; people from all walks of life bumping into each others' shoulders, losing track of themselves, or tripping over luggage. But they always forgive and forget; the spaceport continues to operate, the orderly disorder is maintained, and life moves on. If there was ever a planet so perfectly named, it would be Reunion.`
+			`	Yet, on the line of chairs on the opposite wall to you, throughout the mayhem and over the crowds, there is a woman whose intense and unmistakably direct gaze shatters the peaceful chaos that you've been immersed in.`
+			choice
+				`	(Walk over to her.)`
+				`	(Glance away.)`
+					decline
+
+			`	With some difficulty, you are able to wade through the hordes of people that flow through this atrium in Reunion's spaceport toward the enigmatic woman. As you reappear from the crowd, her gaze remains fixed on you, but her face is more perplexed than anything else.`
+			choice
+				`	"I'm Captain <last>, did you need something?"`
+				`	"Sorry, I noticed you from over there. Is something bothering you?"`
+					goto bothered
+
+			`	For a moment, she looks more flustered than before and gets up from her chair. "Oh, I'm so sorry, I thought I recognized you! Your face was so familiar, I have these moments sometimes where I know the face but the name alludes. I'm sorry for staring, but I couldn't quite place you. You said you were Captain <last>?"`
+				goto ask
+
+			label bothered
+			`	For a moment, she looks more flustered than before and gets up from her chair. "Sorry, no, nothing's bothering me! I'm so sorry, I've a really bad time placing names, but I could have sworn I've seen your face from somewhere. It's really uncanny, how familiar your face is. Are you a captain?"`
+
+			label ask
+			choice
+				`	"Yes, I'm Captain <last>."`
+					goto relax
+				`	"Sorry, I am a captain, but I'm too busy right now."`
+					decline
+
+			label relax
+			`	Her posture relaxes slightly. "Wonderful! What a happy accident. I was actually just looking for a captain. I'm Caroline; my husband Ronald has been living on Martini for the past four years, and I haven't seen him for so long. We married in 3008 and it's coming up to our anniversary in July, so I'd really like to make a surprise and see him! Could you help me get there?"`
+			choice
+				`	"Of course, you can count on me."`
+					goto thank
+				`	"I don't have room for a passenger, sorry."`
+					decline
+
+			label thank
+			`	"I just can't thank you enough! Here, I'll even pay you <payment> when we get there."`
+				accept
+
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		log "Minor People" "Caroline and Ronald Sarie" `Caroline is a woman who lives on Reunion. Her husband Ronald has been working on Martini for the past four years and has not seen her since. She wishes to reunite for their sixth anniversary.`
+		payment 15000
+		dialog `At the pristine spaceport on Martini, you farewell Caroline. She gives you the <payment> and runs off to find her husband, Ronald, while promising that she will contact you again if she needs to. "I will remember your name next time!"`
+
+
+mission "war begins (Reunion on Martini)"
+	name "Reunion on Martini"
+	landing
+	destination 
+		planet "Martini"
+	description "Find out whether Caroline's husband, Ronald, is still alive after the nuclear bombing on Martini."
+	clearance "When you inform the spaceport controller that you are looking for 'Ronald Sarie', who currently resides on Martini, they give you the clearance to land."
+	to offer
+		has "event: war begins"
+		has "Reunion on Martini: active"
+		not "Reunion on Martini: done"
+
+	on offer
+		action
+			fail "Reunion on Martini"
+		log "Minor People" "Caroline and Ronald Sarie" `Caroline is a woman who lives on Reunion. Her husband Ronald has been working on Martini for the past four years and has not seen her since. She wishes to reunite for their sixth anniversary.`
+			`While transporting Caroline, the nuclear bombing on Martini occurred. She is very anxious to know whether Ronald is still alive.`
+		conversation
+			`When you head back to your ship, you are faced with telling Caroline about the nuclear attack on Martini. As you open the door to her room, you realise that she has been asleep and is unaware of what has gone on.`
+			choice
+				`	"Wake up, Caroline."`
+					goto wake
+				`	(Wait for her to get up.)`
+			`	You wait for Caroline to wake up by herself, while milling over how you might go about telling her the bad news.`
+			label wake
+			`	There seems to be a long time before Caroline stirs. Eventually, she opens her eyes and notices that you're in the doorway, before sitting up in her bunk and using that perplexed look she gave you on Reunion.`
+			`	"Huh? What's happened?"`
+			choice
+				`	"I'm sorry, Caroline. Something devastating just happened."`
+				`	"There's something I have to tell you."`
+			`	"What is it, Captain? Are we going to be late?"`
+			choice
+				`	"A nuclear bomb exploded in Martini's capital. Your husband may not have survived."`
+					goto straightface
+				`	"We might not be able to make it. Martini was attacked by terrorists, and the Republic is preventing anyone from landing without a reason."`
+
+			`	Her head drops into her hands, and she shudders with despair.`	
+			`	"Oh God. Ronald. Oh my God. <Last>, we have to find out if he's okay. We have to find him, <last>. Please, please help me find him."`
+			choice
+				`	"Unfortunately, the terrorists attacked with nuclear weapons. The capital city is gone."`
+					goto straightface
+				`	"It was a nuclear bombing, but I'll try to get us through."`
+
+			action
+				set "carolineunaware"
+			`	She only barely acknowledges your words. "We have to get to Martini as fast as we can. R-Ronald is.. he's resourceful if anyone could survie this it's him. I know it. Please, Captain <last>."`
+			accept
+
+			label straightface
+			`	She blinks at you blankly, not comprehending what you just spoke. It is only a moment later that her eyes dilate in shock.`
+			`	"What?!" She roars as tears roll down her cheeks, "What kind of sick joke is this? You think this funny? Some twisted joke? What kind of captain are you?! Where are we? I need to know! Tell me!"`
+			`	As she ends the sentence, she begins to sob uncontrollably.`
+			`	"He's not dead. He can't be dead, not like this. Not now. This is the closest I've been to him in four years. Four years! And he's gone just like that? Forever? We were so close, oh why? Why me? Why Martini? Why anything? Why?"`
+			choice
+				`	"It's alright, Caroline. I'll make sure we'll get to Martini."`
+				`	"It's not a trick, there was a nuclear explosion!"`
+				`	"Check the news. I am not making this up. But I swear I will get you to Martini. You can count on me, Caroline."`
+
+			`	She doesn't seem to hear you, but instead she punches the wall with suprising amount of force, before bringing her sheets up to her red face to wipe away her glistening tears.`
+			choice
+				`	(Leave her alone in the room.)`
+					goto alone
+				`	(Stay in the doorway.)`
+
+			`	She abruptly turns to you with a hateful expression on her red face. Her expression flashes from despair to blind unbridled rage.`
+			`	"Go! Leave! Get away from me!" She screams, and then forces herself to take a wheezing breath." Captain, please. I need to be alone. Just get us to Martin, okay? Just get us to Martini."`
+
+			label alone
+			`	Respecting her privacy, you close the door and leave her.`
+			`	As you walk back to the cockpit, the sound of wailing follows you from the hallway.`
+				accept
+
+	to fail
+		has "Reunion on Martini: done"
+
+	on visit
+		dialog phrase "generic passenger on visit"
+
+	on complete
+		conversation
+			`While entering the atmosphere of Martini, you pass over the ruined capital city that sits at the end of a peninsula on the coast. Where you would normally come down for landing at Martini's pristine spaceport, the four towers of gleaming granite, there is now only one dark spire; the other three have been snapped in half like toothpicks. The rest of the capital city fared much worse, with no buildings by the spaceport surviving the explosion, and there are fires and smoke up spreading up into the horizon.`
+
+			branch falsehope
+				has "carolineunaware"
+			`	Despite the destruction, there is still some defiant hope in Caroline's blood-shot eyes as she stares out the window. "One of the last messages he sent me was that he had moved to one of the suburbs in the capital. Maybe he survived, maybe he managed to get to another city. Maybe he was evacuated. He could still be alive. He could. He could. He has to be."` # You told her the worst, she expects the worst. She's still trying to make up excuses, though.
+				goto landing
+
+			label falsehope
+			`	After avoiding the subject of the bombings for so long, Caroline finally looks out the window and over the city. Her face is ashen, her eyes dark, she says nothing.` # You avoided telling her about how bad the bombings were, she did not expect the worst and now she is distraught.
+
+			label landing
+			choice
+				`	(Land at the closest available spaceport.)`
+					goto spaceport
+				`	(Try to get closer to the city.)`
+
+			`	Bringing your ship closer to the ground, it seems that the spaceport was one of the only buildings to survive intact. The shattered remains of the skyscrapers are scattered everywhere, and fire continues to bellow from the ruins. Before you are able to get closer, a Navy Gunboat appears from above and hails you.`
+			`	"Captain <last> of the <ship>, you must leave immediately. This area is out-of-bounds and potentially life-threatening, and it is in your interest to depart. We will be forced to shoot upon you if you do not comply."` #this is ironic because the navy gunboat is now MORE life threatening than Martini's capital. Hilarious. 
+
+			label spaceport
+			`	You are directed to land at one of the regional spaceports, serving the closest major city the authorities have deemed to be clear of the path of the radiation. It's a port clearly designed for much less traffic than this; an endless stream of people and ships flow through, and all the hallways are packed with all sorts of individuals, all full of words, tears, and anger. It is a wonder that the spaceport hasn't collapsed from the weight of so many human bodies, and the emotion that comes with them. Outside, there are more landing pads being poured to accomodate the traffic.`
+			choice
+				`	(Ask around for help.)`
+
+# May be best to split this here into a new mission, which continues with the dialogue below once you've hit the spaceport button.
+
+			`	Another traveler directs you to the information desk, which seems the be the most crowded area of the spaceport. Following a long queue, you finally get to the desk's exhausted attendant, whose unsmiling face and baggy eyes tells you that she is clearly not being paid enough credits to do her job right now. She motions for you to step foward.`
+			choice
+				`	"Do you know where Ronald Sarie is?"`
+				`	(Let Caroline speak.)`
+					goto letspeak
+
+			`	Before you're able to approach the attendant, Caroline runs towards the desk and starts.`
+
+			label letspeak
+			`	"My husband's name is Ronald Sarie, he may have been in the capital when the nuclear bombing occurred." Her voice cracks as she struggles to keep herself together. "I need to know where he is. I need to know he's okay. Please, tell me where he is!"`
+			`	Despite the situation, the attendant stares at Carlone with a blank expression. She has probably heard variations of those lines at least a hundred times.`
+			`	"Sorry, I haven't been provided information on your husband's location. If you are looking for him, we do not advise you under any circumstances to go into the capital. It is far too dangerous, and we do not want to increase the number of people we need to treat, or our casualties. Your best chance is to go to the refugee camp a couple kilometers away, where they have logged in everyone who has been able to be evacuated or rescued and without injury. We can also advise you to go to the city hospital, where they are treating the injured right now. However, I would not go there unless you have tried every other path. That is all the information we can give you right now."`
+			choice
+				`	(Leave.)`
+					goto thank
+				`	(Tip her 100 credits.)`
+
+			action
+				payment -100
+			`	You pull out of your pocket a credit chip for 100 credits and hand it to the girl behind the counter. The attendant, not expecting this, brightens up and offers you what is probably her first smile of the day.`
+
+			label thank
+			`	After thanking the attendant, the two of you move towards the exit of the overloaded spaceport. Caroline finds an unoccupied seat outside and sits down uncertainly. "What do we do now?"`
+			choice
+				`	"We should go to the refugee camp."`
+				`	"I would go to the city hospital."`
+					goto hospital
+
+			`	"That's probably the most sensible thing to do."`
+			`	You both take a shuttlecar to the camp, the journey feeling much longer than it should. Like the spaceport, there are all sorts of people sharing this shuttle; a man with a neat and expensive suit, who looks like a high powered executive, is talking in fast worried voice about his missing children to a man in greased overalls, who responds with a cracking voice that he's worried about his missing mother who worked as a clerk in one of the skyscrapers in the city. Despite the obvious gap in wealth and position, both of them are united in their grief. Caroline stares with sullen silence out into the fields of Martini.`
+			`	The shuttle finally arrives at the camp, a place somehow more busy than the packed spaceport. Unlike a normal 'refugee camp' with rows upon rows of tents, it seems that someone decided to donate an entire housing development to the refugees, although there are far more families living in each house than was intended.`
+			choice
+				`	(Ask someone whether they know where Ronald is.)`
+					goto whererolandcamp
+				`	(Find an information desk.)`
+
+			label desk
+			`	After some time walking through the "camp," Caroline spots an office building with a crowd gathered outside. You're forced to join a queue again, but fortunately this one is much faster as it seems to deal only with logging people in the camp. Before long, you're facing a uniformed man at a desk, who looks to have some official capacity in this area. Still dealing with his previous client, he scribbles down some notes beside a datapad attatched to a keyboard before beckoning both of you up.`
+			choice
+				`	"Is Ronald Sarie is at this camp?"`
+				`	"Do you know where we could find Ronald Sarie?"`
+
+			`	"Hold on, let me check our files," the man replies curtly. "No, we don't have anybody here by the name of Ronald Sarie. You will have to look in the city hospital or elsewhere, perhaps in the neighbouring city's camp."`
+			`	Caroline's face drops yet again, but she doesn't stop,"A-are you sure? Check again! Maybe you missed him. It's Ronald Sarie. S-A-R-I-E, Sarie. He's here. I know he's here. Just check!"`
+			` 	The official's tired face deepens into a profound frown, "I am sorry ma'am, but he's just not here."`
+			`	Tears blanket Caroline's face, but she says nothing more as you thank the officer and hurry out of the building.`
+			`	As you walk out of the building, a man in a tattered white shirt who was in the queue flags you down.`
+				goto luck
+
+			label whererolandcamp
+			`	There seems to a quite a few people heading in one direction towards the edge of the housing area, but none of them have ever heard of Ronald Sarie.`
+			choice
+				`	(Continue asking.)`
+				`	(Follow the rest of the people.)`
+					goto desk
+			`	After asking a few more refugees from coming from the shuttles, you're about to give up hope when a man in a tattered white shirt comes after you, in the opposite direction of where everybody else is going to.`
+
+			label luck
+			`	"Did you say Ronald Sarie? I know the guy, he lived in my neighbourhood, in fact. He was a lovely fella, always the guy you could count on for a favor. He's done a ton for me and I couldn't thank him any more."`
+			`	Caroline asks, "Yeah, but do you know where he is? I'm his wife, I came here to surprise him, and I-I can't find him. Please tell me where my Ronald is!"`
+			`	"Oh, I'm so sorry, I... well, sorry, I couldn't tell you where he would be, but I really hope you do find him. I only got out because I was out of the capital that day, but I saw Ronald on his way to work as usual. He's a good man, your husband."`
+			`	"He was! He is." Her face sags, "To work? You're sure? I hoped... Oh, nevermind. Thank you, thank you so much, this is the first bit of news I've heard about him since..." she trails off, unable or unwilling to say it.` # Bit of a placeholder. 
+
+			label hospital
+			`	"Imagine the hospital bit goes here, they find a guy who talks about the Ronald who is dead," says a placeholder.` # TODO: Add convo.
+			# goto partwherecarolineissad
+
+# log "Minor People" "Caroline and Ronald Sarie" `Unfortunately, Ronald died in the nuclear bombings, as he was working in the capital as a banker.`
+# Structure: 	go to camp, ask around, find one of his friends, he says he has not seen Ronald.
+#			go to city hospital, find one of his co-workers, he says he had to go home early that day and escaped the blast although the shockwave destroyed his windows and gave him injuries. Ronald stayed behind in the tower and was likely killed.
