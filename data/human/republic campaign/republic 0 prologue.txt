@@ -125,11 +125,12 @@ mission "Republic Bounty 2"
 		payment 200000
 		event "rep bounty cooldown" 30
 		dialog `Commander Shah contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. I'll be in touch should I have need of you again."`
-		log "People" "Amelia Shah" "Amelia Shah is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. She seems to be unaffiliated with the Navy."
 
+event "rep bounty cooldown"
 
+#		log "People" "Amelia Shah" "Amelia Shah is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. She seems to be unaffiliated with the Navy."
 #		log "People" "Anton Kent" "Anton Kent is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. He seems to be unaffiliated with the Navy."
-#Who dis?
+#These logs are outdated
 
 
 mission "Republic Bounty 3"
@@ -455,3 +456,4 @@ mission "Republic Shipping 3"
 		payment 120000
 		log "The Navy officer from earlier said they'd put in a good word for me."
 		dialog `As you land, Jeff pays you <payment>, and the officer you shuttled lets you know they will put in a good word for you.`
+
