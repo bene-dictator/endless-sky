@@ -9344,28 +9344,30 @@ mission "Timothy Radrickson 7: Grave"
 
 
 
-mission "dog skadenga"
+mission "Saga"
 	source "Nifel"
 	destination "Windblain"
-	cargo "Old Doll" 1
+	cargo "Saga" 1
 	to offer
 		has "Stones of Skadenga 4: declined"
-		not "event sagaten"
-		has "event: sagaann"
-		random > 35
+		random > 20
 	on offer
-		require "Saga"
 		conversation
 			`	The empty corridors of Nifel's spaceport feel even lonelier now that the Skadenga have left. Despite the fact that few of them ever came here, and even then only for work.`
-			`	Beneath the spaceport's hollow fluorescent lighting, Saga pads at your side, and the two of you stop to look out a window at the cold dismal tundra beyond. Something catches Saga's eye and she runs toward the nearest exit hatch.`
+			`	Beneath the spaceport's unrelenting fluorescent lights it's easy to be drawn toward the window and the cold bleak tundra beyond. Something catches your eye near an access port that is melting the nearby snow. A flash of white thick fur.`
 			choice
-				`	(Follow Saga outside.)`
+				`	(Investigate)`
 					goto outside
-				`	(Tell Saga to come back.)`
-			`	Obediently, Saga stops in her tracks, and with head down, returns to your side. She whines a little, but soon forgets about whatever had caught her fancy. After a little while longer of walking the eerie halls, you and her return to your ship.`
+				`	(Ignore it)`
+			`	You've learnt the hard way that hardship awaits those who leave the safe confines of Nifel's spaceport. You ignore the furry creature and after a little while longer of walking the eerie halls, you return to your ship.`
 				decline
+
 			label outside
-			`	The merciless cold bites deep as you follow Saga into Nifel. Thankfully, she does not run far before briefly digging into the snow, and retrieving a dirty raggedy object.`
+			`	The merciless cold bites deep as you step in harsh atmosphere of Nifel. Thankfully, your quary does not flee, and instead it runs right up to you and nuzzles you with it's cold nose.`
+			`	The dog's fur is mostly white with a hint of tan here and there, like a lightly cooked marshmellow, it has the look and of husky or a husky mix. It's made itself a sort of bed of trash against the access port for warmth. It doesn't appear to be starving, but it also doesn't seem to be thriving.`
+			choice
+				`	(Bring the dog inside the spaceport.)`
+				`	(Leave the dog outside.)`
 			`	The two of you quickly head back inside, to the heated spaceport corridors that suddenly feel much more friendly than before, and you check what Saga had found.`
 			`	Although caked in frozen mud, it appears to be an old doll, made in the familiar Skadenga style. Perhaps, during the migration a child had dropped it.`
 			choice
