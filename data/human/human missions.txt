@@ -9353,22 +9353,42 @@ mission "Saga"
 		random > 20
 	on offer
 		conversation
-			`	The empty corridors of Nifel's spaceport feel even lonelier now that the Skadenga have left. Despite the fact that few of them ever came here, and even then only for work.`
-			`	Beneath the spaceport's unrelenting fluorescent lights it's easy to be drawn toward the window and the cold bleak tundra beyond. Something catches your eye near an access port that is melting the nearby snow. A flash of white thick fur.`
+			`	The empty corridors of Nifel's spaceport are even lonelier now that the Skadenga have left. Despite the fact that few of them ever came here, and even then only for work.`
+			`	Beneath the spaceport's unrelenting fluorescent lights it's easy to be drawn toward the windows and the cold bleak tundra beyond. You look out at the striking mountains being swallowed up by grueling glaciers that crowd the white horizion.  After a few moments of watching something just outside the spaceport catches your eye. You see it again a brief flash of white thick fur moving in the snow.`
 			choice
-				`	(Investigate)`
+				`	(Go outside and investigate.)`
 					goto outside
-				`	(Ignore it)`
+				`	(Ignore it.)`
 			`	You've learnt the hard way that hardship awaits those who leave the safe confines of Nifel's spaceport. You ignore the furry creature and after a little while longer of walking the eerie halls, you return to your ship.`
 				decline
 
 			label outside
 			`	The merciless cold bites deep as you step in harsh atmosphere of Nifel. Thankfully, your quary does not flee, and instead it runs right up to you and nuzzles you with it's cold nose.`
-			`	The dog's fur is mostly white with a hint of tan here and there, like a lightly cooked marshmellow, it has the look and of husky or a husky mix. It's made itself a sort of bed of trash against the access port for warmth. It doesn't appear to be starving, but it also doesn't seem to be thriving.`
+			`	The dog's fur is mostly white with a hint of tan here and there, like a lightly cooked marshmellow, it has the look and of husky or a husky mix. You notice there is a sort of bed of refuse near a warm access port with a halo of small animal bones surrounding it. The dog doesn't appear to be starving, but it also doesn't seem to be thriving.`
 			choice
 				`	(Bring the dog inside the spaceport.)`
+					goto inside
 				`	(Leave the dog outside.)`
-			`	The two of you quickly head back inside, to the heated spaceport corridors that suddenly feel much more friendly than before, and you check what Saga had found.`
+			`	While the dog is kind, it certainly isn't your problem, and you leave it to whatever life it's managed to piece together living in the shadow of the spaceport.`
+				decline
+			
+			label inside
+			`	The two of you quickly head back inside, to the heated spaceport corridors that suddenly feel much more friendly than before.`
+			choice
+				`	(Look for a collar or any form of identification on the dog.)`
+				`	(Look for someone to ask about the dog.)`
+			`	After a brief search you manage to find some sort of corporate attendant, and you ask him about the stray dog.`	
+			`	The man's eyes seem to sag as you speak. Your earnest words lulling him to sleep. Once you're done he frowns, and shakes his head slowly.`
+			`	"Ser," he says with forced politeness, "this is a spaceport, not a shelter. We are aware of that stray dog. She has been prowling around for weeks. No one has come to collect her, and no one wants her. Frankly, we assumed the cold would get to her by now. It would have done us all a favor. Now, I am sorry she has distracted you, and is now wasting both our time. If you'd like you can leave her with me, and I'll take care of it." `
+			choice
+				`	(Refuse to hand the dog over.)`
+					goto refuse
+				`	(Give the dog to the attendant.)`
+			`	The man tries, and fails to smile. "Thank you. I will make sure this stray mutt bothers no one else in our future." He grabs her thick husky mane and pulls her toward a nearby door. She struggles against him and whimpers, looking back at you, until at last she disappears behind a lifeless beige door.`
+
+
+
+
 			`	Although caked in frozen mud, it appears to be an old doll, made in the familiar Skadenga style. Perhaps, during the migration a child had dropped it.`
 			choice
 				`	(Return the doll to the Skadenga.)`
