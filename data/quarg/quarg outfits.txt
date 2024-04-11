@@ -114,6 +114,7 @@ outfit "Medium Graviton Thruster"
 	"mass" 70
 	"outfit space" -70
 	"engine capacity" -70
+	"afterburner capacity" 70
 	"thrust" 80
 	"thrusting energy" 20
 	"thrusting heat" 2

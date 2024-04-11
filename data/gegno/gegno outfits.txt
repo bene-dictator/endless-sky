@@ -150,6 +150,7 @@ outfit "RG15 Torch Thruster"
 	"mass" 31
 	"outfit space" -31
 	"engine capacity" -31
+	"afterburner capacity" 31
 	"thrust" 11.57
 	"thrusting energy" 0.7
 	"thrusting heat" 1.5
@@ -186,6 +187,7 @@ outfit "RG18 Torch Thruster"
 	"mass" 51
 	"outfit space" -51
 	"engine capacity" -51
+	"afterburner capacity" 51
 	"thrust" 20.4
 	"thrusting energy" 1.25
 	"thrusting heat" 2.9
@@ -225,6 +227,7 @@ outfit "RG3 Torch Thruster"
 	"mass" 83
 	"outfit space" -83
 	"engine capacity" -83
+	"afterburner capacity" 83
 	"thrust" 36
 	"thrusting energy" 2.2
 	"thrusting heat" 5.4
@@ -267,6 +270,7 @@ outfit "SC-1 Plasma Engines"
 	"mass" 21
 	"outfit space" -21
 	"engine capacity" -21
+	"afterburner capacity" 21
 	"thrust" 6.55
 	"thrusting energy" 0.4
 	"thrusting heat" 1
@@ -292,6 +296,7 @@ outfit "SC-12 Plasma Thruster"
 	"mass" 25
 	"outfit space" -25
 	"engine capacity" -25
+	"afterburner capacity" 25
 	"thrust" 13.54
 	"thrusting energy" 0.85
 	"thrusting heat" 2.25
@@ -330,6 +335,7 @@ outfit "SC-14 Plasma Thruster"
 	"mass" 45
 	"outfit space" -45
 	"engine capacity" -45
+	"afterburner capacity" 45
 	"thrust" 26.4
 	"thrusting energy" 1.7
 	"thrusting heat" 4.95
@@ -370,6 +376,7 @@ outfit "SC-15 Plasma Thrusters"
 	"mass" 112
 	"outfit space" -112
 	"engine capacity" -112
+	"afterburner capacity" 112
 	"thrust" 48.6
 	"thrusting energy" 3.1
 	"thrusting heat" 9.5

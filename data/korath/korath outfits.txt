@@ -216,7 +216,7 @@ outfit "Afterburner (Asteroid Class)"
 	thumbnail "outfit/tiny korath afterburner"
 	"mass" 9
 	"outfit space" -9
-	"engine capacity" -5
+	"afterburner capacity" -9
 	"fuel capacity" 100
 	"ramscoop" 0.25
 	"afterburner thrust" 15.4
@@ -234,7 +234,7 @@ outfit "Afterburner (Comet Class)"
 	thumbnail "outfit/small korath afterburner"
 	"mass" 19
 	"outfit space" -19
-	"engine capacity" -19
+	"afterburner capacity" -19
 	"afterburner thrust" 62.4
 	"afterburner energy" 2.25
 	"afterburner heat" 22.75
@@ -250,7 +250,7 @@ outfit "Afterburner (Lunar Class)"
 	thumbnail "outfit/medium korath afterburner"
 	"mass" 32
 	"outfit space" -32
-	"engine capacity" -32
+	"afterburner capacity" -32
 	"afterburner thrust" 119.0
 	"afterburner energy" 3.9
 	"afterburner heat" 41.65
@@ -266,7 +266,7 @@ outfit "Afterburner (Planetary Class)"
 	thumbnail "outfit/large korath afterburner"
 	"mass" 55
 	"outfit space" -55
-	"engine capacity" -55
+	"afterburner capacity" -55
 	"afterburner thrust" 230.4
 	"afterburner energy" 7.1
 	"afterburner heat" 79.45
@@ -368,6 +368,7 @@ outfit "Engine (Meteor Class)"
 	"mass" 18
 	"outfit space" -18
 	"engine capacity" -18
+	"afterburner capacity" 18
 	"thrust" 10.5
 	"thrusting energy" 1.35
 	"thrusting heat" 2.9
@@ -504,6 +505,7 @@ outfit "Thruster (Asteroid Class)"
 	"mass" 14
 	"outfit space" -14
 	"engine capacity" -14
+	"afterburner capacity" 14
 	"thrust" 13.84
 	"thrusting energy" 1.5
 	"thrusting heat" 3.4
@@ -520,6 +522,7 @@ outfit "Thruster (Comet Class)"
 	"mass" 24
 	"outfit space" -24
 	"engine capacity" -24
+	"afterburner capacity" 24
 	"thrust" 25.02
 	"thrusting energy" 2.8
 	"thrusting heat" 6.5
@@ -536,6 +539,7 @@ outfit "Thruster (Lunar Class)"
 	"mass" 40
 	"outfit space" -40
 	"engine capacity" -40
+	"afterburner capacity" 40
 	"thrust" 44.13
 	"thrusting energy" 4.9
 	"thrusting heat" 11.9
@@ -552,6 +556,7 @@ outfit "Thruster (Planetary Class)"
 	"mass" 68
 	"outfit space" -68
 	"engine capacity" -68
+	"afterburner capacity" 68
 	"thrust" 80.0
 	"thrusting energy" 8.9
 	"thrusting heat" 22.7
@@ -568,6 +573,7 @@ outfit "Thruster (Stellar Class)"
 	"mass" 118
 	"outfit space" -118
 	"engine capacity" -118
+	"afterburner capacity" 118
 	"thrust" 149.4
 	"thrusting energy" 15.8
 	"thrusting heat" 42.6
@@ -663,6 +669,7 @@ outfit "Arkrof GP Hybrid Thruster"
 	"mass" 19
 	"outfit space" -19
 	"engine capacity" -19
+	"afterburner capacity" 19
 	"thrust" 19.3
 	"thrusting energy" 2.6
 	"thrusting heat" 3
@@ -678,6 +685,7 @@ outfit "Farves GP Hybrid Thruster"
 	"mass" 33
 	"outfit space" -33
 	"engine capacity" -33
+	"afterburner capacity" 33
 	"thrust" 35.4
 	"thrusting energy" 5.05
 	"thrusting heat" 5.9
@@ -693,6 +701,7 @@ outfit "Gaktem GP Hybrid Thruster"
 	"mass" 57
 	"outfit space" -57
 	"engine capacity" -57
+	"afterburner capacity" 57
 	"thrust" 64.95
 	"thrusting energy" 9.1
 	"thrusting heat" 11.05
@@ -708,6 +717,7 @@ outfit "Nelmeb GP Hybrid Thruster"
 	"mass" 86
 	"outfit space" -86
 	"engine capacity" -86
+	"afterburner capacity" 86
 	"thrust" 104.6
 	"thrusting energy" 14
 	"thrusting heat" 18

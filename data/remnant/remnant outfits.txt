@@ -676,7 +676,7 @@ outfit "Bellows-Class Afterburner"
 	thumbnail "outfit/remnant afterburner"
 	"mass" 8
 	"outfit space" -7
-	"engine capacity" -7
+	"afterburner capacity" -7
 	"slowing resistance" 0.01
 	"afterburner thrust" 125.0
 	"afterburner fuel" 0.65
@@ -702,6 +702,7 @@ outfit "Anvil-Class Engine"
 	"mass" 26
 	"outfit space" -26
 	"engine capacity" -26
+	"afterburner capacity" 26
 	"thrust" 13.8
 	"thrusting energy" 2.05
 	"thrusting heat" 1.95
@@ -732,6 +733,7 @@ outfit "Crucible-Class Thruster"
 	"mass" 20
 	"outfit space" -20
 	"engine capacity" -20
+	"afterburner capacity" 20
 	"thrust" 16.55
 	"thrusting energy" 2.1
 	"thrusting heat" 2.0
@@ -756,6 +758,7 @@ outfit "Forge-Class Thruster"
 	"mass" 39
 	"outfit space" -39
 	"engine capacity" -39
+	"afterburner capacity" 39
 	"thrust" 34
 	"thrusting energy" 4.4
 	"thrusting heat" 4.25
@@ -780,6 +783,7 @@ outfit "Smelter-Class Thruster"
 	"mass" 76
 	"outfit space" -76
 	"engine capacity" -76
+	"afterburner capacity" 76
 	"thrust" 71.1
 	"thrusting energy" 9.5
 	"thrusting heat" 9.6

@@ -404,6 +404,7 @@ outfit "Maeri Engine Nacelles"
 	"mass" 59
 	"outfit space" -76
 	"engine capacity" -59
+	"afterburner capacity" 59
 	"energy consumption" 5.01
 	"heat generation" 1.1
 	"thrust" 38.72
@@ -426,6 +427,7 @@ outfit "Ka'het Sustainer Nacelles"
 	"mass" 27
 	"outfit space" -34
 	"engine capacity" -27
+	"afterburner capacity" 27
 	"heat generation" 0.6
 	"energy consumption" 2.49
 	"thrust" 16.78
@@ -448,6 +450,7 @@ outfit "Telis Engine Nacelles"
 	"mass" 81
 	"outfit space" -101
 	"engine capacity" -81
+	"afterburner capacity" 81
 	"energy consumption" 6.81
 	"heat generation" 1.4
 	"thrust" 55.4
@@ -469,6 +472,7 @@ outfit "Vareti Engine Block"
 	"mass" 137
 	"outfit space" -168
 	"engine capacity" -137
+	"afterburner capacity" 137
 	"energy consumption" 10.90
 	"heat generation" 2.58
 	"thrust" 93.9
@@ -490,6 +494,7 @@ outfit "Ka'het Compact Engine"
 	"mass" 21
 	"outfit space" -26
 	"engine capacity" -21
+	"afterburner capacity" 21
 	"heat generation" 0.3
 	"energy consumption" 0.48
 	"thrust" 12.78

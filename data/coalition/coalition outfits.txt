@@ -301,6 +301,7 @@ outfit "Small Thrust Module"
 	"mass" 9
 	"outfit space" -9
 	"engine capacity" -9
+	"afterburner capacity" 9
 	"thrust" 8.3
 	"thrusting energy" 0.46
 	"thrusting heat" 3
@@ -318,6 +319,7 @@ outfit "Large Thrust Module"
 	"mass" 32
 	"outfit space" -32
 	"engine capacity" -32
+	"afterburner capacity" 32
 	"thrust" 30.6
 	"thrusting energy" 1.7
 	"thrusting heat" 11

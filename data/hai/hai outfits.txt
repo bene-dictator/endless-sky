@@ -593,6 +593,7 @@ outfit `"Baellie" Atomic Engines`
 	"mass" 22
 	"outfit space" -22
 	"engine capacity" -22
+	"afterburner capacity" 22
 	"thrust" 9.8
 	"thrusting energy" .87
 	"thrusting heat" 1.7
@@ -614,6 +615,7 @@ outfit `"Basrem" Atomic Thruster`
 	"mass" 18
 	"outfit space" -18
 	"engine capacity" -18
+	"afterburner capacity" 18
 	"thrust" 15.22
 	"thrusting energy" 1.4
 	"thrusting heat" 2.8
@@ -629,6 +631,7 @@ outfit `"Benga" Atomic Thruster`
 	"mass" 28
 	"outfit space" -28
 	"engine capacity" -28
+	"afterburner capacity" -28
 	"thrust" 25.15
 	"thrusting energy" 2.5
 	"thrusting heat" 4.8
@@ -644,6 +647,7 @@ outfit `"Biroo" Atomic Thruster`
 	"mass" 44
 	"outfit space" -44
 	"engine capacity" -44
+	"afterburner capacity" -44
 	"thrust" 41.65
 	"thrusting energy" 4
 	"thrusting heat" 8.2
@@ -659,6 +663,7 @@ outfit `"Bondir" Atomic Thruster`
 	"mass" 63
 	"outfit space" -63
 	"engine capacity" -63
+	"afterburner capacity" -63
 	"thrust" 62.8
 	"thrusting energy" 6.1
 	"thrusting heat" 12.7
@@ -674,6 +679,7 @@ outfit `"Bufaer" Atomic Thruster`
 	"mass" 104
 	"outfit space" -104
 	"engine capacity" -104
+	"afterburner capacity" -104
 	"thrust" 108.85
 	"thrusting energy" 10.4
 	"thrusting heat" 22.6
