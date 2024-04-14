@@ -9376,6 +9376,7 @@ mission "Saga"
 			`	The two of you quickly head back inside, to the heated spaceport corridors that suddenly feel much more friendly than before.`
 			choice
 				`	(Look for a collar or any form of identification on the dog.)`
+					goto whodog
 				`	(Look for someone to ask about the dog.)`
 			`	After a brief search you manage to find some sort of corporate attendant, and you ask him about the stray dog.`	
 			`	The man's eyes seem to sag as you speak. Your earnest words lulling him to sleep. Once you're done he frowns, and shakes his head slowly.`
@@ -9385,6 +9386,20 @@ mission "Saga"
 					goto refuse
 				`	(Give the dog to the attendant.)`
 			`	The man tries, and fails to smile. "Thank you. I will make sure this stray mutt bothers no one else in our future." He grabs her thick husky mane and pulls her toward a nearby door. She struggles against him and whimpers, looking back at you, until at last she disappears behind a lifeless beige door.`
+				decline
+			
+			label refuse
+			`	You step between the man and the dog. "No."`
+			`	The man's mouth twitches with irritation. "Fine. Then it's your problem. Take that dog and leave."`
+			`	He stomps off leaving you and the dog alone in the spaceport corridor.`
+			choice
+				`	(Look for a collar or any form of identification on the dog.)`
+
+			label whodog
+			`	On closer inspection you find a worn stones beaded through thread around the dog's neck in a style you recognize as being unique to the Skadenga. The carven letters spell out the name 'SAGA'.`
+			`	It appears Saga once belonging to the Skadenga and has been left behind in their move.`
+			choice
+				
 
 
 
