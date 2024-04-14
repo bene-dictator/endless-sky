@@ -1,4 +1,4 @@
-# Copyright (c) 2024 by Michael Zahniser and Benedykt Staples
+# Copyright (c) 2024 by bene_dictator and MasterOfGrey
 #
 # Endless Sky is free software: you can redistribute it and/or modify it under the
 # terms of the GNU General Public License as published by the Free Software
@@ -10,7 +10,6 @@
 #
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
-
 
 event "contractor expansion begins"
 	date 18 7 3014
@@ -28,18 +27,56 @@ event "contractor timer"
 mission "contractor expansion"
 	landing
 	source
-		government "Republic"
-		government "Syndicate"
+		government "Republic" "Syndicate"
 	to offer
 		has "event: contractor timer"
 	on offer
 		log "The Republic Navy appears to have opened up expanded options for hiring contractors to perform security tasks."
 		conversation
-			`As you come in to land you glance at the local bulletins as per usual. To your surprise though, among the standard weather advisories for small ships and featured deals on trade goods or local services, there is a pilot-only bulletin from the Navy. Or more specifically, a bulletin from the local traffic control on behalf of the Navy. It seems that they've given their various contract management officers more scope to hire pilots for odd jobs, and while that's not been announced it seems to be a poorly kept secret, at least among pilots.`
+			`As you come in to land you glance at the local bulletins as per usual. To your surprise, though, among the standard weather advisories for small ships and featured deals on trade goods or local services there is a pilot-only bulletin from the Navy. Or more specifically, a bulletin from the local traffic control on behalf of the Navy. It seems that they've given their various contract management officers more scope to hire independent captains for odd jobs, and while that's not been announced it seems to be a poorly kept secret, at least among merchants.`
 				decline
 
 
-mission "Republic Bounty 1"
+
+# Melgrew
+mission "Republic North 0"
+	job
+	name "Request for Navy Volunteers"
+	description "The commander of <destination> is looking to contract independent captains to perform auxiliary work for the Northern Fleet of the Republic Navy. Interested captains are to register their interest by accepting this offer, then report to the Navy liaison office, located in the station's spaceport."
+	clearance
+	to offer
+		# has "mission: contractor expansion: offered"
+		not "start of hostilities"
+		not "chosen sides"
+	source
+		government "Republic" "Syndicate"
+		near "Triton Station" 10
+	destination "Triton Station"
+	to complete
+		or
+			has "mission: Republic North Resupply 1: offered"
+			has "mission: Republic North Escort 1: offered"
+
+
+mission "Republic North Resupply 1"
+	name "Resupply Navy base on <planet>"
+	description "A Navy commander named Jane Melgrew has asked you to participate in a resupply convoy for the Navy. Transport <cargo> to <destination>."
+	to offer
+		has "Republic Melgrew 0: active"
+		or
+			has "ships: Transport"
+			has "ships: Light Freighter"
+			has "ships: Heavy Freighter"
+			has "ships: Star Liner"
+			has "ships: Utility"
+	on offer
+		conversation
+			`You walk into the Navy liaison office...`
+
+
+
+# Shah
+mission "Republic South Bounty 1"
 	name "Republic Bounty Hunting"
 	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
 	minor
@@ -79,7 +116,7 @@ mission "Republic Bounty 1"
 			`The commander greets you upon landing, seeming pleasantly surprised by your return. "The Republic needs more captains like you. Hopefully this payment of <payment> will be enough to convince you to help us out the next time." You nod. "Captain <last>, correct?" he says, and barely gives you enough time to agree before he continues speaking. "Right. I'm Commander Kent, in case I didn't introduce myself. I'll be keeping an eye out for you in case we ever need more assistance."`
 
 
-mission "Republic Bounty 2"
+mission "Republic South Bounty 2"
 	name "Republic Bounty Hunting"
 	description `Kill a known criminal aboard the <npc>, which was last spotted in the Alnasl system.`
 	source
@@ -133,7 +170,7 @@ event "rep bounty cooldown"
 #These logs are outdated
 
 
-mission "Republic Bounty 3"
+mission "Republic South Bounty 3"
 	name "Republic Bounty Hunting"
 	description `Disable the <npc> which seems to be holding merchants for ransom. Do not destroy or attempt to capture the ship. It was last spotted in the Tais system.`
 	source
@@ -174,50 +211,54 @@ mission "Republic Bounty 3"
 
 
 
-mission "Republic Scouting 1"
-	name "Hyperspace Relay Testing"
-	description "Fly through the <waypoints> systems, then report to <destination> so the Navy can analyze the network connectivity of your logs."
+mission "Republic North Recon 1A"
+	name "Asset Deployment"
+	description `Deploy some "assets," provided to you by a Navy commander named Amelia Shah, in the <waypoints> systems. After you have done so, report to <destination>.`
 	minor
-	waypoint "Hassaleh"
-	waypoint "Sumar"
-	waypoint "Cardax"
-	waypoint "Volax"
+	waypoint "Wei"
+	waypoint "Alnasl"
+	waypoint "Eber"
+	waypoint "Alpha Arae"
 	source
 		government "Republic"
-		attributes "paradise"
-	destination "Farpoint"
+		near "Alioth" 3
+		has attributes "dirt belt"
+		not planet "New Iceland"
+	destination "New Iceland"
 	to offer
-		has "contractor expansion: declined"
+		# has "contractor expansion: declined"
 		not "chosen sides"
-		random < 60
-
 	on offer
 		conversation
-			`As you wander the spaceport you overhear a woman in a Navy uniform telling a bored-looking merchant about sensor buoys in the empty systems to the north.`
+			`As you wander the spaceport you overhear a woman in a Navy uniform telling a bored-looking merchant about sensor buoys in the empty systems to the south.`
 			`	"That sounds interesting," the merchant tells her, "but I've got a cargo bay full of medical supplies headed the other direction."`
-			`	"Also an important mission, I wish you safe travels," she replies.`
+			`	"Also an important mission. I wish you safe travels," she replies.`
 			choice
 				`	(Ask her what's going on.)`
 				`	(Walk away.)`
 					decline
+
 			`	"Do you need help with something?" you ask the Navy officer, interested, as the other merchant captain walks away.`
-			`	"Oh yes," she replies brightly. "We need to replace some assets along the patrol route between Farpoint and Maelstrom, but they can't come from a Navy ship or it rather defeats the purpose. I'd need someone to fly through and jettison some things inconspicuously."`
+			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it rather defeats the purpose. I'd need someone to fly through and jettison some 'trash' inconspicuously."`
 			choice
 				`	"Sounds simple enough."`
 				`	"Sorry, I won't be able to help you either."`
 					decline
-			`	"Excellent." She smiles. "I'm Commander Jane Melgrew, by the way. Thank you for your help."`
+
+			`	"Excellent." She smiles. "I'm Commander Amelia Shah, by the way. Thank you for your help."`
 				accept
 	on waypoint
-		dialog `As you watch the last load of "trash" get dumped into space you finally catch sight of the assets you've been delivering on your sensors, though only briefly and only because you'd pointed them right at them. It seems you've been dropping off stealthy sensor buoys.`
+		dialog `As you watch the last load of "trash" get dumped into space you finally catch sight of the assets you've been delivering on your sensors, though only briefly and only because you pointed your sensors right at them. It seems you've been dropping off stealthy sensor buoys.`
 	on complete
 		payment 30000
 		log `Volunteered to help deploy some "assets" for the Republic. They were stealth sensor buoys.`
 		conversation
-			`As you land on <destination>, Jane approaches you again. "Thank you on behalf of not only the Republic, but especially the Navy personnel who work in that area. I've transfered <payment> to your account."`
+			`When you land on <destination>, Amelia approaches you again. "Thank you on behalf of not only the Republic, but especially the Navy personnel who work in that area. I've transfered <payment> to your account."`
 
 
-mission "Republic Scouting 2"
+mission "Republic North Recon 1B"
+
+# Unfinished
 	landing
 	name "Cul-de-sac System Scouting"
 	description "Fly through the <waypoints> systems, then report to <destination> so the Navy can analyze your logs of pirate activity (if any)."
