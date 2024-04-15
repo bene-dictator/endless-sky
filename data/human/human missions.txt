@@ -9397,55 +9397,53 @@ mission "Saga"
 
 			label whodog
 			`	On closer inspection you find a worn stones beaded through thread around the dog's neck in a style you recognize as being unique to the Skadenga. The carven letters spell out the name 'SAGA'.`
-			`	It appears Saga once belonging to the Skadenga and has been left behind in their move.`
+			`	It appears Saga once belonged to the Skadenga and had been forgotten in their love.`
 			choice
-				
-
-
-
-
-			`	Although caked in frozen mud, it appears to be an old doll, made in the familiar Skadenga style. Perhaps, during the migration a child had dropped it.`
 			choice
-				`	(Return the doll to the Skadenga.)`
+				`	(Return Saga to the Skadenga.)`
 					goto return
-				`	(Throw it away.)`
-			`	It's clearly unwanted trash. Certainly not worth an interstellar journey. You toss it in the nearest trash.`
-			`	A sadness fills Saga's eyes as she watches, but she does not whine, and dutifully follows you, as you continue wandering around the spaceport.`
+				`	(Leave her where you found her.)`
+			`	She was probably left behind for a reason, and either way, it's not your problem. She eagerly follows you back outside, and stays when you tell her to at her makeshift spot. Though her sad eyes follow you until the spaceport doors close.`
 				decline
 			label return
-			`	Maybe this doll is important to someone. You decide to visit the Skadenga in Windblain, and see if anyone has missed it.`
+			`	Maybe Saga is important to someone. You decide to visit the Skadenga in Windblain, and see if anyone has missed her.`
 				accept
+
 	on complete
 		conversation
 			`	You land just outside the growing village of Hrithfjall. The Skadenga have been hard at work here, you see many new structures in Skadenga style. The townsfolk happily wave to you as arrive, and before long Hjlod shows up.`
 			`	"<first>!," Hjlod calls out with a laugh upon her lips. "So good of you to visit us!"`
-			`	She gives you a warm embrace, then turns to Saga, "and who might this be?"`
-			`	You tell her about Saga, how you saved her from mad sheep, and how she's become your loyal companion.`
+			`	She gives you a warm embrace, then looks down at Saga, "and who might this be?"`
+			`	You tell her about Sagam and how you found her outside the Nifel spaceport.`
 			`	Hjlod rubs Saga all over. "Sound like <first>, alvays saving someone."`
-			`	"And vhat is this?" Saga drops the doll she's been carrying at Hjlod's feet.`
-			`	"She found it on Nifel. I thought I would stop by and see if anyone was missing it." You explain.`
-			`	Hjlod picks it up. "Aye, I know it. This belong to Svanhildr, made by her grandmother Grimhilda, powerful woman. Long gone now, but important to young Svanhildr."`
-			`	With that, the blue-tattooed Hjlod turns, and starts walking to toward the coast, where numerous Skadenga youths are practicing their new sailing skills. "Come," Hjlod says,"Ve return doll."`
+			`	 "I know her. She belong to young Svanhildr."`
+			`	With that, the blue-tattooed Hjlod turns, and starts walking to toward the coast, where numerous Skadenga youths are practicing their new sailing skills. "Come," Hjlod says,"Ve return hund."`
 			choice
 				`	(Follow after her.)`
 			`	The white chalky shore is covered in make-shift rafts, dinghies, and other small boats. The Skadenga youth appear to have traded in their skies and snow-shoes of Nifel, for the water-craft of Windblain.`
-			`	A few weathered members of the native Ran's Folk, appear to be instructing and aiding the enthusiastic Skadenga. Few pay any notice to you, Hjlod, or Saga as you near them.`
-			`	"Svanhildr!" Hjlod hollers into the crowd, and a few moments later a small, gray-eyed teenaged girl, hurries toward to you.`
+			`	A few weathered members of the native Ran's Folk appear to be instructing and aiding the enthusiastic Skadenga. None pay any notice to you, Hjlod, or Saga as you near them.`
+			`	"Svanhildr!" Hjlod hollers into the crowd, and a few moments later a small, gray-eyed teenaged girl hurries toward to you.`
 			`	"Aye, drottning. Vhat can I help you vith?" Svanhildr says in careful, respectful tones.`
-			`	"My little dros, no need to be formal. This hund has brought you something." Hjlod offers the doll to Svanhildr.`
-			`	Svanhildr quickly snatches up the doll, holds it tightly against her chest, and squeals, "My little Grima, you've returned her!"`
-			`	Svanhildr's eyes water as she holds the doll close, and then gradually remembers she is not alone. "Oh, thank you! Thank you! I never thought I'd see her again. Ve left so much behind. So, much lost. This is all I have of my grandmother. This is everything."`
-			`	Saga, excited by all the activity, jumps up on Svanhildr. The girl promptly pets and whispers sweet nothings to the happy dog.`
-			`	After a few moments of lavishing attention on Saga, Svanhildr looks up, "She's so vonderful, and she deserves treat. Please, can I play vith her on beach?"`
+			`	"My little dros, no need to be formal. <first> has brought you something." Hjlod nods toward the dog beisde you.`
+			`	Svanhildr quickly lunges at Saga, holds her tightly against her chest, and squeals, "My little Saga, you've returned her!"`
+			`	Svanhildr's eyes water as she holds the dog close, and then gradually remembers she is not alone. "Oh, thank you! Thank you! I never thought I'd see her again. Ve left so much behind. So, much lost."`
+			`	Saga excitedly jumps up on Svanhildr and licks her face. The girl promptly pets and whispers sweet nothings to the happy dog.`
+			`	After a few moments of lavishing attention on Saga, Svanhildr looks up, "She's so vonderful, Thank you!"`
 			choice
-				`	(Let Saga spend the day playing on the beach with the Skadenga youth.)`
+				`	"You're welcome."`
+				`	"My pleasure."`
+				`	"Nothing you wouldn't do."`
+				`	"Yeah, don't go losing anything else."`
+				`	"Just take care of her this time."`
+			choice
+				`	(Spend some time with the Skadenga)`
 					goto beachday
-				`	(Take Saga back to your ship.)`
-			`	You thank the girl for her offer, and explain that you have other places to be. The girl accepts your excuse, and runs off with her doll. Hjlod accompanies you back to your ship, talking, and reminiscing. She makes you promise to visit her again, gives you another hug, and bids you, and Saga farewell.`
+				`	(Take your leave.)`
+			`	You watch the girl run off with her dog toward the sparkling beach, and then say make your farewells to Hjlod. She accompanies you back to your ship, talking, and reminiscing. She makes you promise to visit her again, gives you another hug, and bids farewell.`
 				decline
 			label beachday
-			`	Saga, and Svanhildr run off together toward the beach and the other kids. While Saga is off playing, Hjlod gives you a tour of the town. You meet new faces and old. You learn how the Ran's Folk, and Skadenga have begun merging into a new vibrant community.`
-			`	Before you know it the day has come to an end. Hjlod and you walk back down the beach where you find the kids laughing, giggling, and yelling happily around a bonfire. At the center of it all is Saga, who has been adopted as some sort of mascot, and looks happier than you've ever seen her.`
+			`	Svanhildr and Saga run off together toward the beach and the other kids. While they are playing, Hjlod gives you a tour of the town. You meet new faces and old. You learn how the Ran's Folk, and Skadenga have begun merging into a new vibrant community.`
+			`	Before you know it the day has come to an end. Hjlod and you walk back down the beach where you find the kids laughing, giggling, and yelling happily around a bonfire. At the center of it all is Saga, who has been adopted as some sort of mascot, and looks happy and at home.`
 			`	Svanhildr jogs over to you and Hjlod.`
 			`	She bows her head, "Drottning, could I make request?"`
 			`	Hjlod raises an eyebrow, "Request? Aye."`
