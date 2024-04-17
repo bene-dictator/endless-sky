@@ -38,7 +38,7 @@ mission "contractor expansion"
 
 
 
-# Melgrew
+# Melgrew Part 1
 mission "Republic North 0"
 	job
 	name "Request for Navy Volunteers"
@@ -75,7 +75,124 @@ mission "Republic North Resupply 1"
 
 
 
-# Shah
+mission "Republic North Escort 1"
+	name "Escort convoy to <planet>"
+	description "A Navy commander named Jane Melgrew has asked you to escort a resupply convoy for the Navy. Transport <cargo> to <destination>."
+	to offer
+		has "Republic Melgrew 0: active"
+		or
+			has "ships: Interceptor"
+			has "ships: Light Warship"
+			has "ships: Medium Warship"
+			has "ships: Heavy Warship"
+			has "ships: Superheavy"
+	on offer
+		conversation
+			`You walk into the Navy liaison office...`
+
+
+
+# Shah Part 1
+mission "Republic South Recon 1A"
+	minor
+	name "Navy Asset Deployment"
+	description `Deploy some "assets," provided to you by a Navy commander named Amelia Shah, in the <waypoints> systems. After you have done so, go to <destination>.`
+	waypoint "Wei"
+	waypoint "Alnasl"
+	waypoint "Eber"
+	waypoint "Alpha Arae"
+	source
+		government "Republic"
+		near "Alioth" 3
+		has attributes "dirt belt"
+		not planet "New Iceland"
+	destination "New Iceland"
+	to offer
+		# has "contractor expansion: declined"
+		not "chosen sides"
+		random < 40
+	on offer
+		conversation
+			`As you wander the spaceport you overhear a woman in a Navy uniform telling a bored-looking merchant about sensor buoys in the empty systems to the south.`
+			`	"That sounds interesting," the merchant tells her, "but I've got a cargo bay full of medical supplies headed the other direction."`
+			`	"Also an important mission. I wish you safe travels," she replies.`
+			choice
+				`	(Ask her what's going on.)`
+				`	(Walk away.)`
+					decline
+
+			`	"Do you need help with something?" you ask the Navy officer, interested, as the other merchant captain walks away.`
+			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it rather defeats the purpose. I need someone to fly through and jettison some 'trash' inconspicuously."`
+			choice
+				`	"Sounds simple enough."`
+				`	"Sorry, I won't be able to help you either."`
+					decline
+
+			`	"Excellent. Once you're done, report to my base on <planet>." She smiles. "Thank you for your help."`
+				accept
+
+	on waypoint
+		dialog `As you watch the last load of "trash" get dumped into space you finally catch sight of the assets you've been delivering on your sensors, though only briefly and only because you pointed your sensors right at them. It seems you've been dropping off stealth sensor buoys.`
+
+	on complete
+		payment 30000
+		log `Volunteered to help deploy some "assets" for the Republic in the uninhabited systems south of Seginus. They were stealth sensor buoys.`
+		conversation
+			`The Navy officer contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. If you are interested in more work with the Republic, report to our liaison office in the <planet> spaceport in a couple hours."`
+
+
+mission "Republic South Recon 1B"
+	minor
+	name "Cul-de-sac System Scouting"
+	description "Fly through the <waypoints> systems, then report to <destination> so the Navy can analyze your logs of pirate activity (if any)."
+	waypoint "Hintar"
+	waypoint "Orvala"
+	waypoint "Naper"
+	waypoint "Boral"
+	source
+		government "Republic"
+		near "Peacock" 3
+	destination "New Iceland"
+	to offer
+		# has "contractor expansion: declined"
+		not "chosen sides"
+		random < 40
+
+	on offer
+		conversation
+			``
+
+			`Upon landing you find a message waiting for you in the buffer. It appears to be from Jane, the Navy commander who asked you to fly through some uninhabited systems to the north.`
+			`	"I need some data from a few dead end systems," it reads. "There might be some pirate fleets in the area but I just need logs this time. You seem to be capable of acting with discretion, so if you're interested, let me know and then bring the logs to me on Hestia."`
+			choice
+				`	(Reply in the affirmative.)`
+					accept
+				`	(Reply in the negative.)`
+					decline
+	on complete
+		payment 40000
+		log
+
+		#log "People" "Jane Melgrew" "Jane Melgrew is a Navy commander who seems to mostly deal in contracting information gathering services that are inconvenient for the Navy to do themselves."
+		#conversation
+		#	`You message Commander Melgrew upon landing and transfer your sensor logs to her. She thanks you for your work, and pays you <payment>.`
+		#	`	Before ending the call she informs you that she will undoubtedly let you know when she has more work.`
+
+mission "Republic South Recon 2"
+	name "Southern Pirate Surveillance"
+	source "New Iceland"
+	to offer
+		or
+			has "Republic South Recon 1A: done"
+			has "Republic South Recon 1B: done"
+	on offer
+		conversation
+			`As you reach the Navy liaison office in the spaceport you're flagged down by a Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
+			choice
+				`	"That's me."`
+			`"Good, good. I'm Commander Amelia Shah. I've been keeping an eye out for a captain who's willing to take some risks," she says in a quick, clipped tone. "We need you to fly through the systems around Shaula"`
+
+
 mission "Republic South Bounty 1"
 	name "Republic Bounty Hunting"
 	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
@@ -163,13 +280,10 @@ mission "Republic South Bounty 2"
 		event "rep bounty cooldown" 30
 		dialog `Commander Shah contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. I'll be in touch should I have need of you again."`
 
+
 event "rep bounty cooldown"
 
-#		log "People" "Amelia Shah" "Amelia Shah is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. She seems to be unaffiliated with the Navy."
-#		log "People" "Anton Kent" "Anton Kent is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. He seems to be unaffiliated with the Navy."
-#These logs are outdated
-
-
+# Shah Part 2
 mission "Republic South Bounty 3"
 	name "Republic Bounty Hunting"
 	description `Disable the <npc> which seems to be holding merchants for ransom. Do not destroy or attempt to capture the ship. It was last spotted in the Tais system.`
@@ -184,112 +298,39 @@ mission "Republic South Bounty 3"
 
 	on offer
 		conversation
-			`As you wander the spaceport you hear a powerful voice cut through the crowds, calling your name. You turn to find the voice in question belongs to none other than Commander Shah. "Captain <last>, the Republic has another job for you. It's different than the last one but I'm sure you'll be interested."`
+			`As you wander the spaceport you hear a powerful voice cut through the crowds, calling your name. You turn to find the voice in question belongs to none other than Commander Shah. "Captain <last>, the Republic has another job for you. It's different than the last one, but I'm sure you'll be interested."`
 			choice
 				`	"Sure, what do I have to do?"`
 				`	"Sorry, I'm a bit busy right now."`
 					defer
+
 			`	"A ship named the <npc> has captured a number of wealthy merchants and is holding them for ransom. While this should not be a job for an ordinary contractor, there are concerns that they might kill the hostages if approached by a ship flying Republic colors. You will disable the ship and return to me immediately."`
 			choice
 				`	"Consider it done."`
 				`	"I'm sorry, but I can't deal with problems like that."`
 					decline
+
 			`	Captain Shah gives a small, relieved nod. "The ship was last spotted in Tais. We believe it is still there."`
 				accept
+
 	npc disable
 		personality heroic staying nemesis target
 		government Bounty
 		system "Tais"
 		ship "Falcon (Heavy)" "Gediminas"
 		dialog `The <npc> has been disabled. You can claim the bounty payment by returning to <destination>.`
+
 	on complete
-		log `Hunted and disabled a pirate ship called the "<npc>," which has captured multiple merchant captains. The ship was loitering in the Tais system attempting to extract ransom. Commander Shah seems to have developed a good opinion of my abilities.`
+		log `Hunted and disabled a pirate ship called the "<npc>," which has captured multiple merchant captains. The ship was loitering in the Tais system, attempting to extract ransom. Commander Shah seems to have developed a good opinion of my abilities.`
 		"assisted republic" ++
 		payment 250000
 		conversation
 			`Soon after you land, Captain Shah contacts you. "The hostages were recovered safely," she says, with a smile. "The Republic expresses its gratitude. Since you are no doubt interested in more tangible benefits, <payment> have been transferred to your account by way of this gratitude. Further, you should know I have recorded an endorsement in your file that you can be counted on."`
 
 
-
-mission "Republic North Recon 1A"
-	name "Asset Deployment"
-	description `Deploy some "assets," provided to you by a Navy commander named Amelia Shah, in the <waypoints> systems. After you have done so, report to <destination>.`
-	minor
-	waypoint "Wei"
-	waypoint "Alnasl"
-	waypoint "Eber"
-	waypoint "Alpha Arae"
-	source
-		government "Republic"
-		near "Alioth" 3
-		has attributes "dirt belt"
-		not planet "New Iceland"
-	destination "New Iceland"
-	to offer
-		# has "contractor expansion: declined"
-		not "chosen sides"
-	on offer
-		conversation
-			`As you wander the spaceport you overhear a woman in a Navy uniform telling a bored-looking merchant about sensor buoys in the empty systems to the south.`
-			`	"That sounds interesting," the merchant tells her, "but I've got a cargo bay full of medical supplies headed the other direction."`
-			`	"Also an important mission. I wish you safe travels," she replies.`
-			choice
-				`	(Ask her what's going on.)`
-				`	(Walk away.)`
-					decline
-
-			`	"Do you need help with something?" you ask the Navy officer, interested, as the other merchant captain walks away.`
-			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it rather defeats the purpose. I'd need someone to fly through and jettison some 'trash' inconspicuously."`
-			choice
-				`	"Sounds simple enough."`
-				`	"Sorry, I won't be able to help you either."`
-					decline
-
-			`	"Excellent." She smiles. "I'm Commander Amelia Shah, by the way. Thank you for your help."`
-				accept
-	on waypoint
-		dialog `As you watch the last load of "trash" get dumped into space you finally catch sight of the assets you've been delivering on your sensors, though only briefly and only because you pointed your sensors right at them. It seems you've been dropping off stealthy sensor buoys.`
-	on complete
-		payment 30000
-		log `Volunteered to help deploy some "assets" for the Republic. They were stealth sensor buoys.`
-		conversation
-			`When you land on <destination>, Amelia approaches you again. "Thank you on behalf of not only the Republic, but especially the Navy personnel who work in that area. I've transfered <payment> to your account."`
-
-
-mission "Republic North Recon 1B"
-
-# Unfinished
-	landing
-	name "Cul-de-sac System Scouting"
-	description "Fly through the <waypoints> systems, then report to <destination> so the Navy can analyze your logs of pirate activity (if any)."
-	waypoint "Regulus"
-	waypoint "Fingol"
-	waypoint "Nocte"
-	waypoint "Ipsing"
-	source
-		government "Republic"
-	destination "Hestia"
-	to offer
-		has "Republic Scouting 1: done"
-		not "chosen sides"
-		random < 40
-
-	on offer
-		conversation
-			`Upon landing you find a message waiting for you in the buffer. It appears to be from Jane, the Navy commander who asked you to fly through some uninhabited systems to the north.`
-			`	"I need some data from a few dead end systems," it reads. "There might be some pirate fleets in the area but I just need logs this time. You seem to be capable of acting with discretion, so if you're interested, let me know and then bring the logs to me on Hestia."`
-			choice
-				`	(Reply in the affirmative.)`
-					accept
-				`	(Reply in the negative.)`
-					decline
-	on complete
-		payment 40000
-		log "People" "Jane Melgrew" "Jane Melgrew is a Navy commander who seems to mostly deal in contracting information gathering services that are inconvenient for the Navy to do themselves."
-		conversation
-			`You message Commander Melgrew upon landing and transfer your sensor logs to her. She thanks you for your work, and pays you <payment>.`
-			`	Before ending the call she informs you that she will undoubtedly let you know when she has more work.`
-
+#		log "People" "Amelia Shah" "Amelia Shah is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. She seems to be unaffiliated with the Navy."
+#		log "People" "Anton Kent" "Anton Kent is a Republic official assigned to keep an eye on the systems bordering the Free Worlds. He seems to be unaffiliated with the Navy."
+#These logs are outdated
 
 mission "Republic Scouting 3"
 	name "Navy Reconnaissance"
