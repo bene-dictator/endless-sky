@@ -96,7 +96,7 @@ mission "Republic North Escort 1"
 mission "Republic South Recon 1A"
 	minor
 	name "Navy Asset Deployment"
-	description `Deploy some "assets," provided to you by a Navy commander named Amelia Shah, in the <waypoints> systems. After you have done so, go to <destination>.`
+	description `Deploy some "assets," provided to you by a Navy officer, in the <waypoints> systems. After you have done so, go to <destination>.`
 	waypoint "Wei"
 	waypoint "Alnasl"
 	waypoint "Eber"
@@ -104,7 +104,7 @@ mission "Republic South Recon 1A"
 	source
 		government "Republic"
 		near "Alioth" 3
-		has attributes "dirt belt"
+		attributes "dirt belt"
 		not planet "New Iceland"
 	destination "New Iceland"
 	to offer
@@ -121,14 +121,14 @@ mission "Republic South Recon 1A"
 				`	(Walk away.)`
 					decline
 
-			`	"Do you need help with something?" you ask the Navy officer, interested, as the other merchant captain walks away.`
+			`	"Do you need help with something?" you ask the Navy officer as the other merchant captain walks away.`
 			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it rather defeats the purpose. I need someone to fly through and jettison some 'trash' inconspicuously."`
 			choice
 				`	"Sounds simple enough."`
 				`	"Sorry, I won't be able to help you either."`
 					decline
 
-			`	"Excellent. Once you're done, report to my base on <planet>." She smiles. "Thank you for your help."`
+			`	She smiles. "Excellent. Once you're done, report to my base on <planet>."`
 				accept
 
 	on waypoint
@@ -138,7 +138,7 @@ mission "Republic South Recon 1A"
 		payment 30000
 		log `Volunteered to help deploy some "assets" for the Republic in the uninhabited systems south of Seginus. They were stealth sensor buoys.`
 		conversation
-			`The Navy officer contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. If you are interested in more work with the Republic, report to our liaison office in the <planet> spaceport in a couple hours."`
+			`The Navy officer contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. If you are interested in more work with the Republic, report to our liaison office in the <planet> spaceport."`
 
 
 mission "Republic South Recon 1B"
@@ -178,28 +178,114 @@ mission "Republic South Recon 1B"
 		#	`You message Commander Melgrew upon landing and transfer your sensor logs to her. She thanks you for your work, and pays you <payment>.`
 		#	`	Before ending the call she informs you that she will undoubtedly let you know when she has more work.`
 
+
 mission "Republic South Recon 2"
-	name "Southern Pirate Surveillance"
+	name "Southern Surveillance"
+	description "A Republic commander named Amelia Shah has asked you to scan some freighters in the <waypoints> system, then return to <origin>. At least two of the freighters need to be scanned for Shah to be satisfied."
 	source "New Iceland"
+	waypoint Lesath
 	to offer
-		or
-			has "Republic South Recon 1A: done"
-			has "Republic South Recon 1B: done"
+#		or
+#			has "Republic South Recon 1A: done"
+#			has "Republic South Recon 1B: done"
+
 	on offer
 		conversation
-			`As you reach the Navy liaison office in the spaceport you're flagged down by a Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
+			`As you reach the Navy liaison office in the <origin> spaceport you're flagged down by a Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
 			choice
 				`	"That's me."`
-			`"Good, good. I'm Commander Amelia Shah. I've been keeping an eye out for a captain who's willing to take some risks," she says in a quick, clipped tone. "We need you to fly through the systems around Shaula"`
+
+			`	"Good, good. I'm Commander Amelia Shah. I've been keeping an eye out for a captain who's willing to take some risks," she says in a quick, clipped tone. "We need you to scan the cargo of some freighters going towards Tarazed without getting intercepted by pirates. Does that sound reasonable?"`
+			choice
+				`	"I can do that."`
+				`	"Sorry, that sounds like too much for me."`
+					decline
+
+			`	"Brilliant." She hands you a data chip. "This chip contains the identifiers for the ships we'd like you to scan. Now, we expect the freighters to be in the <waypoints> system. You don't have to scan all of them; just get data from at least two of the ships, and then return to us on <origin>. Of course, the more freighters you scan, the better.`
+			`	"If you don't have a cargo scanner, you can get one at the outfitter on Dancer. The systems down here are particularly frequented by pirates, so good luck."`
+				accept
+
+	to complete
+		"republic south recon 2 scanned ships" = 2
+
+	on visit
+		dialog `You haven't scanned all the cargo ships Commander Shah asked you to! Return here when you've scanned them.`
+
+	on complete
+		payment 45000 + 10000 * "republic south recon 2 scanned ships"
+		conversation
+			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance; I've transferred <payment> into your account. If you want to continue helping us, meet me in the liaison office in a couple hours for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
+
+	npc
+		personality uninterested target staying
+		system Lesath
+		government Merchant
+		"cargo settings"
+			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+		on "scan cargo"
+			"republic south recon 2 scanned ships" ++
+		fleet
+			names "civilian"
+			variant
+				"Bastion"
+
+	npc
+		personality uninterested target staying
+		system Lesath
+		government Merchant
+		"cargo settings"
+			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+		on "scan cargo"
+			"republic south recon 2 scanned ships" ++
+		fleet
+			names "civilian"
+			variant
+				"Hauler III"
+
+	npc
+		personality uninterested target staying
+		system Lesath
+		government Merchant
+		"cargo settings"
+			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+		on "scan cargo"
+			"republic south recon 2 scanned ships" ++
+		fleet
+			names "civilian"
+			variant
+				"Hauler II"
+
+	npc
+		personality uninterested target staying
+		system Lesath
+		government Merchant
+		"cargo settings"
+			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+		on "scan cargo"
+			"republic south recon 2 scanned ships" ++
+		fleet
+			names "civilian"
+			variant
+				"Behemoth"
+
+	npc
+		government "Pirate"
+		personality plunders staying
+		system "Lesath"
+		fleet "Large Southern Pirates" 2
+
+	npc
+		government "Pirate"
+		personality plunders staying
+		system "Lesath"
+		fleet "Small Southern Pirates" 4
 
 
 mission "Republic South Bounty 1"
 	name "Republic Bounty Hunting"
 	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
 	minor
-	source
-		government "Republic"
-		attributes "dirt belt"
+	source "Clark"
 	to offer
 		has "contractor expansion: declined"
 		"combat rating" > 40
