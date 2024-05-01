@@ -122,13 +122,13 @@ mission "Republic South Recon 1A"
 					decline
 
 			`	"Do you need help with something?" you ask the Navy officer as the other merchant captain walks away.`
-			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it rather defeats the purpose. I need someone to fly through and jettison some 'trash' inconspicuously."`
+			`	"Oh yes," she replies brightly. "We need to replace some assets in the systems between Wei and Alpha Arae, but they can't come from a Navy ship or it'd be too obvious. I need someone to fly through and jettison some 'trash' inconspicuously."`
 			choice
 				`	"Sounds simple enough."`
 				`	"Sorry, I won't be able to help you either."`
 					decline
 
-			`	She smiles. "Excellent. Once you're done, report to my base on <planet>."`
+			`	She smiles. "Excellent. Once you're done, report to the Navy base on <planet>."`
 				accept
 
 	on waypoint
@@ -138,7 +138,7 @@ mission "Republic South Recon 1A"
 		payment 30000
 		log `Volunteered to help deploy some "assets" for the Republic in the uninhabited systems south of Seginus. They were stealth sensor buoys.`
 		conversation
-			`The Navy officer contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. If you are interested in more work with the Republic, report to our liaison office in the <planet> spaceport."`
+			`Another Navy officer contacts you after you've landed. "Thank you for your assistance. If you are interested in more work with the Republic, report to our liaison office in the spaceport." He hands you a credit chip for <payment>.`
 
 
 mission "Republic South Recon 1B"
@@ -154,7 +154,7 @@ mission "Republic South Recon 1B"
 		near "Peacock" 3
 	destination "New Iceland"
 	to offer
-		# has "contractor expansion: declined"
+		has "contractor expansion: declined"
 		not "chosen sides"
 		random < 40
 
@@ -162,17 +162,17 @@ mission "Republic South Recon 1B"
 		conversation
 			``
 
-			`Upon landing you find a message waiting for you in the buffer. It appears to be from Jane, the Navy commander who asked you to fly through some uninhabited systems to the north.`
-			`	"I need some data from a few dead end systems," it reads. "There might be some pirate fleets in the area but I just need logs this time. You seem to be capable of acting with discretion, so if you're interested, let me know and then bring the logs to me on Hestia."`
-			choice
-				`	(Reply in the affirmative.)`
-					accept
-				`	(Reply in the negative.)`
-					decline
 	on complete
 		payment 40000
 		log
 
+#			`Upon landing you find a message waiting for you in the buffer. It appears to be from Jane, the Navy commander who asked you to fly through some uninhabited systems to the north.`
+#			`	"I need some data from a few dead end systems," it reads. "There might be some pirate fleets in the area but I just need logs this time. You seem to be capable of acting with discretion, so if you're interested, let me know and then bring the logs to me on Hestia."`
+#			choice
+#				`	(Reply in the affirmative.)`
+#					accept
+#				`	(Reply in the negative.)`
+#					decline
 		#log "People" "Jane Melgrew" "Jane Melgrew is a Navy commander who seems to mostly deal in contracting information gathering services that are inconvenient for the Navy to do themselves."
 		#conversation
 		#	`You message Commander Melgrew upon landing and transfer your sensor logs to her. She thanks you for your work, and pays you <payment>.`
@@ -183,15 +183,16 @@ mission "Republic South Recon 2"
 	name "Southern Surveillance"
 	description "A Republic commander named Amelia Shah has asked you to scan some freighters in the <waypoints> system, then return to <origin>. At least two of the freighters need to be scanned for Shah to be satisfied."
 	source "New Iceland"
-	waypoint Lesath
+	waypoint "Lesath"
 	to offer
-#		or
-#			has "Republic South Recon 1A: done"
-#			has "Republic South Recon 1B: done"
+		or
+			has "Republic South Recon 1A: done"
+			has "Republic South Recon 1B: done"
+			has "Republic South New Iceland Recommendation: done"
 
 	on offer
 		conversation
-			`As you reach the Navy liaison office in the <origin> spaceport you're flagged down by a Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
+			`As you reach the Navy liaison office you're flagged down by another Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
 			choice
 				`	"That's me."`
 
@@ -214,7 +215,7 @@ mission "Republic South Recon 2"
 	on complete
 		payment 45000 + 10000 * "republic south recon 2 scanned ships"
 		conversation
-			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance; I've transferred <payment> into your account. If you want to continue helping us, meet me in the liaison office in a couple hours for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
+			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance. <payment> has been credited into your account. If you want to continue helping us, meet me in the liaison office in a couple hours for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
 
 	npc
 		personality uninterested target staying
@@ -281,16 +282,20 @@ mission "Republic South Recon 2"
 		fleet "Small Southern Pirates" 4
 
 
-mission "Republic South Bounty 1"
+mission "Republic South Bounty 1 Alt"
+	minor
 	name "Republic Bounty Hunting"
 	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
-	minor
-	source "Clark"
+	source
+		government "Republic"
+		attributes "dirt belt"
+		near Alphecca 1 3
 	to offer
 		has "contractor expansion: declined"
 		"combat rating" > 40
 		not "chosen sides"
 		random < 65
+		not "Repulic South Bounty 1: offered"
 
 	on offer
 		conversation
@@ -299,11 +304,10 @@ mission "Republic South Bounty 1"
 			choice
 				`	"Sure."`
 				`	"Sorry, I'm not really into bounty hunting."`
-					defer
+					decline
+
 			`	"Much obliged," he says. "It's a ship called the <npc>. It's been a little devil, so don't let it take you off guard."`
 				accept
-	on accept
-		log `Hunted a pirate ship called the "<npc>," which has been plundering ships near Boral.`
 
 	npc kill
 		personality heroic staying nemesis target
@@ -314,6 +318,60 @@ mission "Republic South Bounty 1"
 		dialog `The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
 
 	on complete
+		log `Hunted a pirate ship called the "<npc>," which has been plundering ships near Boral.`
+		payment 175000
+		event "republic south new iceland recommendation timer" 60
+		conversation
+			`The commander greets you upon landing, seeming pleasantly surprised by your return. "The Republic needs more captains like you. Hopefully this payment of <payment> will be enough to convince you to help us out the next time." You nod. "Captain <last>, correct?" he says, and barely gives you enough time to agree before he continues speaking. "Right. I'm Commander Kent, in case I didn't introduce myself. I'll be keeping an eye out for you in case we ever need more assistance."`
+
+
+event "republic south new iceland recommendation timer"
+
+
+mission "Republic South New Iceland Recommendation"
+	name "Report to <planet>"
+	description "Commander Anton Kent has asked you to report to the Navy liaison office on <destination> to do more work for the Republic."
+	source
+		government "Republic"
+		attributes "dirt belt"
+		not planet "New Iceland"
+	destination "New Iceland"
+	to offer
+		has "Republic South Bounty 1 Alt: done"
+		not "Republic South Recon 2: offered"
+		has "event: republic south new iceland recommendation timer"
+
+	on offer
+		conversation
+			`Upon landing you find a message waiting for you in the buffer.` # It's from Kent, he's asked you go to up to New Iceland and report to the liaison office as they have some work for you.
+
+
+mission "Republic South Bounty 1"
+	name "Republic Bounty Hunting"
+	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
+	source
+		government "Republic"
+		attributes "dirt belt"
+		near Alphecca 1 3
+	to offer
+		has "Republic South Bounty 2: done"
+		not "Repulic South Bounty 1 Alt: offered"
+
+	on offer
+		conversation
+			``
+				accept
+
+	npc kill
+		personality heroic staying nemesis target
+		government Bounty
+		system
+			near Boral 1 2
+		ship "Clipper (Heavy)" "Black Fang"
+		dialog `The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
+
+	on complete
+		log `Hunted a pirate ship called the "<npc>," which has been plundering ships near Boral.`
 		payment 175000
 		conversation
 			`The commander greets you upon landing, seeming pleasantly surprised by your return. "The Republic needs more captains like you. Hopefully this payment of <payment> will be enough to convince you to help us out the next time." You nod. "Captain <last>, correct?" he says, and barely gives you enough time to agree before he continues speaking. "Right. I'm Commander Kent, in case I didn't introduce myself. I'll be keeping an eye out for you in case we ever need more assistance."`
@@ -322,13 +380,14 @@ mission "Republic South Bounty 1"
 mission "Republic South Bounty 2"
 	name "Republic Bounty Hunting"
 	description `Kill a known criminal aboard the <npc>, which was last spotted in the Alnasl system.`
-	source
-		government "Republic"
-		attributes "dirt belt"
+	source "Clark"
 	to offer
-		has "Republic Bounty 1: done"
+		or
+			has "Republic South Bounty 1: done"
+			and
+				has "Republic South Bounty 1 Alt: done"
+				has "Republic South Recon 2: done"
 		not "chosen sides"
-		random < 70
 
 	on offer
 		conversation
@@ -363,11 +422,14 @@ mission "Republic South Bounty 2"
 		dialog `The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
 	on complete
 		payment 200000
-		event "rep bounty cooldown" 30
 		dialog `Commander Shah contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. I'll be in touch should I have need of you again."`
 
 
-event "rep bounty cooldown"
+mission "Republic South Recon 3"
+
+
+mission "Republic South Recon 4"
+
 
 # Shah Part 2
 mission "Republic South Bounty 3"
