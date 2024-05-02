@@ -44,7 +44,7 @@ mission "contractor expansion"
 	source
 		government "Republic" "Syndicate"
 	to offer
-		has "event: contractor timer"
+		# has "event: contractor timer"
 	on offer
 		log "The Republic Navy appears to have opened up expanded options for hiring contractors to perform security tasks."
 		conversation
@@ -57,10 +57,10 @@ mission "contractor expansion"
 mission "Republic North 0"
 	job
 	name "Request for Navy Volunteers"
-	description "The commander of <destination> is looking to contract independent captains to perform auxiliary work for the Northern Fleet of the Republic Navy. Interested captains are to register their interest by accepting this offer, then report to the Navy liaison office, located in the station's spaceport."
+	description "The commander of <destination> is looking to contract independent captains to perform auxiliary work for the Republic Navy's Far North operations. Interested captains are to register their interest by accepting this offer, then report to the Navy liaison office, located in the station's spaceport."
 	clearance
 	to offer
-		# has "mission: contractor expansion: offered"
+		has "mission: contractor expansion: offered"
 		not "start of hostilities"
 		not "chosen sides"
 	source
@@ -307,7 +307,7 @@ mission "Republic South New Iceland Recommendation"
 
 			label "has met anton"
 			`Upon landing you find a message waiting for you in the buffer. It's from Commander Anton Kent, who contracted you to destroy the Black Fang some time ago.`
-			`	"Some of my subordinates have recommended you as a reliable contractor. We thank you again for your continued services to the Republic.`
+			`	"We thank you again for your continued services to the Republic. Some of my subordinates have recommended you as a reliable contractor, and we may require your assistance again.`
 
 			label work
 			`	"If you are interested in further work with us," it reads, "please report to the Navy liaison office in the <planet> spaceport and ask for 'Amelia Shah.' She will give you your next mission."`
@@ -356,6 +356,7 @@ mission "Republic South Recon 2"
 		conversation
 			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance. <payment> has been credited into your account. If you want to continue helping us, meet me in the liaison office in a couple hours for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
 
+	# TODO: after implementing NPC travel instructions, these ships could pass by Girtab instead of using the staying personality.
 	npc
 		government "Merchant"
 		personality uninterested target staying
@@ -421,9 +422,22 @@ mission "Republic South Recon 2"
 		fleet "Small Southern Pirates" 4
 
 
-mission "Republic South Bounty 2"
+mission "Republic South Bounty 2 Reminder"
+	landing
 	name "Republic Bounty Hunting"
-	description `Hunt down the <npc>, a pirate ship that has been assaulting miners in the Boral system.`
+	description "Commander Shah mentioned that the Republic could use your help against pirates if you choose to go to <destination>."
+	source "New Iceland"
+	destination "Clark"
+	to offer
+		has "Republic South Recon 2: done"
+	to fail
+		has "Republic South Bounty 2: offered"
+
+
+mission "Republic South Bounty 2"
+	landing
+	name "Republic Bounty Hunting"
+	description `Hunt down the "<npc>," a pirate ship that has been assaulting miners in the Boral system.`
 	source "Clark"
 	to offer
 		not "chosen sides"
@@ -433,14 +447,20 @@ mission "Republic South Bounty 2"
 		conversation
 			branch "has met anton"
 				has "Repulic South Bounty 1: offered"
-			`Anton gets to you and introduces himself. "It's great to finally meet you."`
-				goto mission
+			`After you do your service checks for the <ship>, a man in a smart Republic uniform comes up to you.`
+			`	"Hi, Captain <last>. My name's Commander Anton Kent." He shakes your hand. "It's great to finally meet you. Captains like you are in short supply."`
+				goto next
 
 			label "has met anton"
-			`Anton gets to you and is happy you kept working for the Republic.`
+			`After you do your service checks for the <ship>, Commander Kent comes up to you. "Another thanks for your continued work for the Republic," he says. "Captains like you are in short supply."`
 
-			label mission
-			`He asks you to eliminate the <npc>.`
+			label next
+			`	He turns to look at the <ship>. "So you've come to help us out with the pirates?"` # From here, needs more fleshing out.
+			choice
+				`	"Yes."`
+				`	"No."`
+					decline
+			`	"Great, we need you to eliminate the <npc>."`
 				accept
 
 	npc kill
