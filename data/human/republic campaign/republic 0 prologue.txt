@@ -164,6 +164,9 @@ mission "Republic South Bounty 1"
 		conversation
 			`The commander greets you upon landing, seeming pleasantly surprised by your return. "The Republic needs more captains like you. Hopefully this payment of <payment> will be enough to convince you to help us out the next time." You nod. "Captain <last>, correct?" he says, and barely gives you enough time to agree before he continues speaking. "Right. I'm Commander Kent, in case I didn't introduce myself. I'll give you a yell in case we ever need more assistance."`
 
+	to fail
+		has "chosen sides"
+
 
 mission "Republic South Recon 1A"
 	minor
@@ -210,6 +213,9 @@ mission "Republic South Recon 1A"
 		log `Volunteered to help deploy some "assets" for the Republic in the uninhabited systems south of Seginus. They were stealth sensor buoys.`
 		conversation
 			`Another Navy officer contacts you after you've landed. "Thank you for your assistance. If we are in need of your services in the future, we will be in contact." He hands you a credit chip for <payment>.`
+
+	to fail
+		has "chosen sides"
 
 
 mission "Republic South Recon 1B"
@@ -260,6 +266,9 @@ mission "Republic South Recon 1B"
 		log `Helped the Republic gain a count on the number of pirates operating in the eastern Dirt Belt.`
 		conversation
 			`The Navy officer comes to your ship after you've landed, and you give him your scanning logs. "Your assistance is greatly appreciated. I'll be sure to recommend you if we have any more work we'd like you to do." He hands you a credit chip for <payment>.`
+
+	to fail
+		has "chosen sides"
 
 
 mission "Republic South New Iceland Recommendation Trigger"
@@ -313,11 +322,11 @@ mission "Republic South New Iceland Recommendation"
 			`	"If you are interested in further work with us," it reads, "please report to the Navy liaison office in the <planet> spaceport and ask for 'Amelia Shah.' She will give you your next mission."`
 				accept
 
-	to fail
-		has "chosen sides"
-
 	to complete
 		has "Republic South Recon 2: active"
+
+	to fail
+		has "chosen sides"
 
 
 mission "Republic South Recon 2"
@@ -354,7 +363,10 @@ mission "Republic South Recon 2"
 	on complete
 		payment 45000 + 10000 * "republic south recon 2 scanned ships"
 		conversation
-			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance. <payment> has been credited into your account. If you want to continue helping us, meet me in the liaison office in a couple hours for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
+			`When you land Shah approaches you and takes your scanning logs. "The Republic thanks you for your assistance. <payment> has been credited into your account. If you want to continue helping us, meet me in the liaison office for another reconnaissance mission, or travel to Clark where we could use some help against the pirates."`
+
+	to fail
+		has "chosen sides"
 
 	# TODO: after implementing NPC travel instructions, these ships could pass by Girtab instead of using the staying personality.
 	npc
@@ -422,15 +434,38 @@ mission "Republic South Recon 2"
 		fleet "Small Southern Pirates" 4
 
 
+mission "Republic South Recon 3 Reminder"
+	landing
+	name "Republic Reconnaissance"
+	description "Commander Shah has another reconnaissance mission for you. When you're ready, meet her in the Navy liaison office in the <origin> spaceport."
+	source "New Iceland"
+	to offer
+		has "Republic South Recon 2: done"
+	to fail
+		has "Republic South Bounty 2: done"
+		has "chosen sides"
+	to complete
+		has "Republic South Recon 3: offered"
+
+
+mission "Republic South Recon 3"
+
+
+mission "Republic South Recon 4"
+
+
 mission "Republic South Bounty 2 Reminder"
 	landing
 	name "Republic Bounty Hunting"
-	description "Commander Shah mentioned that the Republic could use your help against pirates if you choose to go to <destination>."
+	description "If you don't want to continue doing reconnaissance work, Commander Shah mentioned that the Republic could use your help against the pirates if you go to <destination> instead."
 	source "New Iceland"
 	destination "Clark"
 	to offer
 		has "Republic South Recon 2: done"
 	to fail
+		has "Republic South Recon 2: done"
+		has "chosen sides"
+	to complete
 		has "Republic South Bounty 2: offered"
 
 
@@ -447,89 +482,137 @@ mission "Republic South Bounty 2"
 		conversation
 			branch "has met anton"
 				has "Repulic South Bounty 1: offered"
-			`After you do your service checks for the <ship>, a man in a smart Republic uniform comes up to you.`
-			`	"Hi, Captain <last>. My name's Commander Anton Kent." He shakes your hand. "It's great to finally meet you. Captains like you are in short supply."`
+			`After you do your service checks for the <ship>, you're approached by a man in a very smart Republic uniform.`
+			`	"Hi, Captain <last>. My name's Commander Anton Kent." He shakes your hand. "It's great to finally meet you. People like you are in short supply."`
 				goto next
 
 			label "has met anton"
-			`After you do your service checks for the <ship>, Commander Kent comes up to you. "Another thanks for your continued work for the Republic," he says. "Captains like you are in short supply."`
+			`After you do your service checks for the <ship>, Commander Kent comes up to you. "Hi, Captain <last>." He shakes your hand. "Another thanks for your continued work for the Republic," he says with a smile. "People like you are in short supply."`
 
 			label next
-			`	He turns to look at the <ship>. "So you've come to help us out with the pirates?"` # From here, needs more fleshing out.
+			`	He turns to have a look at the <ship>. "So, you've come to help us out with the pirates?" He doesn't wait for your response and continues on. "Well, there's a specific target we'd like you to hit today, since you've proven yourself to be dependable."`
+			`	Anton looks back at you. "This one's a Bastion named the <npc>; they've been hiding out near the Boral system and making the lives of some mining vessels very hard recently. What do you say?"`
 			choice
-				`	"Yes."`
-				`	"No."`
-					decline
-			`	"Great, we need you to eliminate the <npc>."`
-				accept
+				`	"I'm on it."`
+					accept
+				`	"Sorry, I'm not interested in this sort of work."`
+					goto "not interested"
+
+			label "not interested"
+			branch "has done south bounty 1"
+				has "Republic South Bounty 1: done"
+			`	"Oh. That's unfortunate," Kent replies. "Well, we will note that on your contractor file. Have a good day." He walks away.`
+				decline
+
+			label "has done south bounty 1"
+			`	"Oh. That's a shame, especially after the work you did eliminating the Black Fang," Kent replies. "Well, we will note that on your contractor file. Have a good day." He walks away.`
+				decline
 
 	npc kill
 		personality heroic staying nemesis target
 		government Bounty
 		system
 			near "Boral" 1 2
-		ship "Argosy (Proton)" "New Sensations"
+		ship "Bastion (Heavy)" "Amphithere"
 		dialog `The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
 
 	on complete
 		log `Hunted a pirate ship called the "<npc>," which has been plundering ships near Boral.`
 		payment 175000
 		conversation
-			`<payment>.`
+			`As you land you get a message from Commander Kent, telling you that <payment> has been deposited into your account and that he will contact you if more bounty opportunities arise.`
+
+	to fail
+		has "chosen sides"
+
+
+mission "Republic South Bounty 3 Notification"
+	landing
+	name "Report to <planet>"
+	description `Commander Kent requests your services again on <destination>. Report there at your earliest convenience.`
+	source
+		government "Republic"
+		attributes "dirt belt"
+		near "Seginus" 1 5
+	to offer
+		not "chosen sides"
+		has "Republic South Bounty 2: done"
+		or
+			random < 25
+			and
+				has "flagship planet: Clark"
+				random < 65
+
+	on offer
+		conversation
+			`When you land, you recieve a message from Commander Anton Kent. It reads, "Captain <last>, we are in need of your services again. Please report to our liaison office in <planet>'s spaceport at your earliest convenience."`
+
+	to complete
+		has "Republic South Bounty 3: offered"
 
 
 mission "Republic South Bounty 3"
 	name "Republic Bounty Hunting"
-	description `Kill a known criminal aboard the <npc>, which was last spotted in the Alnasl system.`
+	description `Eliminate the "Rat Pack", a fleet of interceptors which were last detected in the Alnasl system.`
 	source "Clark"
 	to offer
 		not "chosen sides"
-		has "Republic South Bounty 2: done"
-
+		has "Republic South Bounty 3 Notification: active"
 	on offer
 		conversation
-#			`Before you can decide where you want to go in the spaceport, you are flagged down by a Republic officer. This time, they're a dour woman with black hair in a tight bun. "Captain <last>?" she asks.`
-#			choice
-#				`	"That's me."`
-#			`"Good, good. I'm Commander Amelia Shah. I've been keeping an eye out for someone to deal with a little problem for us," she says in a quick, clipped tone. "We've been made aware that a notable criminal has been spotted near Alnasl and our system flagged you for being listed as a mercenary. He is wanted dead."`
-#			choice
-#				`	"Dead. Got it."`
-#				` 	"You have an interesting way of asking."`
-#					goto asking
-#				`	"I'm a merchant, not a hitman."`
-#					goto killer
-#			`	Captain Shah grins. "He's aboard a ship named the <npc>. I expect to see you back soon."`
-#				accept
-#			label killer
-#			`	"Your file led me to believe otherwise," says Shah. "Either way, we will be sure to update our record and will be working with other contractors in the future."`
-#				decline
-#			label asking
-#			`	She raises one severe eyebrow at you skeptically. "It's a fairly straightforward offer. I won't try to convince you if you're not interested."`
-#			choice
-#				`	"Okay, I'll do it."`
-#					accept
-#				`	"Thank you, but I'm not interested in this kind of work."`
-#					decline
+			`You find Anton waiting for you in the Navy liaison office. "Captain <last>! Good to see you again." He gets up from his desk and walks up to you, smiling. "Now, I've got another bounty for you to do," he says.`
+			`	"We've recently set up a surveillance network covering the uninhabited systems to the south of here, and it's beginning to pay dividends. It's recently flagged a fleet of pirate interceptors that've been hiding out in secessionist space for the past few months, and now they're causing problems for us here. Want to take them out?"`
+			choice
+				`	"You got it."`
+				`	"Do you have any more details on the pirate fleet?"`
+					goto details
+				`	"I'm not interested in doing more bounty hunting work."`
+					decline
+
+			`	"Great! Before you go, I should mention that the pirate fleet is named the 'Rat Pack,' with appropriate names to match; and that they were last detected in the Alnasl system.`
+			`	"They're specialized in swarm tactics, so try and take them out one-by-one. Good luck."`
+				accept
+
+			label details
+			`	"The fleet's made up of six interceptors with a number of modifications done to them, though nothing extensive as some of the pirates that have been known to surface. Be careful, as the fleet's leader, a Hawk named 'Cluny,' uses the much maligned tactic of shoving Heavy Missiles in peoples' faces and hoping the hole they punch is enough to disable their target," Anton says.`
+			`	"Speaking of which, the pirate gang calls themselves the 'Rat Pack,' with appropriate names to match. They've been known to swarm their opponents to try and take them out; my recommendation is to isolate each interceptor and knock them out one-by-one.`
+			`	"So, what do you say?"`
+			choice
+				`	"I'll eliminate the 'Rat Pack.'"`
+				`	"Sorry, I can't take the fleet out. You'll need to find someone else."`
+					decline
+
+			`	"Great! Before you go, I should mention that they were last detected in the Alnasl system. Good luck."`
+				accept
+
 	npc kill
+		government "Bounty"
 		personality heroic staying nemesis target
-		government Bounty
 		system
+			government "Republic"
 			near "Alnasl" 1 2
-		ship "Bastion (Heavy)" "Amphithere"
-		dialog `The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
+		ship "Hawk (Rocket)" "Cluny"
+		ship "Hawk (Speedy)" "Ferret"
+		ship "Berserker (Afterburner)" "Weasel"
+		ship "Wasp (Proton)" "Vixen"
+		ship "Fury (Laser)" "Stoat"
+		ship "Sparrow" "Rat"
+		dialog `The "Rat Pack" has been eliminated. You can claim the bounty payment by returning to <destination>.`
+
 	on complete
 		payment 200000
-		dialog `Commander Shah contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. I'll be in touch should I have need of you again."`
+		dialog `Commander Kent contacts you after you've landed. "The Republic thanks you for your assistance. <payment> have been credited to your account. I'll be in touch should I have need of you again."`
 
+	to fail
+		has "chosen sides"
 
-mission "Republic South Recon 3"
-
-
-mission "Republic South Recon 4"
 
 
 # Amelia Shah Part 2
 mission "Republic South Return to New Iceland"
+	on offer
+		conversation
+			``
 
 mission "Republic South Escort 1"
 
