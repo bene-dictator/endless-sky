@@ -7020,7 +7020,7 @@ mission "war begins (Reunion on Martini)"
 			`While entering the atmosphere of Martini, you pass over the ruined capital city that sits at the end of a peninsula on the coast. Where you would normally come down for landing at Martini's pristine spaceport, the four towers of gleaming granite, there is now only one dark spire; the other three have been snapped in half like toothpicks. The rest of the capital city fared much worse, with no buildings by the spaceport surviving the explosion, and there are fires and smoke up spreading up into the horizon.`
 			branch falsehope
 				has "carolineunaware"
-			`	Despite the destruction, there is still some defiant hope in Caroline's blood-shot eyes as she stares out the window. "One of the last messages he sent me was that he had moved to one of the suburbs in the capital. Maybe he survived, maybe he managed to get to another city. Maybe he was evacuated. He could still be alive. He could. He could."` # You told her the worst, she expects the worst. She's still trying to make up excuses, though. 
+			`	Despite the destruction, there is still some defiant hope in Caroline's blood-shot eyes as she stares out the window. "One of the last messages he sent me was that he had moved to one of the suburbs in the capital. Maybe he survived, maybe he managed to get to another city. Maybe he was evacuated. He could still be alive. He could. He could. He has to be."` # You told her the worst, she expects the worst. She's still trying to make up excuses, though. 
 				goto landing
 			label falsehope
 			`	After avoiding the subject of the bombings for so long, Caroline finally looks out the window and over the city. Her face is ashen, her eyes dark, she says nothing.` # You avoided telling her about how bad the bombings were, she did not expect the worst and now she is distraught. 
@@ -7042,8 +7042,8 @@ mission "war begins (Reunion on Martini)"
 					goto letspeak
 			`	Before you're able to approach the attendant, Caroline runs towards the desk and starts.`
 			label letspeak
-			`	"My husband's name is Ronald Sarie, he may have been in the capital when the nuclear bombing occurred. I need to know where he is. I need to know he's okay, please! Tell me where he is!"`
-			`	Despite the situation, the attendant stares at Carlone with a blank emotionless expression. She has probably heard variations of those lines at least a hundred times.`
+			`	"My husband's name is Ronald Sarie, he may have been in the capital when the nuclear bombing occurred," Her voice cracks as she struggles to keep herself together." I need to know where he is. I need to know he's okay. Please, tell me where he is!"`
+			`	Despite the situation, the attendant stares at Carlone with a blank expression. She has probably heard variations of those lines at least a hundred times.`
 			`	"Sorry, I haven't been provided information on your husband's location. If you are looking for him, we do not advise you under any circumstances to go into the capital. It is far too dangerous, and we do not want to increase the number of people we need to treat, or our casualties. Your best chance is to go to the refugee camp a couple kilometers away, where they have logged in everyone who has been able to be evacuated or rescued and without injury. We can also advise you to go to the city hospital, where they are treating the injured right now. However, I would not go there unless you have tried every other path. That is all the information we can give you right now."`
 			choice
 				`	(Thank her.)`
@@ -7084,9 +7084,9 @@ mission "war begins (Reunion on Martini)"
 			`	After asking a few more refugees from coming from the shuttles, you're about to give up hope when a man in a tattered white shirt comes after you, in the opposite direction of where everybody else is going to.`
 			label luck
 			`	"Did you say Ronald Sarie? I know the guy, he lived in my neighbourhood, in fact. He was a lovely fella, always the guy you could count on for a favor. He's done a ton for me and I couldn't thank him any more."`
-			`	Caroline asks, "Yeah, but do you know where he is? I'm his wife, I came to surprise him, and I-I can't find him. Please tell me where my Ronald is!"`
+			`	Caroline asks, "Yeah, but do you know where he is? I'm his wife, I came here to surprise him, and I-I can't find him. Please tell me where my Ronald is!"`
 			`	"Oh, I'm so sorry, I... well, sorry, I couldn't tell you where he would be, but I really hope you do find him. I only got out because I was out of the capital that day, but I saw Ronald on his way to work as usual. He's a good man, your husband."`
-			`	"He was! He is." Her face sags, "To work? You're sure? I hoped... Oh, nevermind. Thank you so much, this is the first bit of news I've heard about him all of today."` # Bit of a placeholder. 
+			`	"He was! He is." Her face sags, "To work? You're sure? I hoped... Oh, nevermind. Thank you, thank you so much, this is the first bit of news I've heard about him since..." she trails off, unable or unwilling to say it.` # Bit of a placeholder. 
 			label hospital
 			`	"Imagine the hospital bit goes here, they find a guy who talks about the Ronald who is dead," says a placeholder.` # TODO: Add convo.
 			# goto partwherecarolineissad
