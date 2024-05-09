@@ -6987,7 +6987,7 @@ mission "war begins (Reunion on Martini)"
 				`	"Unfortunately, the terrorists attacked with nuclear weapons. The capital city is gone."`
 					goto straightface
 				`	"It was a nuclear bombing, but I'll try to get us through."`
-			`	She only barely acknowledges your words. "Well, we have to get to Martini as fast as we can. R-Ronald is.. he's resourceful if anyone could survie this it's him. I know it. Please, Captain <last>."`
+			`	She only barely acknowledges your words. "We have to get to Martini as fast as we can. R-Ronald is.. he's resourceful if anyone could survie this it's him. I know it. Please, Captain <last>."`
 			accept
 			action
 				set "carolineunaware"
