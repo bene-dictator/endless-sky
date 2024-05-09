@@ -7635,7 +7635,9 @@ mission "war begins (Reunion on Martini)"
 				`	"Is Ronald Sarie is at this camp?"`
 				`	"Do you know where we could find Ronald Sarie?"`
 			`	"Hold on, let me check our files," the man replies curtly. "No, we don't have anybody here by the name of Ronald Sarie. You will have to look in the city hospital or elsewhere, perhaps in the neighbouring city's camp."`
-			`	Caroline's face drops yet again, but you thank the officer and hurry out of the building.`
+			`	Caroline's face drops yet again, but she doesn't stop,"A-are you sure? Check again! Maybe you missed him. It's Ronald Sarie. S-A-R-I-E, Sarie. He's here. I know he's here. Just check!"`
+			` 	The official's tired face deepens into a profound frown, "I am sorry ma'am, but he's just not here."`
+			`	Tears blanket Caroline's face, but she says nothing more as you thank the officer and hurry out of the building.`
 			`	As you walk out of the building, a man in a tattered white shirt who was in the queue flags you down.`
 				goto luck
 			label whererolandcamp
