@@ -6999,14 +6999,14 @@ mission "war begins (Reunion on Martini)"
 			choice
 				`	"It's alright, Caroline. I'll make sure we'll get to Martini."`
 				`	"It's not a trick, there was a nuclear explosion!"`
-				`	"Check the news. I am not making this up. But I swear I will get you to Martini. You can count on me Caroline."`
+				`	"Check the news. I am not making this up. But I swear I will get you to Martini. You can count on me, Caroline."`
 			`	She doesn't seem to hear you, but instead she punches the wall with suprising amount of force, before bringing her sheets up to her red face to wipe away her glistening tears.`
 			choice
 				`	(Leave her alone in the room.)`
 					goto alone
 				`	(Stay in the doorway.)`
 			`	She abruptly turns to you with a hateful expression on her red face. Her expression flashes from despair to blind unbridled rage.`
-			`	"Go! Leave! Get away from me!" She screams, and then forces herself to take a wheezing breath." Captain, please. I need to be alone. Just get us to Martin, okay? Just get us to Martin!"`
+			`	"Go! Leave! Get away from me!" She screams, and then forces herself to take a wheezing breath." Captain, please. I need to be alone. Just get us to Martin, okay? Just get us to Martin."`
 			label alone
 			`	Respecting her privacy, you close the door and leave her.`
 			`	As you walk back to the cockpit, the sound of wailing follows you from the hallway.`
