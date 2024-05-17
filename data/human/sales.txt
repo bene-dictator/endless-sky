@@ -17,6 +17,7 @@ shipyard "Basic Ships"
 	"Star Barge"
 
 shipyard "Tarazed Basics"
+	"Tanager"
 	"Sparrow"
 	"Hawk"
 	"Blackbird"
