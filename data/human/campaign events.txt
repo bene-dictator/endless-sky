@@ -161,6 +161,112 @@ mission "event: war begins"
 			`	Unless the terrorists can be found or turn themselves in, civil war is imminent. It has been less than a year since you bought your ship, and already the galaxy is falling apart on you.`
 				decline
 
+event "week of mourning"
+	date 4 7 3014
+	government "Republic"
+		"friendly hail" "human week of mourning"
+	government "Syndicate"
+		"friendly hail" "human week of mourning"
+	government "Deep Security"
+		"friendly hail" "human week of mourning"
+	government "Militia"
+		"friendly hail" "human week of mourning"
+	government "Merchant"
+		"friendly hail" "human week of mourning"
+	fleet "Small Core Merchants"
+		add personality quiet
+	fleet "Large Core Merchants"
+		add personality quiet
+	fleet "Small Southern Merchants"
+		add personality quiet
+	fleet "Large Southern Merchants"
+		add personality quiet
+	fleet "Small Northern Merchants"
+		add personality quiet
+	fleet "Large Northern Merchants"
+		add personality quiet
+	fleet "Paradise Merchants"
+		add personality quiet
+	fleet "Small Deep Merchants"
+		add personality quiet
+	fleet "Large Deep Merchants"
+		add personality quiet
+	fleet "Human Miners"
+		add personality quiet
+	fleet "Small Militia"
+		add personality quiet
+	fleet "Large Militia"
+		add personality quiet
+	fleet "Small Republic"
+		add personality quiet
+	fleet "Large Republic"
+		add personality quiet
+	fleet "Republic Logistics"
+		add personality quiet
+	fleet "Small Deep Security"
+		add personality quiet
+	fleet "Large Deep Security"
+		add personality quiet
+	fleet "Small Syndicate"
+		add personality quiet
+	fleet "Large Syndicate"
+		add personality quiet
+
+event "week of mourning ends"
+	date 11 7 3014
+	government "Republic"
+		"friendly hail" "friendly navy"
+	government "Syndicate"
+		"friendly hail" "friendly syndicate"
+	government "Deep Security"
+		"friendly hail" "friendly deep"
+	government "Militia"
+		"friendly hail" "friendly militia"
+	government "Merchant"
+		"friendly hail" "friendly civilian"
+	fleet "Small Core Merchants"
+		remove personality quiet
+	fleet "Large Core Merchants"
+		remove personality quiet
+	fleet "Small Southern Merchants"
+		remove personality quiet
+	fleet "Large Southern Merchants"
+		remove personality quiet
+	fleet "Small Northern Merchants"
+		remove personality quiet
+	fleet "Large Northern Merchants"
+		remove personality quiet
+	fleet "Paradise Merchants"
+		remove personality quiet
+	fleet "Small Deep Merchants"
+		remove personality quiet
+	fleet "Large Deep Merchants"
+		remove personality quiet
+	fleet "Human Miners"
+		remove personality quiet
+	fleet "Small Militia"
+		remove personality quiet
+	fleet "Large Militia"
+		remove personality quiet
+	fleet "Small Republic"
+		remove personality quiet
+	fleet "Large Republic"
+		remove personality quiet
+	fleet "Republic Logistics"
+		remove personality quiet
+	fleet "Small Deep Security"
+		remove personality quiet
+	fleet "Large Deep Security"
+		remove personality quiet
+	fleet "Small Syndicate"
+		remove personality quiet
+	fleet "Large Syndicate"
+		remove personality quiet
+
+phrase "human week of mourning"
+	word
+		"Please respect the lives of those lost on Martini and Geminus by maintaining silence during the week of mourning."
+
 event "initial deployment 1"
 	date 24 7 3014
 	system "Spica"
