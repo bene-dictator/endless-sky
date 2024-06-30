@@ -810,7 +810,7 @@ mission "FW Syndicate Capture 1B"
 				"Wasp" 12
 	
 	npc
-		system Jabbah
+		system Ankaa
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -818,7 +818,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	npc
-		system Jabbah
+		system Ankaa
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -826,31 +826,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	npc
-		system Jabbah
-		government Syndicate
-		personality heroic nemesis staying
-		fleet
-			names "syndicate capital"
-			variant
-				"Manta (Nuclear)"
-	npc
-		system "Alpha Scuti"
-		government Syndicate
-		personality heroic nemesis staying
-		fleet
-			names "syndicate capital"
-			variant
-				"Manta (Nuclear)"
-	npc
-		system "Alpha Scuti"
-		government Syndicate
-		personality heroic nemesis staying
-		fleet
-			names "syndicate capital"
-			variant
-				"Manta (Nuclear)"
-	npc
-		system "Alpha Scuti"
+		system Ankaa
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -882,7 +858,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	npc
-		system Sheliak
+		system Sheratan
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -890,7 +866,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	npc
-		system Sheliak
+		system Sheratan
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -898,7 +874,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	npc
-		system Sheliak
+		system Sheratan
 		government Syndicate
 		personality heroic nemesis staying
 		fleet
@@ -906,11 +882,7 @@ mission "FW Syndicate Capture 1B"
 			variant
 				"Manta (Nuclear)"
 	
-	on enter Jabbah
-		dialog
-			`There is a warning light on your ship's main control panel that has never turned on. It is a relic of the dark age of galactic travel, part of a sensor system that is built into every starship, to detect incoming nuclear warheads. You had almost forgotten it even existed, because you have never seen it flash.`
-			`	It begins flashing now.`
-	on enter "Alpha Scuti"
+	on enter Ankaa
 		dialog
 			`There is a warning light on your ship's main control panel that has never turned on. It is a relic of the dark age of galactic travel, part of a sensor system that is built into every starship, to detect incoming nuclear warheads. You had almost forgotten it even existed, because you have never seen it flash.`
 			`	It begins flashing now.`
@@ -918,7 +890,7 @@ mission "FW Syndicate Capture 1B"
 		dialog
 			`There is a warning light on your ship's main control panel that has never turned on. It is a relic of the dark age of galactic travel, part of a sensor system that is built into every starship, to detect incoming nuclear warheads. You had almost forgotten it even existed, because you have never seen it flash.`
 			`	It begins flashing now.`
-	on enter Sheliak
+	on enter Sheratan
 		dialog
 			`There is a warning light on your ship's main control panel that has never turned on. It is a relic of the dark age of galactic travel, part of a sensor system that is built into every starship, to detect incoming nuclear warheads. You had almost forgotten it even existed, because you have never seen it flash.`
 			`	It begins flashing now.`
