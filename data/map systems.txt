@@ -3340,7 +3340,7 @@ system "Al Hurr"
 			period 11.1964
 
 system Albaldah
-	pos -350 484
+	pos -349 472
 	government Republic
 	attributes "south"
 	arrival 560
@@ -3349,7 +3349,7 @@ system Albaldah
 	haze _menu/haze-133
 	link Albireo
 	link Eltanin
-	link Girtab
+	link Fang
 	link Nunki
 	asteroids "small rock" 1 8.82
 	asteroids "medium rock" 20 5.4
@@ -3717,6 +3717,11 @@ system Aldhibain
 				scale 0.5
 			distance 211
 			period 13.622
+
+system Aldulfin
+	pos -492 533
+	government Uninhabited
+	link Girtab
 
 system Aleit
 	pos 967.604 -690.722
@@ -16151,6 +16156,13 @@ system "Fallen Leaf"
 			distance 126
 			period 17.7794
 
+system Fang
+	pos -407 474
+	government Republic
+	link Albaldah
+	link Girtab
+	link Rastaban
+
 system "Far Horizon"
 	pos -1108.59 726.051
 	government Coalition
@@ -18416,15 +18428,17 @@ system Giribea
 			period 48.7616
 
 system Girtab
-	pos -430 481
+	pos -449 508
 	government Republic
 	attributes "south"
 	arrival 1080
 	habitable 1080
 	belt 1387
-	link Albaldah
+	link Aldulfin
+	link Fang
 	link Lesath
 	link Rastaban
+	link "Yed Posterior"
 	asteroids "large rock" 1 7.695
 	asteroids "small metal" 9 3.648
 	asteroids "medium metal" 1 5.7
@@ -24786,7 +24800,6 @@ system Lesath
 	link Girtab
 	link Rastaban
 	link Sargas
-	link Shaula
 	asteroids "medium rock" 9 4.8384
 	asteroids "large rock" 21 7.2
 	asteroids "medium metal" 8 4.3776
@@ -27747,6 +27760,11 @@ system Mintaka
 		distance 4566.87
 		period 4209.57
 
+system Mira
+	pos -332 570
+	government Uninhabited
+	link Nunki
+
 system Mirach
 	pos -166 250
 	government Syndicate
@@ -29467,13 +29485,15 @@ system Nssryos
 		period 4679.16
 
 system Nunki
-	pos -393 537
+	pos -359 530
 	government Pirate
 	attributes "south"
 	arrival 500
 	habitable 230
 	belt 1930
 	link Albaldah
+	link Mira
+	link "Yed Posterior"
 	asteroids "small rock" 15 3.3516
 	asteroids "medium rock" 77 1.8144
 	asteroids "large rock" 15 1.9908
@@ -33525,7 +33545,7 @@ system Rasalhague
 		period 2045.39
 
 system Rastaban
-	pos -463 446
+	pos -479 444
 	government Republic
 	attributes "south"
 	arrival 1080
@@ -33534,6 +33554,7 @@ system Rastaban
 	haze _menu/haze-133
 	link "Alpha Arae"
 	link "Delta Sagittarii"
+	link Fang
 	link Girtab
 	link Lesath
 	asteroids "small rock" 2 3.8766
@@ -35084,7 +35105,7 @@ system Salipastart
 			period 21.2086
 
 system Saquergen
-	pos -482 561
+	pos -512 575
 	government Uninhabited
 	attributes "notable star" "nova"
 	arrival 500
@@ -36124,13 +36145,13 @@ system Sextet
 		period 8880.60
 
 system Shaula
-	pos -460 527
+	pos -422 585
 	government Pirate
 	attributes "south"
 	arrival 625
 	habitable 625
 	belt 1814
-	link Lesath
+	link "Yed Posterior"
 	asteroids "small rock" 1 3.2016
 	asteroids "medium rock" 2 3.5496
 	asteroids "large rock" 2 3.8628
@@ -42697,6 +42718,13 @@ system "Ya Hai"
 			sprite planet/tethys
 			distance 184
 			period 13.1378
+
+system "Yed Posterior"
+	pos -416 547
+	government Uninhabited
+	link Girtab
+	link Nunki
+	link Shaula
 
 system "Yed Prior"
 	pos -810 374
