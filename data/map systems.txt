@@ -27761,7 +27761,7 @@ system Mintaka
 		period 4209.57
 
 system Mira
-	pos -332 570
+	pos -336 560
 	government Uninhabited
 	link Nunki
 
@@ -35105,7 +35105,7 @@ system Salipastart
 			period 21.2086
 
 system Saquergen
-	pos -512 575
+	pos -498 563
 	government Uninhabited
 	attributes "notable star" "nova"
 	arrival 500
